@@ -7,6 +7,7 @@ https://iesb.blackboard.com/webapps/blackboard/execute/content/file?cmd=view&con
 * Fazer as páginas de acordo com o padrão do template (Depende da inicialização do Angular e ngRoute); ( Daniel está fazendo )
 * Implementar interceptors para direcionar para páginas de erros, segue exemplo:
 
+```javascript
 angular
     .module('myProject.myModule')
     .config(['$httpProvider', function ($httpProvider) {
@@ -21,4 +22,4 @@ angular
             }
         };
     }]);
-}]);
+}]);```
