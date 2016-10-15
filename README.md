@@ -4,7 +4,7 @@ https://iesb.blackboard.com/webapps/blackboard/execute/content/file?cmd=view&con
 
 ## MySQL
 * IP: 52.39.66.114:3306
-* User: root
+* User: laravel
 * Pswd: iesb
 * DB: iesb
 
