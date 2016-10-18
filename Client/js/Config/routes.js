@@ -5,6 +5,12 @@ app.config(function ($routeProvider, $locationProvider) {
             templateUrl: 'pages/inicio.html'
         })
 
+        // TODO
+        // Mudar o route do angular para o UI-Router ou usar ng-include na página de login
+        .when('/login', {
+            templateUrl: 'pages/login.html'
+        })
+
         .when('/questoes', {
             templateUrl: 'pages/questoes/listar.html'
         })

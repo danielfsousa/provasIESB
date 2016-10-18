@@ -10,6 +10,7 @@ https://iesb.blackboard.com/webapps/blackboard/execute/content/file?cmd=view&con
 
 
 ## TO-DO
+* Mudar o route do angular para o UI-Router ou usar ng-include na página de login;
 * Inicializar o Angular com ngRoute; ( Feito )
 * Fazer as páginas de acordo com o padrão do template (Depende da inicialização do Angular e ngRoute); ( Daniel está fazendo )
 * Implementar interceptors para direcionar para páginas de erros, segue exemplo:
@@ -29,4 +30,5 @@ angular
             }
         };
     }]);
-}]);```
+}]);
+```
