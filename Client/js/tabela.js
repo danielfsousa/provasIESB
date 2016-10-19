@@ -1,11 +1,11 @@
 $(function () {
     $('.table-data').DataTable({
         "paging": true,
-        "lengthChange": false,
+        "lengthChange": true,
         "searching": true,
         "ordering": true,
         "info": true,
-        "autoWidth": false,
+        "autoWidth": true,
         language: {
             "sEmptyTable": "Nenhum registro encontrado",
             "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
