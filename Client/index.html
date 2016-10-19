@@ -142,16 +142,28 @@
                 <li class="treeview">
                     <a href="#"><i class="fa fa-question-circle"></i> <span>Questões</span>
                         <span class="pull-right-container">
-              <i class="fa fa-angle-down pull-right"></i>
-            </span>
+                            <i class="fa fa-angle-down pull-right"></i>
+                        </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="/questoes/criar">Criar</a></li>
-                        <li><a href="/questoes">Todas</a></li>
-                        <li><a href="/questoes/aguardando">Aguardando Aprovação</a></li>
-                        <li><a href="/questoes/aceitas">Aceitas</a></li>
-                        <li><a href="/questoes/recusadas">Recusadas</a></li>
-                        <li><a href="/questoes/rascunhos">Rascunhos</a></li>
+                        <li>
+                            <a href="#"><i class="fa fa-circle-o"></i> Criar
+                                <span class="pull-right-container">
+                                <i class="fa fa-angle-down pull-right"></i>
+                            </span>
+                                <ul class="treeview-menu">
+                                    <li><a href="/questao/criar/objetiva"><i class="fa fa-circle-o"></i> Objetiva</a>
+                                    </li>
+                                    <li><a href="/questao/criar/subjetiva"><i class="fa fa-circle-o"></i> Subjetiva</a>
+                                    </li>
+                                </ul>
+                            </a>
+                        </li>
+                        <li><a href="/questoes"><i class="fa fa-circle-o"></i> Todas</a></li>
+                        <li><a href="/questoes/aguardando"><i class="fa fa-circle-o"></i> Aguardando Aprovação</a></li>
+                        <li><a href="/questoes/aceitas"><i class="fa fa-circle-o"></i> Aceitas</a></li>
+                        <li><a href="/questoes/recusadas"><i class="fa fa-circle-o"></i> Recusadas</a></li>
+                        <li><a href="/questoes/rascunhos"><i class="fa fa-circle-o"></i> Rascunhos</a></li>
                     </ul>
                 </li>
                 <li class="treeview">
@@ -161,14 +173,14 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="/provas/criar">Criar</a></li>
-                        <li><a href="/provas">Todas</a></li>
-                        <li><a href="/provas/aguardando">Aguardando Aprovação</a></li>
-                        <li><a href="/provas/aceitas">Aceitas</a></li>
-                        <li><a href="/provas/recusadas">Recusadas</a></li>
-                        <li><a href="/provas/rascunhos">Rascunhos</a></li>
-                        <li><a href="/provas/imprimir">Imprimir</a></li>
-                        <li><a href="/provas/digitalizar">Digitalizar</a></li>
+                        <li><a href="/prova/criar"><i class="fa fa-circle-o"></i> Criar</a></li>
+                        <li><a href="/provas"><i class="fa fa-circle-o"></i> Todas</a></li>
+                        <li><a href="/provas/aguardando"><i class="fa fa-circle-o"></i> Aguardando Aprovação</a></li>
+                        <li><a href="/provas/aceitas"><i class="fa fa-circle-o"></i> Aceitas</a></li>
+                        <li><a href="/provas/recusadas"><i class="fa fa-circle-o"></i> Recusadas</a></li>
+                        <li><a href="/provas/rascunhos"><i class="fa fa-circle-o"></i> Rascunhos</a></li>
+                        <li><a href="/provas/imprimir"><i class="fa fa-circle-o"></i> Imprimir</a></li>
+                        <li><a href="/provas/digitalizar"><i class="fa fa-circle-o"></i> Digitalizar</a></li>
                     </ul>
                 </li>
                 <li class="treeview">
@@ -178,22 +190,24 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="/notas/linguagem-programacao">Linguagem de Programação</a></li>
-                        <li><a href="/notas/disciplina">Disciplina</a></li>
+                        <li><a href="/notas/linguagem-programacao"><i class="fa fa-circle-o"></i> Linguagem de
+                            Programação</a></li>
+                        <li><a href="/notas/disciplina"><i class="fa fa-circle-o"></i> Disciplina</a></li>
                     </ul>
                 </li>
                 <li class="treeview">
                     <a href="#"><i class="fa fa-balance-scale"></i> <span>Recursos</span>
                         <span class="pull-right-container">
-              <i class="fa fa-angle-down pull-right"></i>
-            </span>
+                            <i class="fa fa-angle-down pull-right"></i>
+                            <small class="label pull-right bg-red">5</small>
+                        </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="/recursos/criar">Criar</a></li>
-                        <li><a href="/recursos">Todos</a></li>
-                        <li><a href="/recursos/aguardando">Aguardando Aprovação</a></li>
-                        <li><a href="/recursos/aceitos">Aceitos</a></li>
-                        <li><a href="/recursos/recusados">Recusados</a></li>
+                        <li><a href="/recurso/criar"><i class="fa fa-circle-o"></i> Criar</a></li>
+                        <li><a href="/recursos"><i class="fa fa-circle-o"></i> Todos</a></li>
+                        <li><a href="/recursos/aguardando"><i class="fa fa-circle-o"></i> Aguardando Aprovação</a></li>
+                        <li><a href="/recursos/aceitos"><i class="fa fa-circle-o"></i> Aceitos</a></li>
+                        <li><a href="/recursos/recusados"><i class="fa fa-circle-o"></i> Recusados</a></li>
                     </ul>
                 </li>
             </ul>
@@ -203,10 +217,7 @@
     </aside>
 
     <!-- Content Wrapper. Contains page content -->
-    <div ng-view class="content-wrapper">
-
-
-    </div>
+    <div ng-view class="content-wrapper"></div>
     <!-- /.content-wrapper -->
 
     <!-- Main Footer -->
@@ -235,6 +246,8 @@
 <!-- DataTables -->
 <script src="lib/AdminLTE/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="lib/AdminLTE/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<!-- CK Editor -->
+<script src="https://cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>
 
 <!-- AdminLTE App -->
 <script src="lib/AdminLTE/dist/js/app.min.js"></script>

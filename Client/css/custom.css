@@ -1,3 +1,7 @@
+.click {
+    cursor: pointer;
+}
+
 /* ============================
     Label de notificações
    ============================ */
@@ -29,11 +33,21 @@
 }
 
 /* ============================
-    Container
+    Box
    ============================ */
-.box {
-    overflow-x: auto; /* Habilita scroll quando necessário */
+@media screen and (max-width: 1100px) {
+    .box {
+        overflow-x: auto; /* Habilita scroll quando necessário */
+    }
 }
+
+/* ============================
+    Botões do box
+   ============================ */
+.box-footer button.pull-right {
+    margin-left: 10px;
+}
+
 
 /* ============================
     Paginação
