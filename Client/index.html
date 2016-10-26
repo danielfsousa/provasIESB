@@ -10,11 +10,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="lib/AdminLTE/plugins/datatables/dataTables.bootstrap.css">
+    <link rel="stylesheet" href="lib/AdminLTE/plugins/select2/select2.min.css">
     <link rel="stylesheet" href="lib/AdminLTE/dist/css/AdminLTE.min.css">
     <link rel="stylesheet" href="lib/AdminLTE/dist/css/skins/skin-red.min.css">
     <link rel="stylesheet" href="css/custom.css">
     <link rel="shortcut icon" type="image/png" href="favicon.png">
-
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -179,7 +179,6 @@
                         <li><a href="/provas/aceitas"><i class="fa fa-circle-o"></i> Aceitas</a></li>
                         <li><a href="/provas/recusadas"><i class="fa fa-circle-o"></i> Recusadas</a></li>
                         <li><a href="/provas/rascunhos"><i class="fa fa-circle-o"></i> Rascunhos</a></li>
-                        <li><a href="/provas/imprimir"><i class="fa fa-circle-o"></i> Imprimir</a></li>
                         <li><a href="/provas/digitalizar"><i class="fa fa-circle-o"></i> Digitalizar</a></li>
                     </ul>
                 </li>
@@ -190,9 +189,32 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="/notas/linguagem-programacao"><i class="fa fa-circle-o"></i> Linguagem de
-                            Programação</a></li>
-                        <li><a href="/notas/disciplina"><i class="fa fa-circle-o"></i> Disciplina</a></li>
+                        <li>
+                            <a href="#"><i class="fa fa-circle-o"></i> Disciplina 1
+                                <span class="pull-right-container">
+                                <i class="fa fa-angle-down pull-right"></i>
+                            </span>
+                                <ul class="treeview-menu">
+                                    <li><a href="/notas/1489/p1"><i class="fa fa-circle-o"></i> P1</a>
+                                    </li>
+                                    <li><a href="/notas/1489/p2"><i class="fa fa-circle-o"></i> P2</a>
+                                    </li>
+                                </ul>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-circle-o"></i> Disciplina 2
+                                <span class="pull-right-container">
+                                <i class="fa fa-angle-down pull-right"></i>
+                            </span>
+                                <ul class="treeview-menu">
+                                    <li><a href="/notas/0864/p1"><i class="fa fa-circle-o"></i> P1</a>
+                                    </li>
+                                    <li><a href="/notas/0864/p2"><i class="fa fa-circle-o"></i> P2</a>
+                                    </li>
+                                </ul>
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li class="treeview">
@@ -246,18 +268,17 @@
 <!-- DataTables -->
 <script src="lib/AdminLTE/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="lib/AdminLTE/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<!-- Select2 -->
+<script src="lib/AdminLTE/plugins/select2/select2.full.min.js"></script>
 <!-- CK Editor -->
 <script src="https://cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>
 
-
-
+<!-- AdminLTE App -->
+<script src="lib/AdminLTE/dist/js/app.min.js"></script>
 
 <!-- Angular -->
 <script src="lib/AngularJS/angular.min.js"></script>
 <script src="lib/AngularJS/angular-route.js"></script>
-
-<!-- AdminLTE App -->
-<script src="lib/AdminLTE/dist/js/app.min.js"></script>
 
 <!-- Inicializa o Angular -->
 <script src="js/Config/app.js"></script>
