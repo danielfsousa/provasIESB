@@ -1,0 +1,85 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Recursos
+        <small>Criar</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="/">Provas IESB</a></li>
+        <li><a href="/recursos">Recursos</a></li>
+        <li class="active">Criar</li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="col-md-12">
+        <div class="box box-solid">
+            <form role="form">
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <label for="titulo">Título</label>
+                                <input type="text" class="form-control" id="titulo" placeholder="Título">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="questao">Questão</label>
+                                <input type="number" class="form-control" id="questao" placeholder="Questão">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="disciplina">Disciplina</label>
+                                <select id="disciplina" class="form-control">
+                                    <option>option 1</option>
+                                    <option>option 2</option>
+                                    <option>option 3</option>
+                                    <option>option 4</option>
+                                    <option>option 5</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="turma">Turma</label>
+                                <select id="turma" class="form-control">
+                                    <option>option 1</option>
+                                    <option>option 2</option>
+                                    <option>option 3</option>
+                                    <option>option 4</option>
+                                    <option>option 5</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="prova">Prova</label>
+                                <select id="prova" class="form-control">
+                                    <option>P1</option>
+                                    <option>P2</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label for="editor">Mensagem</label>
+                            <textarea id="editor" name="mensagem" rows="20" cols="70"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-footer">
+                    <a href="/recursos"><button class="btn btn-default">Voltar</button></a>
+                    <button type="submit" class="btn btn-primary pull-right">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<script src="js/editor.js"></script>

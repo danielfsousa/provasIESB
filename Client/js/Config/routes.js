@@ -7,7 +7,7 @@ app.config(function ($routeProvider, $locationProvider) {
 
         // TODO
         // Mudar o route do angular para o UI-Router ou usar ng-include na página de login
-        .when('/login', {
+        .when('/entrar', {
             templateUrl: 'pages/login.html'
         })
 
@@ -55,6 +55,10 @@ app.config(function ($routeProvider, $locationProvider) {
             templateUrl: 'pages/provas/listar.html'
         })
 
+        .when('/prova/criar', {
+            templateUrl: 'pages/provas/criar.html'
+        })
+
         .when('/prova/:id', {
             templateUrl: 'pages/provas/visualizar.html'
         })
@@ -75,8 +79,12 @@ app.config(function ($routeProvider, $locationProvider) {
             templateUrl: 'pages/provas/listar.html'
         })
 
-        .when('/provas/imprimir', {
-            templateUrl: 'pages/provas/listar.html'
+        .when('/provas/corrigir', {
+            templateUrl: 'pages/provas/corrigir/listar.html'
+        })
+
+        .when('/provas/corrigir/:prova', {
+            templateUrl: 'pages/provas/corrigir/visualizar.html'
         })
 
         .when('/provas/digitalizar', {
@@ -87,11 +95,7 @@ app.config(function ($routeProvider, $locationProvider) {
          *     Notas      *
          ******************/
 
-        .when('/notas', {
-            templateUrl: 'pages/notas/listar.html'
-        })
-
-        .when('/notas/:disciplina', {
+        .when('/notas/:disciplina/:prova', {
             templateUrl: 'pages/notas/listar.html'
         })
 
