@@ -1,1 +1,1 @@
-var app = angular.module('iesb', ['ngRoute']);
+var app = angular.module('iesb', ['ionic']);
