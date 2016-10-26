@@ -1,3 +1,11 @@
+/* ============================
+    Background color Fix
+   ============================ */
+.main-footer {
+    background: #ecf0f5;
+    border-top: none;
+}
+
 .click {
     cursor: pointer;
 }
