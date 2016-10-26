@@ -25,9 +25,31 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         })
 
+        /******************
+         *    Questões    *
+         ******************/
+
+        .state('app.criarQuestaoObjetiva', {
+            url: 'questao/criar/objetiva/',
+            views: {
+                'menuContent': {
+                    templateUrl: 'pages/questoes/criar/objetiva.html'
+                }
+            }
+        })
+
+        .state('app.criarQuestaoSubjetiva', {
+            url: '/questao/criar/subjetiva/',
+            views: {
+                'menuContent': {
+                    templateUrl: 'pages/questoes/criar/subjetiva.html'
+                }
+            }
+        })
+
+    $urlRouterProvider.when('', '/login');
 
 
-    $urlRouterProvider.otherwise('/login');
     // $routeProvider
     //
     //     .when('/', {
