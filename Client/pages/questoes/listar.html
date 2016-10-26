@@ -28,11 +28,11 @@
                 </div>
                 <div class="box-body no-padding">
                     <ul class="nav nav-pills nav-stacked">
-                        <li class="active"><a href="#"><i class="fa fa-circle-o text-blue"></i> Todos
+                        <li class="active"><a href="#"><i class="fa fa-circle-o text-blue"></i> Todas
                             <span class="label label-primary pull-right">12</span></a></li>
                         <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> Aguardando Aprovação</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o text-green"></i> Aceitos</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o text-red"></i> Recusados</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o text-green"></i> Aceitas</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o text-red"></i> Recusadas</a></li>
                     </ul>
                 </div>
                 <!-- /.box-body -->
@@ -51,6 +51,19 @@
                 </div>
                 <div class="box-body">
                     <div class="form-group">
+                        <label>Tipo</label>
+                        <select class="form-control select2">
+                            <option selected="selected">Alabama</option>
+                            <option>Alaska</option>
+                            <option>California</option>
+                            <option>Delaware</option>
+                            <option>Tennessee</option>
+                            <option>Texas</option>
+                            <option>Washington</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
                         <label>Disciplina</label>
                         <select class="form-control select2">
                             <option selected="selected">Alabama</option>
@@ -64,7 +77,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Turma</label>
+                        <label>Dificuldade</label>
                         <select class="form-control select2">
                             <option selected="selected">Alabama</option>
                             <option>Alaska</option>
@@ -77,20 +90,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Prova</label>
-                        <select class="form-control select2">
-                            <option selected="selected">Alabama</option>
-                            <option>Alaska</option>
-                            <option>California</option>
-                            <option>Delaware</option>
-                            <option>Tennessee</option>
-                            <option>Texas</option>
-                            <option>Washington</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Questão</label>
+                        <label>Criador</label>
                         <select class="form-control select2">
                             <option selected="selected">Alabama</option>
                             <option>Alaska</option>
@@ -115,229 +115,181 @@
                         <thead>
                         <tr>
                             <th>Título</th>
-                            <th>Aluno</th>
-                            <th>Turma</th>
+                            <th>Tipo</th>
+                            <th>Dificuldade</th>
                             <th>Disciplina</th>
-                            <th>Prova</th>
-                            <th>Questão</th>
-                            <th>Data</th>
+                            <th>Criador</th>
                             <th>Estado</th>
-                            <th>Ações</th>
+                            <th>Visualizar</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-                            <td><a href="#">Recruso 1</a></td>
-                            <td>Daniel Sousa</td>
-                            <td>ADS123456</td>
-                            <td>Projeto Integrador</td>
-                            <td>P2</td>
-                            <td>2</td>
-                            <td>14/10/2016</td>
+                            <td><a href="#">Título da questão aqui</a></td>
+                            <td>Subjetiva</td>
+                            <td>Alta</td>
+                            <td>Segurança da Informação</td>
+                            <td>Cícero</td>
                             <td>Aguardando aprovação</td>
-                            <td class="center-block">
-                                <button class="btn btn-sm btn-default"><i class="fa fa-eye"></i> Visualizar</button>
-                                <button class="btn btn-sm btn-default"><i class="fa fa-print"></i> Imprimir</button>
+                            <td>
+                                <button class="btn btn-sm btn-default btn-block"><i class="fa fa-eye"></i> Visualizar</button>
                             </td>
                         </tr>
                         <tr>
-                            <td><a href="#">Recruso 1</a></td>
-                            <td>Daniel Sousa</td>
-                            <td>ADS123456</td>
-                            <td>Projeto Integrador</td>
-                            <td>P2</td>
-                            <td>2</td>
-                            <td>14/10/2016</td>
+                            <td><a href="#">Título da questão aqui</a></td>
+                            <td>Subjetiva</td>
+                            <td>Alta</td>
+                            <td>Segurança da Informação</td>
+                            <td>Cícero</td>
                             <td>Aguardando aprovação</td>
-                            <td class="center-block">
-                                <button class="btn btn-sm btn-default"><i class="fa fa-eye"></i> Visualizar</button>
-                                <button class="btn btn-sm btn-default"><i class="fa fa-print"></i> Imprimir</button>
+                            <td>
+                                <button class="btn btn-sm btn-default btn-block"><i class="fa fa-eye"></i> Visualizar</button>
                             </td>
                         </tr>
                         <tr>
-                            <td><a href="#">Recruso 1</a></td>
-                            <td>Daniel Sousa</td>
-                            <td>ADS123456</td>
-                            <td>Projeto Integrador</td>
-                            <td>P2</td>
-                            <td>2</td>
-                            <td>14/10/2016</td>
+                            <td><a href="#">Título da questão aqui</a></td>
+                            <td>Subjetiva</td>
+                            <td>Alta</td>
+                            <td>Segurança da Informação</td>
+                            <td>Cícero</td>
                             <td>Aguardando aprovação</td>
-                            <td class="center-block">
-                                <button class="btn btn-sm btn-default"><i class="fa fa-eye"></i> Visualizar</button>
-                                <button class="btn btn-sm btn-default"><i class="fa fa-print"></i> Imprimir</button>
+                            <td>
+                                <button class="btn btn-sm btn-default btn-block"><i class="fa fa-eye"></i> Visualizar</button>
                             </td>
                         </tr>
                         <tr>
-                            <td><a href="#">Recruso 1</a></td>
-                            <td>Daniel Sousa</td>
-                            <td>ADS123456</td>
-                            <td>Projeto Integrador</td>
-                            <td>P2</td>
-                            <td>2</td>
-                            <td>14/10/2016</td>
+                            <td><a href="#">Título da questão aqui</a></td>
+                            <td>Subjetiva</td>
+                            <td>Alta</td>
+                            <td>Segurança da Informação</td>
+                            <td>Cícero</td>
                             <td>Aguardando aprovação</td>
-                            <td class="center-block">
-                                <button class="btn btn-sm btn-default"><i class="fa fa-eye"></i> Visualizar</button>
-                                <button class="btn btn-sm btn-default"><i class="fa fa-print"></i> Imprimir</button>
+                            <td>
+                                <button class="btn btn-sm btn-default btn-block"><i class="fa fa-eye"></i> Visualizar</button>
                             </td>
                         </tr><tr>
-                            <td><a href="#">Recruso 1</a></td>
-                            <td>Daniel Sousa</td>
-                            <td>ADS123456</td>
-                            <td>Projeto Integrador</td>
-                            <td>P2</td>
-                            <td>2</td>
-                            <td>14/10/2016</td>
+                            <td><a href="#">Título da questão aqui</a></td>
+                            <td>Subjetiva</td>
+                            <td>Alta</td>
+                            <td>Segurança da Informação</td>
+                            <td>Cícero</td>
                             <td>Aguardando aprovação</td>
-                            <td class="center-block">
-                                <button class="btn btn-sm btn-default"><i class="fa fa-eye"></i> Visualizar</button>
-                                <button class="btn btn-sm btn-default"><i class="fa fa-print"></i> Imprimir</button>
+                            <td>
+                                <button class="btn btn-sm btn-default btn-block"><i class="fa fa-eye"></i> Visualizar</button>
                             </td>
                         </tr><tr>
-                            <td><a href="#">Recruso 1</a></td>
-                            <td>Daniel Sousa</td>
-                            <td>ADS123456</td>
-                            <td>Projeto Integrador</td>
-                            <td>P2</td>
-                            <td>2</td>
-                            <td>14/10/2016</td>
+                            <td><a href="#">Título da questão aqui</a></td>
+                            <td>Subjetiva</td>
+                            <td>Alta</td>
+                            <td>Segurança da Informação</td>
+                            <td>Cícero</td>
                             <td>Aguardando aprovação</td>
-                            <td class="center-block">
-                                <button class="btn btn-sm btn-default"><i class="fa fa-eye"></i> Visualizar</button>
-                                <button class="btn btn-sm btn-default"><i class="fa fa-print"></i> Imprimir</button>
+                            <td>
+                                <button class="btn btn-sm btn-default btn-block"><i class="fa fa-eye"></i> Visualizar</button>
                             </td>
                         </tr>
                         <tr>
-                            <td><a href="#">Recruso 1</a></td>
-                            <td>Daniel Sousa</td>
-                            <td>ADS123456</td>
-                            <td>Projeto Integrador</td>
-                            <td>P2</td>
-                            <td>2</td>
-                            <td>14/10/2016</td>
+                            <td><a href="#">Título da questão aqui</a></td>
+                            <td>Subjetiva</td>
+                            <td>Alta</td>
+                            <td>Segurança da Informação</td>
+                            <td>Cícero</td>
                             <td>Aguardando aprovação</td>
-                            <td class="center-block">
-                                <button class="btn btn-sm btn-default"><i class="fa fa-eye"></i> Visualizar</button>
-                                <button class="btn btn-sm btn-default"><i class="fa fa-print"></i> Imprimir</button>
+                            <td>
+                                <button class="btn btn-sm btn-default btn-block"><i class="fa fa-eye"></i> Visualizar</button>
                             </td>
                         </tr>
                         <tr>
-                            <td><a href="#">Recruso 1</a></td>
-                            <td>Daniel Sousa</td>
-                            <td>ADS123456</td>
-                            <td>Projeto Integrador</td>
-                            <td>P2</td>
-                            <td>2</td>
-                            <td>14/10/2016</td>
+                            <td><a href="#">Título da questão aqui</a></td>
+                            <td>Subjetiva</td>
+                            <td>Alta</td>
+                            <td>Segurança da Informação</td>
+                            <td>Cícero</td>
                             <td>Aguardando aprovação</td>
-                            <td class="center-block">
-                                <button class="btn btn-sm btn-default"><i class="fa fa-eye"></i> Visualizar</button>
-                                <button class="btn btn-sm btn-default"><i class="fa fa-print"></i> Imprimir</button>
+                            <td>
+                                <button class="btn btn-sm btn-default btn-block"><i class="fa fa-eye"></i> Visualizar</button>
                             </td>
                         </tr><tr>
-                            <td><a href="#">Recruso 1</a></td>
-                            <td>Daniel Sousa</td>
-                            <td>ADS123456</td>
-                            <td>Projeto Integrador</td>
-                            <td>P2</td>
-                            <td>2</td>
-                            <td>14/10/2016</td>
+                            <td><a href="#">Título da questão aqui</a></td>
+                            <td>Subjetiva</td>
+                            <td>Alta</td>
+                            <td>Segurança da Informação</td>
+                            <td>Cícero</td>
                             <td>Aguardando aprovação</td>
-                            <td class="center-block">
-                                <button class="btn btn-sm btn-default"><i class="fa fa-eye"></i> Visualizar</button>
-                                <button class="btn btn-sm btn-default"><i class="fa fa-print"></i> Imprimir</button>
+                            <td>
+                                <button class="btn btn-sm btn-default btn-block"><i class="fa fa-eye"></i> Visualizar</button>
                             </td>
                         </tr><tr>
-                            <td><a href="#">Recruso 1</a></td>
-                            <td>Daniel Sousa</td>
-                            <td>ADS123456</td>
-                            <td>Projeto Integrador</td>
-                            <td>P2</td>
-                            <td>2</td>
-                            <td>14/10/2016</td>
+                            <td><a href="#">Título da questão aqui</a></td>
+                            <td>Subjetiva</td>
+                            <td>Alta</td>
+                            <td>Segurança da Informação</td>
+                            <td>Cícero</td>
                             <td>Aguardando aprovação</td>
-                            <td class="center-block">
-                                <button class="btn btn-sm btn-default"><i class="fa fa-eye"></i> Visualizar</button>
-                                <button class="btn btn-sm btn-default"><i class="fa fa-print"></i> Imprimir</button>
+                            <td>
+                                <button class="btn btn-sm btn-default btn-block"><i class="fa fa-eye"></i> Visualizar</button>
                             </td>
                         </tr><tr>
-                            <td><a href="#">Recruso 1</a></td>
-                            <td>Daniel Sousa</td>
-                            <td>ADS123456</td>
-                            <td>Projeto Integrador</td>
-                            <td>P2</td>
-                            <td>2</td>
-                            <td>14/10/2016</td>
+                            <td><a href="#">Título da questão aqui</a></td>
+                            <td>Subjetiva</td>
+                            <td>Alta</td>
+                            <td>Segurança da Informação</td>
+                            <td>Cícero</td>
                             <td>Aguardando aprovação</td>
-                            <td class="center-block">
-                                <button class="btn btn-sm btn-default"><i class="fa fa-eye"></i> Visualizar</button>
-                                <button class="btn btn-sm btn-default"><i class="fa fa-print"></i> Imprimir</button>
+                            <td>
+                                <button class="btn btn-sm btn-default btn-block"><i class="fa fa-eye"></i> Visualizar</button>
                             </td>
                         </tr><tr>
-                            <td><a href="#">Recruso 1</a></td>
-                            <td>Daniel Sousa</td>
-                            <td>ADS123456</td>
-                            <td>Projeto Integrador</td>
-                            <td>P2</td>
-                            <td>2</td>
-                            <td>14/10/2016</td>
+                            <td><a href="#">Título da questão aqui</a></td>
+                            <td>Subjetiva</td>
+                            <td>Alta</td>
+                            <td>Segurança da Informação</td>
+                            <td>Cícero</td>
                             <td>Aguardando aprovação</td>
-                            <td class="center-block">
-                                <button class="btn btn-sm btn-default"><i class="fa fa-eye"></i> Visualizar</button>
-                                <button class="btn btn-sm btn-default"><i class="fa fa-print"></i> Imprimir</button>
+                            <td>
+                                <button class="btn btn-sm btn-default btn-block"><i class="fa fa-eye"></i> Visualizar</button>
                             </td>
                         </tr><tr>
-                            <td><a href="#">Recruso 1</a></td>
-                            <td>Daniel Sousa</td>
-                            <td>ADS123456</td>
-                            <td>Projeto Integrador</td>
-                            <td>P2</td>
-                            <td>2</td>
-                            <td>14/10/2016</td>
+                            <td><a href="#">Título da questão aqui</a></td>
+                            <td>Subjetiva</td>
+                            <td>Alta</td>
+                            <td>Segurança da Informação</td>
+                            <td>Cícero</td>
                             <td>Aguardando aprovação</td>
-                            <td class="center-block">
-                                <button class="btn btn-sm btn-default"><i class="fa fa-eye"></i> Visualizar</button>
-                                <button class="btn btn-sm btn-default"><i class="fa fa-print"></i> Imprimir</button>
+                            <td>
+                                <button class="btn btn-sm btn-default btn-block"><i class="fa fa-eye"></i> Visualizar</button>
                             </td>
                         </tr><tr>
-                            <td><a href="#">Recruso 1</a></td>
-                            <td>Daniel Sousa</td>
-                            <td>ADS123456</td>
-                            <td>Projeto Integrador</td>
-                            <td>P2</td>
-                            <td>2</td>
-                            <td>14/10/2016</td>
+                            <td><a href="#">Título da questão aqui</a></td>
+                            <td>Subjetiva</td>
+                            <td>Alta</td>
+                            <td>Segurança da Informação</td>
+                            <td>Cícero</td>
                             <td>Aguardando aprovação</td>
-                            <td class="center-block">
-                                <button class="btn btn-sm btn-default"><i class="fa fa-eye"></i> Visualizar</button>
-                                <button class="btn btn-sm btn-default"><i class="fa fa-print"></i> Imprimir</button>
+                            <td>
+                                <button class="btn btn-sm btn-default btn-block"><i class="fa fa-eye"></i> Visualizar</button>
                             </td>
                         </tr><tr>
-                            <td><a href="#">Recruso 1</a></td>
-                            <td>Daniel Sousa</td>
-                            <td>ADS123456</td>
-                            <td>Projeto Integrador</td>
-                            <td>P2</td>
-                            <td>2</td>
-                            <td>14/10/2016</td>
+                            <td><a href="#">Título da questão aqui</a></td>
+                            <td>Subjetiva</td>
+                            <td>Alta</td>
+                            <td>Segurança da Informação</td>
+                            <td>Cícero</td>
                             <td>Aguardando aprovação</td>
-                            <td class="center-block">
-                                <button class="btn btn-sm btn-default"><i class="fa fa-eye"></i> Visualizar</button>
-                                <button class="btn btn-sm btn-default"><i class="fa fa-print"></i> Imprimir</button>
+                            <td>
+                                <button class="btn btn-sm btn-default btn-block"><i class="fa fa-eye"></i> Visualizar</button>
                             </td>
                         </tr>
                         </tbody>
                         <tfoot>
                         <tr>
                             <th>Título</th>
-                            <th>Aluno</th>
-                            <th>Turma</th>
+                            <th>Tipo</th>
+                            <th>Dificuldade</th>
                             <th>Disciplina</th>
-                            <th>Prova</th>
-                            <th>Questão</th>
-                            <th>Data</th>
+                            <th>Criador</th>
                             <th>Estado</th>
+                            <th>Visualizar</th>
                         </tr>
                         </tfoot>
                     </table>

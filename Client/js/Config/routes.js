@@ -15,20 +15,16 @@ app.config(function ($routeProvider, $locationProvider) {
          *    Questões    *
          ******************/
 
-        .when('/questao/criar/objetiva', {
+        .when('/questoes', {
+            templateUrl: 'pages/questoes/listar.html'
+        })
+
+        .when('/questoes/criar/objetiva', {
             templateUrl: 'pages/questoes/criar/objetiva.html'
         })
 
-        .when('/questao/criar/subjetiva', {
+        .when('/questoes/criar/subjetiva', {
             templateUrl: 'pages/questoes/criar/subjetiva.html'
-        })
-
-        .when('/questao/:id', {
-            templateUrl: 'pages/questoes/visualizar.html'
-        })
-
-        .when('/questoes', {
-            templateUrl: 'pages/questoes/listar.html'
         })
 
         .when('/questoes/aguardando', {
@@ -47,6 +43,10 @@ app.config(function ($routeProvider, $locationProvider) {
             templateUrl: 'pages/questoes/listar.html'
         })
 
+        .when('/questoes/:id', {
+            templateUrl: 'pages/questoes/visualizar.html'
+        })
+
         /******************
          *     Provas     *
          ******************/
@@ -55,12 +55,8 @@ app.config(function ($routeProvider, $locationProvider) {
             templateUrl: 'pages/provas/listar.html'
         })
 
-        .when('/prova/criar', {
+        .when('/provas/criar', {
             templateUrl: 'pages/provas/criar.html'
-        })
-
-        .when('/prova/:id', {
-            templateUrl: 'pages/provas/visualizar.html'
         })
 
         .when('/provas/aguardando', {
@@ -91,12 +87,24 @@ app.config(function ($routeProvider, $locationProvider) {
             templateUrl: 'pages/provas/listar.html'
         })
 
+        .when('/provas/:id', {
+            templateUrl: 'pages/provas/visualizar.html'
+        })
+
         /******************
          *     Notas      *
          ******************/
 
-        .when('/notas/:disciplina/:prova', {
+        .when('/notas/aguardando', {
             templateUrl: 'pages/notas/listar.html'
+        })
+
+        .when('/notas/corrigidas', {
+            templateUrl: 'pages/notas/listar.html'
+        })
+
+        .when('/notas/:prova', {
+            templateUrl: 'pages/notas/visualizar.html'
         })
 
         /******************
@@ -107,7 +115,7 @@ app.config(function ($routeProvider, $locationProvider) {
             templateUrl: 'pages/recursos/listar.html'
         })
 
-        .when('/recurso/criar', {
+        .when('/recursos/criar', {
             templateUrl: 'pages/recursos/criar.html'
         })
 
@@ -123,7 +131,7 @@ app.config(function ($routeProvider, $locationProvider) {
             templateUrl: 'pages/recursos/listar.html'
         })
 
-        .when('/recurso/:id', {
+        .when('/recursos/:id', {
             templateUrl: 'pages/recursos/visualizar.html'
         })
 
