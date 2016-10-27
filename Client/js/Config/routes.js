@@ -95,6 +95,10 @@ app.config(function ($routeProvider, $locationProvider) {
          *     Notas      *
          ******************/
 
+        .when('/notas', {
+            templateUrl: 'pages/notas/listar.html'
+        })
+
         .when('/notas/aguardando', {
             templateUrl: 'pages/notas/listar.html'
         })

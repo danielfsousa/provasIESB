@@ -1,10 +1,101 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Notas
+        <small>Visualizar</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="/">Provas IESB</a></li>
+        <li><a href="/notas">Notas</a></li>
+        <li class="active">Visualizar</li>
+    </ol>
+</section>
 
-</body>
-</html>
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-md-4">
+
+            <div class="box box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Informações</h3>
+
+                    <div class="box-tools">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="box-body no-padding">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th style="width: 10%">Aluno:</th>
+                                <td>Daniel Sousa</td>
+                            </tr>
+                            <tr>
+                                <th>Turma:</th>
+                                <td>ADS123456</td>
+                            </tr>
+                            <tr>
+                                <th>Prova:</th>
+                                <td>P2</td>
+                            </tr>
+                            <tr>
+                                <th>Data:</th>
+                                <td>14/10/2016</td>
+                            </tr>
+                            <tr>
+                                <th>Estado:</th>
+                                <td>Corrigida</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /. box -->
+            <!-- TODO: chamar o método do select2 para ajustar a largura toda vez que a página for redimensionada -->
+            <!-- TODO: traduzir "no results found" no select2 -->
+            <div class="box box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Nota</h3>
+
+                    <div class="box-tools">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <div class="form-group">
+                        <label>Nota:</label>
+                        <input type="text" class="form-control" placeholder="0 a 10">
+                    </div>
+                    <div class="form-group">
+                        <label>Feedback:</label>
+                        <textarea class="form-control" placeholder="Deixe uma mensagem aqui" rows="5"></textarea>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer">
+                    <a href="/notas"><button class="btn btn-default">Voltar</button></a>
+                    <button type="submit" class="btn btn-primary pull-right">Salvar</button>
+                </div>
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- Tabela -->
+        <div class="col-md-8">
+            <div class="box box-solid">
+                <div class="box-body">
+                    <img class="prova-img" src="/img/prova.jpg" alt="Prova">
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer">
+                    <button class="btn btn-default pull-right"><i class="fa fa-download"></i> Fazer Download</button>
+                    <button class="btn btn-default pull-right"><i class="fa fa-print"></i> Imprimir</button>
+                </div>
+            </div>
+            <!-- /.box -->
+        </div>
+    </div>
+</section>
