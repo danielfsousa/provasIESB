@@ -1,10 +1,119 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Provas
+        <small>Digitalizar</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="/">Provas IESB</a></li>
+        <li><a href="/provas">Provas</a></li>
+        <li class="active">Digitalizar</li>
+    </ol>
+</section>
 
-</body>
-</html>
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-md-4">
+
+            <div class="box box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Anexar Folhas de Respostas</h3>
+
+                    <div class="box-tools">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="box-body with-border">
+                    <div class="form-group">
+                        <label for="objetiva">Objetiva</label>
+                        <input type="file" id="objetiva">
+                    </div>
+                    <div class="form-group">
+                        <label for="subjetiva">Subjetiva</label>
+                        <input type="file" id="subjetiva">
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /. box -->
+            <!-- TODO: chamar o método do select2 para ajustar a largura toda vez que a página for redimensionada -->
+            <!-- TODO: traduzir "no results found" no select2 -->
+            <div class="box box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Informações</h3>
+
+                    <div class="box-tools">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <div class="form-group">
+                        <label>Matrícula do aluno:</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Turma</label>
+                        <select class="form-control select2">
+                            <option selected="selected">Alabama</option>
+                            <option>Alaska</option>
+                            <option>California</option>
+                            <option>Delaware</option>
+                            <option>Tennessee</option>
+                            <option>Texas</option>
+                            <option>Washington</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Professor</label>
+                        <select class="form-control select2">
+                            <option selected="selected">Alabama</option>
+                            <option>Alaska</option>
+                            <option>California</option>
+                            <option>Delaware</option>
+                            <option>Tennessee</option>
+                            <option>Texas</option>
+                            <option>Washington</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Prova</label>
+                        <select class="form-control">
+                            <option selected="selected">P1</option>
+                            <option>P2</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer">
+                    <a href="/provas"><button class="btn btn-default">Voltar</button></a>
+                    <button type="submit" class="btn btn-primary pull-right">Salvar</button>
+                </div>
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- Tabela -->
+        <div class="col-md-8">
+            <div class="box box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Pré-Visualizar</h3>
+                    <div class="box-tools">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <img class="prova-img" src="/img/prova.jpg" alt="Prova">
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer">
+                    <button class="btn btn-danger pull-right"><i class="fa fa-trash"></i> Remover Anexos</button>
+                </div>
+            </div>
+            <!-- /.box -->
+        </div>
+    </div>
+</section>
+<script src="/js/select.js"></script>

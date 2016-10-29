@@ -62,6 +62,6 @@ $(function () {
             }
         ],
         editable: false,
-        droppable: false, // this allows things to be dropped onto the calendar !!!
+        droppable: false // this allows things to be dropped onto the calendar !!!
     });
-})
+});

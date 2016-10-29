@@ -84,7 +84,7 @@ app.config(function ($routeProvider, $locationProvider) {
         })
 
         .when('/provas/digitalizar', {
-            templateUrl: 'pages/provas/listar.html'
+            templateUrl: 'pages/provas/digitalizar.html'
         })
 
         .when('/provas/:id', {
