@@ -17,6 +17,7 @@ class CreateUsersTable extends Migration
         Schema::create('usuarios', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome');
+            // TODO: Criar uma tabela separada para os papeis
             $table->string('papel');
             $table->integer('matricula')->unique();
             $table->string('senha');

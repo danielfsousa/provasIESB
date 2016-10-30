@@ -13,6 +13,19 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::post('/autenticar', 'AutenticacaoController@autenticar');
+Route::post('autenticar', 'AutenticacaoController@autenticar');
 
-Route::get('/usuario', 'AutenticacaoController@getUsuarioAutenticado')->middleware('jwt.auth');
+
+/*
+|--------------------------------------------------------------------------
+| Rotas protegidas por login
+|--------------------------------------------------------------------------
+*/
+Route::group(['middleware' => 'jwt.auth'], function () {
+
+    Route::get('usuario', 'AutenticacaoController@getUsuarioAutenticado');
+
+    Route::get('usuario/recursos', 'RecursoController@indexAutenticado');
+    Route::resource('recursos', 'RecursoController', ['only' => ['index', 'store', 'show', 'destroy']]);
+
+});
