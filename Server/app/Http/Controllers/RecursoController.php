@@ -52,7 +52,6 @@ class RecursoController extends Controller
                 // TODO
             break;
 
-
         }
 
         return response()->json(['erro' => 'Não foi possível obter os recursos'], 500);
@@ -97,18 +96,26 @@ class RecursoController extends Controller
     /**
      * Retorna um recurso específico.
      *
-     * @param  int $usuario_id
-     * @param  int $recurso_id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($usuario_id, $recurso_id)
+    public function show($id)
     {
+        $usuario_papel = Auth::user()->papel;
 
-        if(! $recursos = Recurso::where('aluno_id', $usuario_id)->find($recurso_id)) {
+        if(!$recurso = Recurso::find($id)) {
             return response()->json(['erro' => 'Recurso não encontrado'], 404);
         }
 
-        return response()->json($recursos);
+        $usuario_id = $recurso->aluno_id;
+
+        // Se for aluno e o recurso não for dele: retorna erro (não autorizado)
+        if($usuario_papel === 'aluno' && $usuario_id !== Auth::user()->id) {
+            return response()->json(['erro' => 'Usuário não autorizado'], 401);
+        }
+
+        return response()->json(compact('recurso'));
+
     }
 
     /**
