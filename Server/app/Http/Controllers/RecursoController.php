@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Recurso;
 use Illuminate\Http\Request;
 use Mockery\CountValidator\Exception;
-use JWTAuth;
 use Auth;
 use Validator;
 
@@ -101,13 +100,12 @@ class RecursoController extends Controller
      */
     public function show($id)
     {
-        $usuario_papel = Auth::user()->papel;
-
         if(!$recurso = Recurso::find($id)) {
             return response()->json(['erro' => 'Recurso não encontrado'], 404);
         }
 
         $usuario_id = $recurso->aluno_id;
+        $usuario_papel = Auth::user()->papel;
 
         // Se for aluno e o recurso não for dele: retorna erro (não autorizado)
         if($usuario_papel === 'aluno' && $usuario_id !== Auth::user()->id) {

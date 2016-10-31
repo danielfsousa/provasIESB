@@ -4,6 +4,25 @@ namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+/**
+ * App\Usuario
+ *
+ * @property integer $id
+ * @property string $nome
+ * @property string $papel
+ * @property integer $matricula
+ * @property string $senha
+ * @property string $created_at
+ * @property string $updated_at
+ * @method static \Illuminate\Database\Query\Builder|\App\Usuario whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Usuario whereNome($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Usuario wherePapel($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Usuario whereMatricula($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Usuario whereSenha($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Usuario whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Usuario whereUpdatedAt($value)
+ * @mixin \Eloquent
+ */
 class Usuario extends Authenticatable
 {
     public $table = "usuarios";
