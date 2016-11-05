@@ -1,3 +1,6 @@
+.modal-title i {
+    margin-left: 5px;
+}
 
 .click {
     cursor: pointer;
@@ -18,7 +21,7 @@
 /* ============================
     Background color Fix
    ============================ */
-.main-footer {
+body, .main-footer {
     background: #ecf0f5;
     border-top: none;
 }
@@ -33,7 +36,8 @@
 /* ============================
     Ícone v do menu lateral
    ============================ */
-.sidebar-menu li > a > .fa-angle-down, .sidebar-menu li > a > .pull-right-container > .fa-angle-down {
+.sidebar-menu li > a > .fa-angle-down,
+.sidebar-menu li > a > .pull-right-container > .fa-angle-down {
     width: auto;
     height: auto;
     padding: 0;
@@ -65,16 +69,52 @@
 /* ============================
     Botões do box
    ============================ */
-.box-footer button.pull-right {
+.box-footer button.pull-right  {
     margin-left: 10px;
+}
+
+.modal-footer a button {
+    margin-right: 5px;
 }
 
 
 /* ============================
     Paginação
    ============================ */
-/*.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {*/
-    /*background-color: #222d32;*/
-    /*border-color: #222d32;*/
-/*}*/
+.pagination>.active>a,
+.pagination>.active>a:focus,
+.pagination>.active>a:hover,
+.pagination>.active>span,
+.pagination>.active>span:focus,
+.pagination>.active>span:hover {
+    background-color: #3c8dbc;
+    border-color: #3c8dbc;
+}
+
+
+/* ============================
+    Menu tree Fix
+   ============================ */
+@media (min-width: 768px) {
+    .sidebar-mini.sidebar-collapse .sidebar-menu > li:hover > a > span:not(.pull-right),
+    .sidebar-mini.sidebar-collapse .sidebar-menu > li:hover > .treeview-menu {
+        width: 215px;
+    }
+
+    .sidebar-collapse .sidebar-menu li > a.pai > .pull-right-container > .fa-angle-down {
+        display: none;
+    }
+
+    .sidebar-collapse .sidebar-menu > li .label {
+        position: absolute;
+        right: -30px;
+    }
+}
+
+/* ============================
+    Página 404
+   ============================ */
+.error-page>.error-content {
+    padding-top: 20px;
+}
 

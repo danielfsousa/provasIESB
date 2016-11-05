@@ -308,7 +308,10 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Título da questão aqui</h4>
+                <h4 class="modal-title">
+                    Título da questão aqui
+                    <small><a href="questoes/id" target="_blank" title="Ir para página completa"><i class="fa fa-external-link" aria-hidden="true"></i></a></small>
+                </h4>
             </div>
             <div class="modal-body">
                 <table class="table">
@@ -345,14 +348,16 @@
                 </p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Editar</button>
-                <button type="button" class="btn btn-danger esperar" data-dismiss="modal" data-show="#confirmacao">Excluir</button>
+                <a type="button" class="btn btn-danger trocar-modal pull-left" data-dismiss="modal" data-show="#confirmacao"><i class="fa fa-trash"></i> Excluir</a>
+                <a href="questoes/id/editar" type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-pencil"></i> Editar</a>
+                <a type="button" class="btn btn-warning" data-dismiss="modal"><i class="fa fa-times"></i> Recusar</a>
+                <a type="button" class="btn btn-success" data-dismiss="modal"><i class="fa fa-check"></i> Aprovar</a>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-<!-- MODAL: Visualizar -->
+<!-- MODAL: Confirmação -->
 <div class="modal fade" id="confirmacao" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -372,11 +377,11 @@
 </div><!-- /.modal -->
 
 <script>
-    $('.esperar').on('click', function (e) {
+    $('.trocar-modal').on('click', function (e) {
         setTimeout(function () {
             var id = $(e.target).data('show');
             $(id).modal();
-        }, 350);
+        }, 400);
     });
 </script>
 

@@ -43,6 +43,19 @@ app.config(function ($routeProvider, $locationProvider) {
             templateUrl: 'pages/questoes/listar.html'
         })
 
+        .when('/questoes/:id/editar', {
+            // TODO: Redireciona para subjetiva ou objetiva de acordo com o tipo da questao
+            templateUrl: 'pages/questoes/criar/subjetiva.html'
+        })
+
+        .when('/questoes/:id/editar/subjetiva', {
+            templateUrl: 'pages/questoes/criar/subjetiva.html'
+        })
+
+        .when('/questoes/:id/editar/objetiva', {
+            templateUrl: 'pages/questoes/criar/objetiva.html'
+        })
+
         .when('/questoes/:id', {
             templateUrl: 'pages/questoes/visualizar.html'
         })
@@ -89,6 +102,10 @@ app.config(function ($routeProvider, $locationProvider) {
 
         .when('/provas/:id', {
             templateUrl: 'pages/provas/visualizar.html'
+        })
+
+        .when('/provas/:id/editar', {
+            templateUrl: 'pages/provas/criar.html'
         })
 
         /******************

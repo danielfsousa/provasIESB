@@ -25,50 +25,38 @@
                         </button>
                     </div>
                 </div>
-                <div class="box-body with-border">
-                    <div class="form-group">
-                        <label>Disciplina</label>
-                        <select class="form-control select2">
-                            <option selected="selected">Alabama</option>
-                            <option>Alaska</option>
-                            <option>California</option>
-                            <option>Delaware</option>
-                            <option>Tennessee</option>
-                            <option>Texas</option>
-                            <option>Washington</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Turma</label>
-                        <select class="form-control select2">
-                            <option selected="selected">Alabama</option>
-                            <option>Alaska</option>
-                            <option>California</option>
-                            <option>Delaware</option>
-                            <option>Tennessee</option>
-                            <option>Texas</option>
-                            <option>Washington</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Prova</label>
-                        <select class="form-control">
-                            <option selected="selected">P1</option>
-                            <option>P2</option>
-                        </select>
-                    </div>
+                <div class="box-body no-padding">
+                    <table class="table">
+                        <tbody>
+                        <tr>
+                            <th style="width: 10%">Aluno:</th>
+                            <td>Daniel Sousa</td>
+                        </tr>
+                        <tr>
+                            <th>Turma:</th>
+                            <td>ADS123456</td>
+                        </tr>
+                        <tr>
+                            <th>Prova:</th>
+                            <td>P2</td>
+                        </tr>
+                        <tr>
+                            <th>Data:</th>
+                            <td>14/10/2016</td>
+                        </tr>
+                        <tr>
+                            <th>Estado:</th>
+                            <td>Corrigida</td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
                 <!-- /.box-body -->
-                <div class="box-footer">
-                    <a href="/provas"><button class="btn btn-default">Voltar</button></a>
-                    <button type="submit" class="btn btn-primary pull-right">Salvar</button>
-                    <button type="submit" class="btn btn-default pull-right">Salvar como Rascunho</button>
-                </div>
             </div>
             <!-- /. box -->
             <div class="box box-solid">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Filtrar</h3>
+                    <h3 class="box-title">Nota</h3>
 
                     <div class="box-tools">
                         <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -77,184 +65,17 @@
                 </div>
                 <div class="box-body">
                     <div class="form-group">
-                        <label>Tipo</label>
-                        <select class="form-control select2">
-                            <option selected="selected">Alabama</option>
-                            <option>Alaska</option>
-                            <option>California</option>
-                            <option>Delaware</option>
-                            <option>Tennessee</option>
-                            <option>Texas</option>
-                            <option>Washington</option>
-                        </select>
+                        <label>Nota:</label>
+                        <input type="text" class="form-control" placeholder="0 a 10">
                     </div>
-
                     <div class="form-group">
-                        <label>Disciplina</label>
-                        <select class="form-control select2">
-                            <option selected="selected">Alabama</option>
-                            <option>Alaska</option>
-                            <option>California</option>
-                            <option>Delaware</option>
-                            <option>Tennessee</option>
-                            <option>Texas</option>
-                            <option>Washington</option>
-                        </select>
+                        <label>Feedback:</label>
+                        <textarea class="form-control" placeholder="Deixe uma mensagem aqui" rows="5"></textarea>
                     </div>
-
-                    <div class="form-group">
-                        <label>Dificuldade</label>
-                        <select class="form-control select2">
-                            <option selected="selected">Alabama</option>
-                            <option>Alaska</option>
-                            <option>California</option>
-                            <option>Delaware</option>
-                            <option>Tennessee</option>
-                            <option>Texas</option>
-                            <option>Washington</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Autor</label>
-                        <select class="form-control select2">
-                            <option selected="selected">Alabama</option>
-                            <option>Alaska</option>
-                            <option>California</option>
-                            <option>Delaware</option>
-                            <option>Tennessee</option>
-                            <option>Texas</option>
-                            <option>Washington</option>
-                        </select>
-                    </div>
-                </div>
-                <!-- /.box-body -->
-            </div>
-            <!-- /.box -->
-            <!-- TODO: chamar o método do select2 para ajustar a largura toda vez que a página for redimensionada -->
-            <!-- TODO: traduzir "no results found" no select2 -->
-            <div class="box box-default collapsed-box questao">
-                <div class="box-header with-border">
-                    <h3 class="box-title click" data-widget="collapse">Questão 1</h3>
-
-                    <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                    </div>
-                </div>
-                <div class="box-body no-padding">
-                    <table class="table">
-                        <tbody>
-                        <tr>
-                            <th style="width: 10%">Título:</th>
-                            <td>Título da questão aqui</td>
-                        </tr>
-                        <tr>
-                            <th>Tipo:</th>
-                            <td>Subjetiva</td>
-                        </tr>
-                        <tr>
-                            <th>Dificuldade:</th>
-                            <td>Alta</td>
-                        </tr>
-                        <tr>
-                            <th>Disciplina:</th>
-                            <td>Segurança da Informação</td>
-                        </tr>
-                        <tr>
-                            <th>Autor:</th>
-                            <td>Cícero</td>
-                        </tr>
-                        </tbody>
-                    </table>
                 </div>
                 <!-- /.box-body -->
                 <div class="box-footer">
-                    <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> Remover</button>
-                    <button type="submit" class="btn btn-default pull-right" data-toggle="modal" data-target="#visualizar"><i class="fa fa-eye"></i> Visualizar</button>
-                </div>
-            </div>
-            <div class="box box-default collapsed-box questao">
-                <div class="box-header with-border">
-                    <h3 class="box-title click" data-widget="collapse">Questão 2</h3>
-
-                    <div class="box-tools">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                    </div>
-                </div>
-                <div class="box-body no-padding">
-                    <table class="table">
-                        <tbody>
-                        <tr>
-                            <th style="width: 10%">Título:</th>
-                            <td>Título da questão aqui</td>
-                        </tr>
-                        <tr>
-                            <th>Tipo:</th>
-                            <td>Subjetiva</td>
-                        </tr>
-                        <tr>
-                            <th>Dificuldade:</th>
-                            <td>Alta</td>
-                        </tr>
-                        <tr>
-                            <th>Disciplina:</th>
-                            <td>Segurança da Informação</td>
-                        </tr>
-                        <tr>
-                            <th>Autor:</th>
-                            <td>Cícero</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <!-- /.box-body -->
-                <div class="box-footer">
-                    <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> Remover</button>
-                    <button type="submit" class="btn btn-default pull-right" data-toggle="modal" data-target="#visualizar"><i class="fa fa-eye"></i> Visualizar</button>
-                </div>
-            </div>
-            <!-- /.box -->
-            <div class="box box-default collapsed-box questao">
-                <div class="box-header with-border">
-                    <h3 class="box-title click" data-widget="collapse">Questão 3</h3>
-
-                    <div class="box-tools">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                    </div>
-                </div>
-                <div class="box-body no-padding">
-                    <table class="table">
-                        <tbody>
-                        <tr>
-                            <th style="width: 10%">Título:</th>
-                            <td>Título da questão aqui</td>
-                        </tr>
-                        <tr>
-                            <th>Tipo:</th>
-                            <td>Subjetiva</td>
-                        </tr>
-                        <tr>
-                            <th>Dificuldade:</th>
-                            <td>Alta</td>
-                        </tr>
-                        <tr>
-                            <th>Disciplina:</th>
-                            <td>Segurança da Informação</td>
-                        </tr>
-                        <tr>
-                            <th>Autor:</th>
-                            <td>Cícero</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <!-- /.box-body -->
-                <div class="box-footer">
-                    <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> Remover</button>
-                    <button type="submit" class="btn btn-default pull-right" data-toggle="modal" data-target="#visualizar"><i class="fa fa-eye"></i> Visualizar</button>
+                    <button type="submit" class="btn btn-primary pull-right">Salvar</button>
                 </div>
             </div>
             <!-- /.box -->
@@ -495,17 +316,16 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Título da questão aqui</h4>
+                <h4 class="modal-title">
+                    Título da questão aqui
+                    <small><a href="questoes/id" target="_blank" title="Ir para página completa"><i class="fa fa-external-link" aria-hidden="true"></i></a></small>
+                </h4>
             </div>
             <div class="modal-body">
                 <table class="table">
                     <tbody>
                     <tr>
-                        <th style="width: 10%">Título:</th>
-                        <td>Título da questão aqui</td>
-                    </tr>
-                    <tr>
-                        <th>Tipo:</th>
+                        <th style="width: 10%">Tipo:</th>
                         <td>Subjetiva</td>
                     </tr>
                     <tr>
@@ -536,8 +356,7 @@
                 </p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-                <button type="button" class="btn btn-primary">Adicionar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Adicionar</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
