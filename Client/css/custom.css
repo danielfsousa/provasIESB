@@ -69,7 +69,7 @@ body, .main-footer {
 /* ============================
     Botões do box
    ============================ */
-.box-footer button.pull-right  {
+.box-footer button.pull-right {
     margin-left: 10px;
 }
 
@@ -77,20 +77,18 @@ body, .main-footer {
     margin-right: 5px;
 }
 
-
 /* ============================
     Paginação
    ============================ */
-.pagination>.active>a,
-.pagination>.active>a:focus,
-.pagination>.active>a:hover,
-.pagination>.active>span,
-.pagination>.active>span:focus,
-.pagination>.active>span:hover {
+.pagination > .active > a,
+.pagination > .active > a:focus,
+.pagination > .active > a:hover,
+.pagination > .active > span,
+.pagination > .active > span:focus,
+.pagination > .active > span:hover {
     background-color: #3c8dbc;
     border-color: #3c8dbc;
 }
-
 
 /* ============================
     Menu tree Fix
@@ -114,7 +112,33 @@ body, .main-footer {
 /* ============================
     Página 404
    ============================ */
-.error-page>.error-content {
+.error-page > .error-content {
     padding-top: 20px;
+}
+
+/* ============================
+    Animações
+   ============================ */
+.content, .content-header {
+    -webkit-animation: fadeInRight .8s both;
+    -moz-animation: fadeInRight .8s both;
+    animation: fadeInRight .8s both;
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateX(20px);
+        -ms-transform: translateX(20px);
+        -o-transform: translateX(20px);
+        transform: translateX(20px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+        transform: translateX(0);
+    }
 }
 
