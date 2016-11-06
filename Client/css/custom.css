@@ -117,6 +117,19 @@ body, .main-footer {
 }
 
 /* ============================
+    Dropify
+   ============================ */
+.dropify-wrapper .dropify-preview .dropify-infos {
+    background: rgba(34, 45, 50, 0.9);
+}
+
+/*.dropify-message span.file-icon, .dropify-message p { transition: color .15s linear }*/
+/*.is-dragover {*/
+    /*border-color: #3c8dbc;*/
+    /*!*color: #3c8dbc !important;*!*/
+/*}*/
+
+/* ============================
     Animações
    ============================ */
 .content, .content-header {
