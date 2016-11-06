@@ -157,6 +157,12 @@
         </div>
     </div>
 </section>
-
+<script>
+    // Evita que o angular recarregue as rotas ao trocar o slide do carousel
+    $('.carousel-control').on('click', function (e) {
+        e.preventDefault();
+    });
+</script>
 <script src="/js/calendario.js"></script>
+
 
