@@ -55,12 +55,29 @@
                     <h3 class="box-title click" data-widget="collapse">Enunciado</h3>
                 </div>
                 <div class="box-body">
-                    <textarea id="editor" name="enunciado" rows="20" cols="70"></textarea>
+                    <textarea id="enunciado" name="enunciado" rows="20" cols="70"></textarea>
+                </div>
+            </div>
+            <div class="box box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title click" data-widget="collapse">Gabarito</h3>
+                </div>
+                <div class="box-body">
+                    <textarea id="gabarito" name="enunciado" rows="20" cols="70"></textarea>
                 </div>
             </div>
         </div>
     </div>
 </section>
 <script>
-    $.getScript('js/editor.js');
+    $(function () {
+        CKEDITOR.replace('enunciado', {
+            uiColor: '#f9f9f9',
+            height: 300
+        });
+        CKEDITOR.replace('gabarito', {
+            uiColor: '#f9f9f9',
+            height: 300
+        });
+    });
 </script>

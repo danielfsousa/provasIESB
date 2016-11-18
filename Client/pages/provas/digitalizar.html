@@ -106,8 +106,6 @@
     </div>
 </section>
 <script>
-    $.getScript('/js/select.js');
-
     $('.dropify').dropify({
         messages: {
             'default': 'Arraste e solte um arquivo ou clique aqui',
@@ -118,7 +116,7 @@
         error: {
             'fileSize': 'O arquivo é muito grande. (Máximo: {{ value }}).',
             'fileExtension': 'O formato de arquivo não é permitido. (Permitidos: {{ value }}).',
-            'imageFormat': 'O formato da imagem não é permitido. ({{ value }} apenas).'
+            'imageFormat': 'O formato da imagem não é permitido. (Permitidos: {{ value }}).'
         }
     });
 </script>

@@ -1,7 +1,3 @@
-.modal-title i {
-    margin-left: 5px;
-}
-
 .click {
     cursor: pointer;
 }
@@ -16,6 +12,24 @@
 
 .box-footer .btn {
     margin-top: 10px;
+}
+
+/* ============================
+    Select2 responsivo
+   ============================ */
+.select2 {
+    width: 100% !important;
+}
+
+/* ============================
+    Modal
+   ============================ */
+.modal-title i {
+    margin-left: 5px;
+}
+
+.modal-xg {
+    width: 80%;
 }
 
 /* ============================
@@ -126,7 +140,7 @@ body, .main-footer {
 /*.dropify-message span.file-icon, .dropify-message p { transition: color .15s linear }*/
 /*.is-dragover {*/
     /*border-color: #3c8dbc;*/
-    /*!*color: #3c8dbc !important;*!*/
+    /*color: #3c8dbc !important;*/
 /*}*/
 
 /* ============================
