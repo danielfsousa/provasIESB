@@ -1079,6 +1079,10 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 <script>
+    $("input[type=text]").focus(function() {
+        $(this).select();
+    });
+
     $.getScript('/js/trocar-modal.js');
     $.getScript('/js/tabela.js');
 </script>
