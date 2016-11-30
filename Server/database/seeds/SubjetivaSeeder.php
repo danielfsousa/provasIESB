@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class QuestoesSeeder extends Seeder
+class SubjetivaSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +11,6 @@ class QuestoesSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Questao::class, 10)->create();
+        factory(App\Subjetiva::class, 10)->create();
     }
 }

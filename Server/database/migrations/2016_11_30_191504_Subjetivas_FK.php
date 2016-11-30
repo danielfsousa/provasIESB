@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Estado extends Migration
+class SubjetivasFK extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class Estado extends Migration
      */
     public function up()
     {
-        Schema::create('estados', function(Blueprint $table) {
-            $table->increments('id');
-
-            $table->string('nome');
+        Schema::table('subjetivas', function (Blueprint $table) {
+            $table->foreign('questao_id')
+                ->references('id')
+                ->on('questoes')
+                ->onDelete('cascade');
         });
     }
 

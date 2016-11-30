@@ -18,7 +18,7 @@ class Turma extends Migration
 
             $table->string('codigo');
 
-            $table->integer('disciplina_id')->unsigned();
+            $table->integer('disciplina_id')->unsigned()->index();
 
             $table->timestamps();
         });
@@ -31,6 +31,6 @@ class Turma extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('turmas');
+        //
     }
 }

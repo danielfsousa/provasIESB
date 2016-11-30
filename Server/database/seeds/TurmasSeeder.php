@@ -16,7 +16,7 @@ class TurmasSeeder extends Seeder
         foreach ($turmas as $i => $turma) {
             DB::table('turmas')->insert([
                 'codigo' => $turma,
-                'disciplina_id' => $i,
+                'disciplina_id' => $i + 1,
             ]);
         }
     }

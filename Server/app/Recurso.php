@@ -31,9 +31,22 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Recurso extends Model
 {
-
     protected $fillable = [
         'titulo', 'prova', 'questao', 'descricao', 'estado_id', 'aluno_id', 'disciplina_id'
     ];
 
+    public function estado()
+    {
+        return $this->belongsTo('App\Estado');
+    }
+
+    public function aluno()
+    {
+        return $this->belongsTo('App\Usuario');
+    }
+
+    public function disciplina()
+    {
+        return $this->belongsTo('App\Disciplina');
+    }
 }

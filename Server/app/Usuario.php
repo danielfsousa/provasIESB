@@ -70,4 +70,24 @@ class Usuario extends Authenticatable
     public function isAluno() {
         return $this->papel === 'aluno' || $this->papel === 'admin';
     }
+
+    public function provas()
+    {
+        return $this->hasMany('App\Prova', 'professor_id');
+    }
+
+    public function questoes()
+    {
+        return $this->hasMany('App\Questao');
+    }
+
+    public function recursos()
+    {
+        return $this->hasMany('App\Recurso');
+    }
+
+    public function notas()
+    {
+        return $this->hasMany('App\Nota');
+    }
 }

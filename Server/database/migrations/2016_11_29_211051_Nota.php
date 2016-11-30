@@ -20,14 +20,10 @@ class Nota extends Migration
             $table->date('data');
             $table->integer('nota')->unsigned();
 
-            $table->integer('aluno_id')->unsigned();
-            $table->integer('disciplina_id')->unsigned();
-            $table->integer('turma_id')->unsigned();
-            $table->integer('estado_id')->unsigned();
-
-//            $table->foreign('aluno_id')->references('id')->on('alunos');
-//            $table->foreign('disciplina_id')->references('id')->on('disciplinas');
-//            $table->foreign('estado_id')->references('id')->on('estados');
+            $table->integer('aluno_id')->unsigned()->index();
+            $table->integer('disciplina_id')->unsigned()->index();
+            $table->integer('turma_id')->unsigned()->index();
+            $table->integer('estado_id')->unsigned()->index();
 
             $table->timestamps();
 
@@ -41,6 +37,6 @@ class Nota extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('notas');
+        //
     }
 }

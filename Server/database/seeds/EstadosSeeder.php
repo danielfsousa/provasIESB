@@ -13,11 +13,11 @@ class EstadosSeeder extends Seeder
     public function run()
     {
 
-        $estados = ['Aguardando aprovação', 'Aceito', 'Recusado'];
+        $estados = ['Aguardando aprovação', 'Aceito', 'Recusado', 'Aguardando correção', 'Corrigido'];
 
         foreach ($estados as $estado) {
             DB::table('estados')->insert([
-                'nome' => $estado,
+                'nome' => $estado
             ]);
         }
     }

@@ -16,19 +16,10 @@ class Subjetiva extends Migration
         Schema::create('subjetivas', function(Blueprint $table) {
             $table->increments('id');
 
-            $table->string('titulo');
-            $table->string('tags');
-            $table->string('dificuldade');
             $table->text('enunciado');
             $table->text('resposta');
 
-            $table->integer('disciplina_id')->unsigned();
-            $table->integer('autor_id')->unsigned();
-            $table->integer('estado_id')->unsigned();
-
-//            $table->foreign('aluno_id')->references('id')->on('alunos');
-//            $table->foreign('disciplina_id')->references('id')->on('disciplinas');
-//            $table->foreign('estado_id')->references('id')->on('estados');
+            $table->integer('questao_id')->unsigned()->index();
 
             $table->timestamps();
 
@@ -42,6 +33,6 @@ class Subjetiva extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('subjetivas');
+        //
     }
 }

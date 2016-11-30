@@ -4,9 +4,8 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration
+class Questao extends Migration
 {
-
     /**
      * Run the migrations.
      *
@@ -14,14 +13,20 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('usuarios', function (Blueprint $table) {
+        Schema::create('questoes', function(Blueprint $table) {
             $table->increments('id');
-            $table->string('nome');
-            // TODO: Criar uma tabela separada para os papeis
-            $table->string('papel');
-            $table->integer('matricula')->unique();
-            $table->string('senha');
+
+            $table->string('titulo');
+            $table->string('tags');
+            $table->string('dificuldade');
+            $table->string('tipo');
+
+            $table->integer('disciplina_id')->unsigned()->index();
+            $table->integer('autor_id')->unsigned()->index();
+            $table->integer('estado_id')->unsigned()->index();
+
             $table->timestamps();
+
         });
     }
 

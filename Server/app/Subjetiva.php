@@ -2,13 +2,16 @@
 
 namespace App;
 
-use App\Questao;
+use Illuminate\Database\Eloquent\Model;
 
-class Subjetiva extends Questao
+class Subjetiva extends Model
 {
-
     protected $fillable = [
-        'enunciado', 'resposta'
+        'enunciado', 'resposta', 'questao_id'
     ];
 
+    public function questao()
+    {
+        return $this->belongsTo('App\Questao');
+    }
 }

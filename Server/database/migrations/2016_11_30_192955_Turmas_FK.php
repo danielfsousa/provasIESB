@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Estado extends Migration
+class TurmasFK extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class Estado extends Migration
      */
     public function up()
     {
-        Schema::create('estados', function(Blueprint $table) {
-            $table->increments('id');
-
-            $table->string('nome');
+        Schema::table('turmas', function (Blueprint $table) {
+            $table->foreign('disciplina_id')
+                ->references('id')
+                ->on('disciplinas')
+                ->onDelete('cascade');
         });
     }
 

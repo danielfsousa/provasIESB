@@ -19,14 +19,10 @@ class Prova extends Migration
             $table->string('prova');
             $table->date('data');
 
-            $table->integer('turma_id')->unsigned();
-            $table->integer('disciplina_id')->unsigned();
-            $table->integer('professor_id')->unsigned();
-            $table->integer('estado_id')->unsigned();
-
-//            $table->foreign('aluno_id')->references('id')->on('alunos');
-//            $table->foreign('disciplina_id')->references('id')->on('disciplinas');
-//            $table->foreign('estado_id')->references('id')->on('estados');
+            $table->integer('turma_id')->unsigned()->index();
+            $table->integer('disciplina_id')->unsigned()->index();
+            $table->integer('professor_id')->unsigned()->index();
+            $table->integer('estado_id')->unsigned()->index();
 
             $table->timestamps();
 
@@ -40,6 +36,6 @@ class Prova extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('provas');
+        //
     }
 }
