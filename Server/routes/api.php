@@ -25,6 +25,10 @@ Route::group(['middleware' => 'jwt.auth'], function () {
 
     Route::get('usuario', 'AutenticacaoController@getUsuarioAutenticado');
 
+    Route::resource('disciplinas', 'DisciplinaController', ['only' => ['index', 'show']]);
+
+    Route::resource('turmas', 'TurmaController', ['only' => ['index', 'show']]);
+
     Route::get('usuario/recursos', 'RecursoController@indexAutenticado');
     Route::resource('recursos', 'RecursoController', ['only' => ['index', 'store', 'show', 'destroy']]);
 
