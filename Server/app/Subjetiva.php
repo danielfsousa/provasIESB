@@ -8,7 +8,7 @@ class Subjetiva extends Questao
 {
 
     protected $fillable = [
-        'enunciado'
+        'enunciado', 'resposta'
     ];
 
 }

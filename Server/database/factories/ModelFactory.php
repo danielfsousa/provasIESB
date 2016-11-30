@@ -20,13 +20,14 @@ $factory->define(App\Recurso::class, function (Faker\Generator $faker) {
         'descricao' => $faker->text,
         'aluno_id' => 1,
         'disciplina_id' => 1,
-        'estado_id' => 1,
+        'estado_id' => collect([1, 2, 3])->random(),
     ];
 });
 
 $factory->define(App\Objetiva::class, function (Faker\Generator $faker) {
     return [
         'disciplina_id' => 1,
+        'titulo' => $faker->sentence(5),
         'autor_id' => 2,
         'tags' => 'tag',
         'estado_id' => collect([1, 2, 3])->random(),
@@ -44,10 +45,35 @@ $factory->define(App\Objetiva::class, function (Faker\Generator $faker) {
 $factory->define(App\Subjetiva::class, function (Faker\Generator $faker) {
     return [
         'disciplina_id' => 1,
+        'titulo' => $faker->sentence(5),
         'autor_id' => 2,
         'tags' => 'tag',
         'estado_id' => collect([1, 2, 3])->random(),
         'dificuldade' => collect(['Alta', 'Média', 'Baixa'])->random(),
         'enunciado' => $faker->text,
+        'resposta' => $faker->text
+    ];
+});
+
+$factory->define(App\Prova::class, function (Faker\Generator $faker) {
+    return [
+        'prova' => collect(['P1', 'P2'])->random(),
+        'data' => $faker->date(),
+        'disciplina_id' => 1,
+        'professor_id' => 2,
+        'turma_id' => 1,
+        'estado_id' => collect([1, 2, 3])->random(),
+    ];
+});
+
+$factory->define(App\Nota::class, function (Faker\Generator $faker) {
+    return [
+        'prova' => collect(['P1', 'P2'])->random(),
+        'data' => $faker->date(),
+        'nota' => $faker->biasedNumberBetween(0, 10),
+        'aluno_id' => 1,
+        'estado_id' => collect([1, 2, 3])->random(),
+        'disciplina_id' => 1,
+        'turma_id' => 1,
     ];
 });
