@@ -4,6 +4,34 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * App\Prova
+ *
+ * @property integer $id
+ * @property string $prova
+ * @property string $data
+ * @property integer $turma_id
+ * @property integer $disciplina_id
+ * @property integer $professor_id
+ * @property integer $estado_id
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Questao[] $questoes
+ * @property-read \App\Turma $turma
+ * @property-read \App\Disciplina $disciplina
+ * @property-read \App\Usuario $professor
+ * @property-read \App\Estado $estado
+ * @method static \Illuminate\Database\Query\Builder|\App\Prova whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Prova whereProva($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Prova whereData($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Prova whereTurmaId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Prova whereDisciplinaId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Prova whereProfessorId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Prova whereEstadoId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Prova whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Prova whereUpdatedAt($value)
+ * @mixin \Eloquent
+ */
 class Prova extends Model
 {
     protected $fillable = [

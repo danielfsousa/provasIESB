@@ -4,6 +4,23 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * App\Turma
+ *
+ * @property integer $id
+ * @property string $codigo
+ * @property integer $disciplina_id
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Prova[] $provas
+ * @property-read \App\Disciplina $disciplina
+ * @method static \Illuminate\Database\Query\Builder|\App\Turma whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Turma whereCodigo($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Turma whereDisciplinaId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Turma whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Turma whereUpdatedAt($value)
+ * @mixin \Eloquent
+ */
 class Turma extends Model
 {
     protected $fillable = [

@@ -28,6 +28,9 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Query\Builder|\App\Recurso whereCreatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Recurso whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property-read \App\Estado $estado
+ * @property-read \App\Usuario $aluno
+ * @property-read \App\Disciplina $disciplina
  */
 class Recurso extends Model
 {

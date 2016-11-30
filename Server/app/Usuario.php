@@ -22,6 +22,10 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  * @method static \Illuminate\Database\Query\Builder|\App\Usuario whereCreatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Usuario whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Prova[] $provas
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Questao[] $questoes
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Recurso[] $recursos
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Nota[] $notas
  */
 class Usuario extends Authenticatable
 {
