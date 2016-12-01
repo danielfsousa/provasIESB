@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Estado;
 use App\Questao;
 use Auth;
 use Validator;
@@ -21,6 +22,32 @@ class QuestaoController extends Controller
         }
         $questoes = Questao::all();
         return response()->json(compact('questoes'));
+    }
+
+    /**
+     * Retorna todas as questões do professor ou coordenador autenticado.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function indexAutenticado()
+    {
+        $id = Auth::user()->id;
+        $papel = Auth::user()->papel;
+
+        switch($papel) {
+
+            case 'professor':
+                $questoes = Questao::where('autor_id', $id)->get();
+                return response()->json(compact('questoes'));
+            break;
+
+            case 'coordenador':
+                // TODO
+            break;
+
+        }
+
+        return response()->json(['erro' => 'Usuário não autorizado'], 401);
     }
 
     /**
@@ -114,5 +141,47 @@ class QuestaoController extends Controller
         } else {
             return response()->json(['erro' => 'Erro ao excluir questão'], 500);
         }
+    }
+
+    /**
+     * Coordenador aprova uma questão específica
+     *
+     * @param  int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function aprovar($id)
+    {
+        if (!Auth::user()->isCoordenador()) {
+            return response()->json(['erro' => 'Usuário não autorizado'], 401);
+        }
+
+        if(!$questao = Questao::find($id)) {
+            return response()->json(['erro' => 'Questão não encontrada'], 404);
+        }
+
+        $questao->update(['estado_id' => Estado::APROVADO]);
+
+        return response()->json(['mensagem' => 'Prova aprovada com sucesso'], 200);
+    }
+
+    /**
+     * Coordenador recusa uma questão específica
+     *
+     * @param  int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function recusar($id)
+    {
+        if (!Auth::user()->isCoordenador()) {
+            return response()->json(['erro' => 'Usuário não autorizado'], 401);
+        }
+
+        if(!$questao = Questao::find($id)) {
+            return response()->json(['erro' => 'Questão não encontrada'], 404);
+        }
+
+        $questao->update(['estado_id' => Estado::RECUSADO]);
+
+        return response()->json(['mensagem' => 'Questão recusada com sucesso'], 200);
     }
 }
