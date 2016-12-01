@@ -68,7 +68,7 @@ class Usuario extends Authenticatable
     }
 
     public function isProfessor() {
-        return $this->papel === 'professor' || $this->papel === 'admin';
+        return $this->papel === 'professor' || $this->papel === 'coordenador' || $this->papel === 'admin';
     }
 
     public function isAluno() {

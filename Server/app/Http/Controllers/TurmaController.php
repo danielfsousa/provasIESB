@@ -29,7 +29,6 @@ class TurmaController extends Controller
         if(!$turma = Turma::find($id)) {
             return response()->json(['erro' => 'Turma não encontrada'], 404);
         }
-
         return response()->json(compact('turma'));
     }
 }

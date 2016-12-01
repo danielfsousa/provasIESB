@@ -12,6 +12,21 @@ class Questao extends Model
         'titulo', 'disciplina_id', 'autor_id', 'tags', 'estado_id', 'dificuldade', 'tipo'
     ];
 
+    const VALIDACAO = [
+        'questao' => 'required',
+        'data' => 'required|date',
+        'turma_id' => 'required|integer|min:1',
+        'disciplina_id' => 'required|integer|min:1',
+        'estado_id' => 'required|integer|min:1'
+    ];
+
+    const VALIDACAO_UPDATE = [
+        'data' => 'date',
+        'turma_id' => 'integer|min:1',
+        'disciplina_id' => 'integer|min:1',
+        'estado_id' => 'integer|min:1'
+    ];
+
     public function tipo()
     {
         if ($this->tipo === 'objetiva') {

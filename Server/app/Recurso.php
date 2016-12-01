@@ -38,6 +38,15 @@ class Recurso extends Model
         'titulo', 'prova', 'questao', 'descricao', 'estado_id', 'aluno_id', 'disciplina_id'
     ];
 
+    const VALIDACAO = [
+        'titulo' => 'required',
+        'prova' => 'required',
+        'questao' => 'required|integer|min:1',
+        'descricao' => 'required',
+        'estado_id' => 'required|integer|min:1',
+        'disciplina_id' => 'required|integer|min:1'
+    ];
+
     public function estado()
     {
         return $this->belongsTo('App\Estado');

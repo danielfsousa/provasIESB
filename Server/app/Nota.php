@@ -35,7 +35,28 @@ use Illuminate\Database\Eloquent\Model;
 class Nota extends Model
 {
     protected $fillable = [
-        'data', 'nota', 'prova', 'turma_id', 'estado_id', 'aluno_id', 'disciplina_id'
+        'data', 'nota', 'prova', 'folha_repsosta', 'respostas', 'turma_id', 'estado_id', 'aluno_id', 'disciplina_id'
+    ];
+
+    const VALIDACAO = [
+        'aluno_id' => 'required|integer',
+        'data' => 'required|date',
+        'prova' => 'required',
+        'nota' => 'required|number',
+        'folha_repsosta' => 'required',
+        'respostas' => 'required',
+        'turma_id' => 'required|integer|min:1',
+        'estado_id' => 'required|integer|min:1',
+        'disciplina_id' => 'required|integer|min:1'
+    ];
+
+    const VALIDACAO_UPDATE = [
+        'aluno_id' => 'integer',
+        'data' => 'date',
+        'nota' => 'number',
+        'turma_id' => 'integer|min:1',
+        'estado_id' => 'integer|min:1',
+        'disciplina_id' => 'integer|min:1'
     ];
 
     public function estado()

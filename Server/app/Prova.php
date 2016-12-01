@@ -38,6 +38,21 @@ class Prova extends Model
         'prova', 'data', 'turma_id', 'professor_id', 'disciplina_id', 'estado_id'
     ];
 
+    const VALIDACAO = [
+        'prova' => 'required',
+        'data' => 'required|date',
+        'turma_id' => 'required|integer|min:1',
+        'disciplina_id' => 'required|integer|min:1',
+        'estado_id' => 'required|integer|min:1'
+    ];
+
+    const VALIDACAO_UPDATE = [
+        'data' => 'date',
+        'turma_id' => 'integer|min:1',
+        'disciplina_id' => 'integer|min:1',
+        'estado_id' => 'integer|min:1'
+    ];
+
     public function questoes()
     {
         return $this->belongsToMany('App\Questao');

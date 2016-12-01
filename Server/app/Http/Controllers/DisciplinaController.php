@@ -29,7 +29,6 @@ class DisciplinaController extends Controller
         if(!$disciplina = Disciplina::find($id)) {
             return response()->json(['erro' => 'Disciplina não encontrada'], 404);
         }
-
         return response()->json(compact('disciplina'));
     }
 }

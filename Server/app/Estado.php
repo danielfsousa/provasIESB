@@ -19,6 +19,13 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Estado extends Model
 {
+
+    const AGUARDANDO_APROVACAO = 1;
+    const APROVADO = 2;
+    const RECUSADO = 3;
+    const AGUARDANDO_CORRECAO = 4;
+    const CORRIGIDO = 5;
+
     protected $fillable = [
         'nome'
     ];
