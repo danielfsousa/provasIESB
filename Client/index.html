@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="iesb">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,213 +26,10 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body class="hold-transition skin-red sidebar-mini" ng-app="iesb">
-<div class="wrapper">
 
-    <!-- Main Header -->
-    <header class="main-header">
+<body class="hold-transition skin-red sidebar-mini">
 
-        <!-- Logo -->
-        <a href="/" class="logo">
-            <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><b>I</b>P</span>
-            <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>IESB</b> Provas</span>
-        </a>
-
-        <!-- Header Navbar -->
-        <nav class="navbar navbar-static-top" role="navigation">
-            <!-- Sidebar toggle button-->
-            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-                <span class="sr-only">Alternar navegação</span>
-            </a>
-            <!-- Navbar Right Menu -->
-            <div class="navbar-custom-menu">
-                <ul class="nav navbar-nav">
-
-                    <!-- Notifications Menu -->
-                    <li class="dropdown notifications-menu">
-                        <!-- Menu toggle button -->
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-bell-o"></i>
-                            <span id="label-top" class="label label-warning">1</span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="header">Você tem 1 notificação</li>
-                            <li>
-                                <!-- Inner Menu: contains the notifications -->
-                                <ul class="menu">
-                                    <li><!-- start notification -->
-                                        <a href="#">
-                                            <i class="fa fa-users text-red"></i> Darlene enviou um novo recurso
-                                        </a>
-                                    </li>
-                                    <!-- end notification -->
-                                </ul>
-                            </li>
-                            <li class="footer"><a href="#">Ver todas</a></li>
-                        </ul>
-                    </li>
-                    <!-- User Account Menu -->
-                    <li class="dropdown user user-menu">
-                        <!-- Menu Toggle Button -->
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <!-- The user image in the navbar-->
-                            <img src="img/elliot.jpg" class="user-image" alt="User Image">
-                            <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                            <span class="hidden-xs">Elliot Alderson</span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <!-- The user image in the menu -->
-                            <li class="user-header">
-                                <img src="img/elliot.jpg" class="img-circle" alt="User Image">
-
-                                <p>
-                                    Elliot Alderson
-                                    <small>Coordenador</small>
-                                </p>
-                            </li>
-                            <!-- Menu Footer-->
-                            <li class="user-footer">
-                                <div class="pull-left">
-                                    <a href="#" class="btn btn-default btn-flat">Configurações</a>
-                                </div>
-                                <div class="pull-right">
-                                    <a href="#" class="btn btn-default btn-flat">Sair</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-    <!-- Left side column. contains the logo and sidebar -->
-    <aside class="main-sidebar">
-
-        <!-- sidebar: style can be found in sidebar.less -->
-        <section class="sidebar">
-
-            <!-- Sidebar user panel (optional) -->
-            <div class="user-panel">
-                <div class="pull-left image">
-                    <img src="img/elliot.jpg" class="img-circle" alt="User Image">
-                </div>
-                <div class="pull-left info">
-                    <p>Elliot Alderson</p>
-                    <!-- Status -->
-                    <a href="#">Coordenador</a>
-                </div>
-            </div>
-
-            <!-- search form (Optional) -->
-            <form action="#" method="get" class="sidebar-form">
-                <div class="input-group">
-                    <input type="text" name="q" class="form-control" placeholder="Procurar...">
-                    <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                </button>
-              </span>
-                </div>
-            </form>
-            <!-- /.search form -->
-
-            <!-- Sidebar Menu -->
-            <ul class="sidebar-menu">
-                <li class="header">Navegação</li>
-                <!-- Optionally, you can add icons to the links -->
-                <li class="active"><a href="/"><i class="fa fa-home"></i> <span>Início</span></a></li>
-                <li class="treeview">
-                    <a href="#" class="pai"><i class="fa fa-question-circle"></i> <span>Questões</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-down pull-right"></i>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li>
-                            <a href="#"><i class="fa fa-circle-o"></i> Criar
-                                <span class="pull-right-container">
-                                <i class="fa fa-angle-down pull-right"></i>
-                            </span>
-                                <ul class="treeview-menu">
-                                    <li><a href="/questoes/criar/objetiva"><i class="fa fa-circle-o"></i> Objetiva</a>
-                                    </li>
-                                    <li><a href="/questoes/criar/subjetiva"><i class="fa fa-circle-o"></i> Subjetiva</a>
-                                    </li>
-                                </ul>
-                            </a>
-                        </li>
-                        <li><a href="/questoes"><i class="fa fa-circle-o"></i> Todas</a></li>
-                        <li><a href="/questoes/aguardando"><i class="fa fa-circle-o"></i> Aguardando Aprovação</a></li>
-                        <li><a href="/questoes/aceitas"><i class="fa fa-circle-o"></i> Aceitas</a></li>
-                        <li><a href="/questoes/recusadas"><i class="fa fa-circle-o"></i> Recusadas</a></li>
-                        <li><a href="/questoes/rascunhos"><i class="fa fa-circle-o"></i> Rascunhos</a></li>
-                    </ul>
-                </li>
-                <li class="treeview">
-                    <a href="#" class="pai"><i class="fa fa-file-text"></i> <span>Provas</span>
-                        <span class="pull-right-container">
-              <i class="fa fa-angle-down pull-right"></i>
-            </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="/provas/criar"><i class="fa fa-circle-o"></i> Criar</a></li>
-                        <li><a href="/provas/digitalizar"><i class="fa fa-circle-o"></i> Digitalizar</a></li>
-                        <li><a href="/provas"><i class="fa fa-circle-o"></i> Todas</a></li>
-                        <li><a href="/provas/aguardando"><i class="fa fa-circle-o"></i> Aguardando Aprovação</a></li>
-                        <li><a href="/provas/aceitas"><i class="fa fa-circle-o"></i> Aceitas</a></li>
-                        <li><a href="/provas/recusadas"><i class="fa fa-circle-o"></i> Recusadas</a></li>
-                        <li><a href="/provas/rascunhos"><i class="fa fa-circle-o"></i> Rascunhos</a></li>
-                    </ul>
-                </li>
-                <li class="treeview">
-                    <a href="#" class="pai"><i class="fa fa-star"></i> <span>Notas</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-down pull-right"></i>
-                    </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="/notas"><i class="fa fa-circle-o"></i> Todas</a></li>
-                        <li><a href="/notas/aguardando"><i class="fa fa-circle-o"></i> Aguardando Correção</a></li>
-                        <li><a href="/notas/corrigidas"><i class="fa fa-circle-o"></i> Corrigidas</a></li>
-                    </ul>
-                </li>
-                <li class="treeview">
-                    <a href="#" class="pai"><i class="fa fa-balance-scale"></i> <span>Recursos</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-down pull-right"></i>
-                            <small class="label pull-right bg-red">5</small>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="/recursos/criar"><i class="fa fa-circle-o"></i> Criar</a></li>
-                        <li><a href="/recursos"><i class="fa fa-circle-o"></i> Todos</a></li>
-                        <li><a href="/recursos/aguardando"><i class="fa fa-circle-o"></i> Aguardando Aprovação</a></li>
-                        <li><a href="/recursos/aceitos"><i class="fa fa-circle-o"></i> Aceitos</a></li>
-                        <li><a href="/recursos/recusados"><i class="fa fa-circle-o"></i> Recusados</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <!-- /.sidebar-menu -->
-        </section>
-        <!-- /.sidebar -->
-    </aside>
-
-    <!-- Content Wrapper. Contains page content -->
-    <div ng-view class="content-wrapper"></div>
-    <!-- /.content-wrapper -->
-
-    <!-- Main Footer -->
-    <footer class="main-footer">
-        <!-- To the right -->
-        <div class="pull-right hidden-xs">
-            Time 2 rocks
-        </div>
-        <!-- Default to the left -->
-        <strong><a href="http://iesb.br">Centro Universitário IESB</a> &copy; 2016</strong>
-    </footer>
-</div>
-<!-- ./wrapper -->
+<ui-view></ui-view>
 
 <!-- SCRIPTS -->
 
@@ -277,11 +74,13 @@
 
 <!-- Angular -->
 <script src="lib/AngularJS/angular.min.js"></script>
-<script src="lib/AngularJS/angular-route.min.js"></script>
+<script src="lib/AngularJS/angular-ui-router.min.js"></script>
+<script src="lib/Lodash/lodash.min.js"></script>
+<script src="lib/AngularJS/restangular.min.js"></script>
 <!-- Inicializa o Angular -->
 <script src="js/Config/app.js"></script>
 <!-- Configura rotas -->
-<script src="js/Config/routes.js"></script>
+<script src="js/Routes/routes.js"></script>
 
 </body>
 </html>
