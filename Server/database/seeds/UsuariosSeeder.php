@@ -41,7 +41,7 @@ class UsuariosSeeder extends Seeder
         ]);
 
         DB::table('usuarios')->insert([
-            'nome' => 'admin',
+            'nome' => 'Tyrell Wellick',
             'papel' => 'admin',
             'matricula' => '0',
             'senha' => bcrypt('senha'),
