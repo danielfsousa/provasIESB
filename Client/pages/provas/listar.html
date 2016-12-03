@@ -38,8 +38,6 @@
                 <!-- /.box-body -->
             </div>
             <!-- /. box -->
-            <!-- TODO: chamar o método do select2 para ajustar a largura toda vez que a página for redimensionada -->
-            <!-- TODO: traduzir "no results found" no select2 -->
             <div class="box box-solid">
                 <div class="box-header with-border">
                     <h3 class="box-title">Filtrar</h3>
@@ -52,7 +50,7 @@
                 <div class="box-body">
                     <div class="form-group">
                         <label>Disciplina</label>
-                        <select class="form-control select2">
+                        <select class="form-control" select2>
                             <option selected="selected">Alabama</option>
                             <option>Alaska</option>
                             <option>California</option>
@@ -65,7 +63,7 @@
 
                     <div class="form-group">
                         <label>Turma</label>
-                        <select class="form-control select2">
+                        <select class="form-control" select2>
                             <option selected="selected">Alabama</option>
                             <option>Alaska</option>
                             <option>California</option>
@@ -78,7 +76,7 @@
 
                     <div class="form-group">
                         <label>Professor</label>
-                        <select class="form-control select2">
+                        <select class="form-control" select2>
                             <option selected="selected">Alabama</option>
                             <option>Alaska</option>
                             <option>California</option>
@@ -91,7 +89,7 @@
 
                     <div class="form-group">
                         <label>Prova</label>
-                        <select class="form-control select2">
+                        <select class="form-control" select2>
                             <option selected="selected">Alabama</option>
                             <option>Alaska</option>
                             <option>California</option>
@@ -111,7 +109,7 @@
             <div class="box box-solid">
                 <div class="box-body">
 
-                    <table class="table table-data table-bordered table-striped">
+                    <table class="table table-data table-bordered table-striped" datatables>
                         <thead>
                         <tr>
                             <th>Disciplina</th>
@@ -854,7 +852,7 @@
             </div>
             <div class="modal-footer">
                 <!--Somente coordenador ou se a prova for do professor-->
-                <button type="button" class="btn btn-danger pull-left" data-dismiss="modal"><i class="fa fa-trash"></i> Excluir</button>
+                <button type="button" class="btn btn-danger pull-left" data-dismiss="modal" data-show="#confirmacao" trocar-modal><i class="fa fa-trash"></i> Excluir</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-pencil"></i> Editar</button>
 
                 <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-print"></i> Imprimir</button>
@@ -866,6 +864,22 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-<script>
-    $.getScript('/js/tabela.js');
-</script>
+
+<!-- MODAL: Confirmação -->
+<div class="modal fade" id="confirmacao" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Excluir Prova</h4>
+            </div>
+            <div class="modal-body">
+                <p>Você realmente deseja excluir a prova "Título da prova aqui"?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Excluir</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

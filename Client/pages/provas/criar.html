@@ -29,7 +29,7 @@
                 <div class="box-body with-border">
                     <div class="form-group">
                         <label>Disciplina</label>
-                        <select class="select2">
+                        <select select2>
                             <option selected="selected">Alabama</option>
                             <option>Alaska</option>
                             <option>California</option>
@@ -41,7 +41,7 @@
                     </div>
                     <div class="form-group">
                         <label>Turma</label>
-                        <select class="select2">
+                        <select select2>
                             <option selected="selected">Alabama</option>
                             <option>Alaska</option>
                             <option>California</option>
@@ -88,7 +88,7 @@
                                     <label>Valor:</label>
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control" value="1,0">
+                                    <input type="text" class="form-control" value="1,0" seleciona-tudo>
                                 </td>
                             </tr>
                             <tr>
@@ -146,7 +146,7 @@
                                     <label>Valor:</label>
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control" value="1,0">
+                                    <input type="text" class="form-control" value="1,0" seleciona-tudo>
                                 </td>
                             </tr>
                             <tr>
@@ -204,7 +204,7 @@
                                     <label>Valor:</label>
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control" value="1,0">
+                                    <input type="text" class="form-control" value="1,0" seleciona-tudo>
                                 </td>
                             </tr>
                             <tr>
@@ -262,7 +262,7 @@
                                     <label>Valor:</label>
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control" value="1,0">
+                                    <input type="text" class="form-control" value="1,0" seleciona-tudo>
                                 </td>
                             </tr>
                             <tr>
@@ -320,7 +320,7 @@
                                     <label>Valor:</label>
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control" value="1,0">
+                                    <input type="text" class="form-control" value="1,0" seleciona-tudo>
                                 </td>
                             </tr>
                             <tr>
@@ -378,7 +378,7 @@
                                     <label>Valor:</label>
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control" value="1,0">
+                                    <input type="text" class="form-control" value="1,0" seleciona-tudo>
                                 </td>
                             </tr>
                             <tr>
@@ -436,7 +436,7 @@
                                     <label>Valor:</label>
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control" value="1,0">
+                                    <input type="text" class="form-control" value="1,0" seleciona-tudo>
                                 </td>
                             </tr>
                             <tr>
@@ -494,7 +494,7 @@
                                     <label>Valor:</label>
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control" value="1,0">
+                                    <input type="text" class="form-control" value="1,0" seleciona-tudo>
                                 </td>
                             </tr>
                             <tr>
@@ -552,7 +552,7 @@
                                     <label>Valor:</label>
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control" value="1,0">
+                                    <input type="text" class="form-control" value="1,0" seleciona-tudo>
                                 </td>
                             </tr>
                             <tr>
@@ -610,7 +610,7 @@
                                     <label>Valor:</label>
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control" value="1,0">
+                                    <input type="text" class="form-control" value="1,0" seleciona-tudo>
                                 </td>
                             </tr>
                             <tr>
@@ -668,7 +668,7 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <label>Tipo</label>
-                            <select class="form-control select2">
+                            <select class="form-control" select2>
                                 <option selected="selected">Alabama</option>
                                 <option>Alaska</option>
                                 <option>California</option>
@@ -682,7 +682,7 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <label>Disciplina</label>
-                            <select class="form-control select2">
+                            <select class="form-control" select2>
                                 <option selected="selected">Alabama</option>
                                 <option>Alaska</option>
                                 <option>California</option>
@@ -696,7 +696,7 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <label>Dificuldade</label>
-                            <select class="form-control select2">
+                            <select class="form-control" select2>
                                 <option selected="selected">Alabama</option>
                                 <option>Alaska</option>
                                 <option>California</option>
@@ -710,7 +710,7 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <label>Autor</label>
-                            <select class="form-control select2">
+                            <select class="form-control" select2>
                                 <option selected="selected">Alabama</option>
                                 <option>Alaska</option>
                                 <option>California</option>
@@ -724,7 +724,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <table class="table table-data table-bordered table-striped">
+                        <table class="table table-data table-bordered table-striped" datatables>
                             <thead>
                             <tr>
                                 <th>Título</th>
@@ -746,7 +746,7 @@
                                 <td>Cícero</td>
                                 <td>Aguardando aprovação</td>
                                 <td>
-                                    <button class="btn btn-sm btn-default btn-block trocar-modal" data-dismiss="modal" data-show="#visualizar-questao"><i class="fa fa-eye"></i> Visualizar</button>
+                                    <button class="btn btn-sm btn-default btn-block" trocar-modal data-dismiss="modal" data-show="#visualizar-questao"><i class="fa fa-eye"></i> Visualizar</button>
                                 </td>
                                 <td>
                                     <button class="btn btn-sm btn-default btn-block"><i class="fa fa-plus"></i> Adicionar</button>
@@ -760,7 +760,7 @@
                                 <td>Cícero</td>
                                 <td>Aguardando aprovação</td>
                                 <td>
-                                    <button class="btn btn-sm btn-default btn-block trocar-modal" data-dismiss="modal" data-show="#visualizar-questao"><i class="fa fa-eye"></i> Visualizar</button>
+                                    <button class="btn btn-sm btn-default btn-block" trocar-modal data-dismiss="modal" data-show="#visualizar-questao"><i class="fa fa-eye"></i> Visualizar</button>
                                 </td>
                                 <td>
                                     <button class="btn btn-sm btn-default btn-block"><i class="fa fa-plus"></i> Adicionar</button>
@@ -774,7 +774,7 @@
                                 <td>Cícero</td>
                                 <td>Aguardando aprovação</td>
                                 <td>
-                                    <button class="btn btn-sm btn-default btn-block trocar-modal" data-dismiss="modal" data-show="#visualizar-questao"><i class="fa fa-eye"></i> Visualizar</button>
+                                    <button class="btn btn-sm btn-default btn-block" trocar-modal data-dismiss="modal" data-show="#visualizar-questao"><i class="fa fa-eye"></i> Visualizar</button>
                                 </td>
                                 <td>
                                     <button class="btn btn-sm btn-default btn-block"><i class="fa fa-plus"></i> Adicionar</button>
@@ -788,7 +788,7 @@
                                 <td>Cícero</td>
                                 <td>Aguardando aprovação</td>
                                 <td>
-                                    <button class="btn btn-sm btn-default btn-block trocar-modal" data-dismiss="modal" data-show="#visualizar-questao"><i class="fa fa-eye"></i> Visualizar</button>
+                                    <button class="btn btn-sm btn-default btn-block" trocar-modal data-dismiss="modal" data-show="#visualizar-questao"><i class="fa fa-eye"></i> Visualizar</button>
                                 </td>
                                 <td>
                                     <button class="btn btn-sm btn-default btn-block"><i class="fa fa-plus"></i> Adicionar</button>
@@ -801,7 +801,7 @@
                                 <td>Cícero</td>
                                 <td>Aguardando aprovação</td>
                                 <td>
-                                    <button class="btn btn-sm btn-default btn-block trocar-modal" data-dismiss="modal" data-show="#visualizar-questao"><i class="fa fa-eye"></i> Visualizar</button>
+                                    <button class="btn btn-sm btn-default btn-block" trocar-modal data-dismiss="modal" data-show="#visualizar-questao"><i class="fa fa-eye"></i> Visualizar</button>
                                 </td>
                                 <td>
                                     <button class="btn btn-sm btn-default btn-block"><i class="fa fa-plus"></i> Adicionar</button>
@@ -814,7 +814,7 @@
                                 <td>Cícero</td>
                                 <td>Aguardando aprovação</td>
                                 <td>
-                                    <button class="btn btn-sm btn-default btn-block trocar-modal" data-dismiss="modal" data-show="#visualizar-questao"><i class="fa fa-eye"></i> Visualizar</button>
+                                    <button class="btn btn-sm btn-default btn-block" trocar-modal data-dismiss="modal" data-show="#visualizar-questao"><i class="fa fa-eye"></i> Visualizar</button>
                                 </td>
                                 <td>
                                     <button class="btn btn-sm btn-default btn-block"><i class="fa fa-plus"></i> Adicionar</button>
@@ -828,7 +828,7 @@
                                 <td>Cícero</td>
                                 <td>Aguardando aprovação</td>
                                 <td>
-                                    <button class="btn btn-sm btn-default btn-block trocar-modal" data-dismiss="modal" data-show="#visualizar-questao"><i class="fa fa-eye"></i> Visualizar</button>
+                                    <button class="btn btn-sm btn-default btn-block" trocar-modal data-dismiss="modal" data-show="#visualizar-questao"><i class="fa fa-eye"></i> Visualizar</button>
                                 </td>
                                 <td>
                                     <button class="btn btn-sm btn-default btn-block"><i class="fa fa-plus"></i> Adicionar</button>
@@ -842,7 +842,7 @@
                                 <td>Cícero</td>
                                 <td>Aguardando aprovação</td>
                                 <td>
-                                    <button class="btn btn-sm btn-default btn-block trocar-modal" data-dismiss="modal" data-show="#visualizar-questao"><i class="fa fa-eye"></i> Visualizar</button>
+                                    <button class="btn btn-sm btn-default btn-block" trocar-modal data-dismiss="modal" data-show="#visualizar-questao"><i class="fa fa-eye"></i> Visualizar</button>
                                 </td>
                                 <td>
                                     <button class="btn btn-sm btn-default btn-block"><i class="fa fa-plus"></i> Adicionar</button>
@@ -855,7 +855,7 @@
                                 <td>Cícero</td>
                                 <td>Aguardando aprovação</td>
                                 <td>
-                                    <button class="btn btn-sm btn-default btn-block trocar-modal" data-dismiss="modal" data-show="#visualizar-questao"><i class="fa fa-eye"></i> Visualizar</button>
+                                    <button class="btn btn-sm btn-default btn-block" trocar-modal data-dismiss="modal" data-show="#visualizar-questao"><i class="fa fa-eye"></i> Visualizar</button>
                                 </td>
                                 <td>
                                     <button class="btn btn-sm btn-default btn-block"><i class="fa fa-plus"></i> Adicionar</button>
@@ -868,7 +868,7 @@
                                 <td>Cícero</td>
                                 <td>Aguardando aprovação</td>
                                 <td>
-                                    <button class="btn btn-sm btn-default btn-block trocar-modal" data-dismiss="modal" data-show="#visualizar-questao"><i class="fa fa-eye"></i> Visualizar</button>
+                                    <button class="btn btn-sm btn-default btn-block" trocar-modal data-dismiss="modal" data-show="#visualizar-questao"><i class="fa fa-eye"></i> Visualizar</button>
                                 </td>
                                 <td>
                                     <button class="btn btn-sm btn-default btn-block"><i class="fa fa-plus"></i> Adicionar</button>
@@ -881,7 +881,7 @@
                                 <td>Cícero</td>
                                 <td>Aguardando aprovação</td>
                                 <td>
-                                    <button class="btn btn-sm btn-default btn-block trocar-modal" data-dismiss="modal" data-show="#visualizar-questao"><i class="fa fa-eye"></i> Visualizar</button>
+                                    <button class="btn btn-sm btn-default btn-block" trocar-modal data-dismiss="modal" data-show="#visualizar-questao"><i class="fa fa-eye"></i> Visualizar</button>
                                 </td>
                                 <td>
                                     <button class="btn btn-sm btn-default btn-block"><i class="fa fa-plus"></i> Adicionar</button>
@@ -894,7 +894,7 @@
                                 <td>Cícero</td>
                                 <td>Aguardando aprovação</td>
                                 <td>
-                                    <button class="btn btn-sm btn-default btn-block trocar-modal" data-dismiss="modal" data-show="#visualizar-questao"><i class="fa fa-eye"></i> Visualizar</button>
+                                    <button class="btn btn-sm btn-default btn-block" trocar-modal data-dismiss="modal" data-show="#visualizar-questao"><i class="fa fa-eye"></i> Visualizar</button>
                                 </td>
                                 <td>
                                     <button class="btn btn-sm btn-default btn-block"><i class="fa fa-plus"></i> Adicionar</button>
@@ -907,7 +907,7 @@
                                 <td>Cícero</td>
                                 <td>Aguardando aprovação</td>
                                 <td>
-                                    <button class="btn btn-sm btn-default btn-block trocar-modal" data-dismiss="modal" data-show="#visualizar-questao"><i class="fa fa-eye"></i> Visualizar</button>
+                                    <button class="btn btn-sm btn-default btn-block" trocar-modal data-dismiss="modal" data-show="#visualizar-questao"><i class="fa fa-eye"></i> Visualizar</button>
                                 </td>
                                 <td>
                                     <button class="btn btn-sm btn-default btn-block"><i class="fa fa-plus"></i> Adicionar</button>
@@ -920,7 +920,7 @@
                                 <td>Cícero</td>
                                 <td>Aguardando aprovação</td>
                                 <td>
-                                    <button class="btn btn-sm btn-default btn-block trocar-modal" data-dismiss="modal" data-show="#visualizar-questao"><i class="fa fa-eye"></i> Visualizar</button>
+                                    <button class="btn btn-sm btn-default btn-block" trocar-modal data-dismiss="modal" data-show="#visualizar-questao"><i class="fa fa-eye"></i> Visualizar</button>
                                 </td>
                                 <td>
                                     <button class="btn btn-sm btn-default btn-block"><i class="fa fa-plus"></i> Adicionar</button>
@@ -933,7 +933,7 @@
                                 <td>Cícero</td>
                                 <td>Aguardando aprovação</td>
                                 <td>
-                                    <button class="btn btn-sm btn-default btn-block trocar-modal" data-dismiss="modal" data-show="#visualizar-questao"><i class="fa fa-eye"></i> Visualizar</button>
+                                    <button class="btn btn-sm btn-default btn-block" trocar-modal data-dismiss="modal" data-show="#visualizar-questao"><i class="fa fa-eye"></i> Visualizar</button>
                                 </td>
                                 <td>
                                     <button class="btn btn-sm btn-default btn-block"><i class="fa fa-plus"></i> Adicionar</button>
@@ -1007,17 +1007,9 @@
                 </p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default trocar-modal" data-dismiss="modal" data-show="#adicionar-questoes">Voltar</button>
+                <button type="button" class="btn btn-default" trocar-modal data-dismiss="modal" data-show="#adicionar-questoes">Voltar</button>
                 <button type="button" class="btn btn-primary" data-dismiss="modal">Adicionar</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-<script>
-    $("input[type=text]").focus(function() {
-        $(this).select();
-    });
-
-    $.getScript('/js/trocar-modal.js');
-    $.getScript('/js/tabela.js');
-</script>

@@ -35,8 +35,6 @@
                 <!-- /.box-body -->
             </div>
             <!-- /. box -->
-            <!-- TODO: chamar o método do select2 para ajustar a largura toda vez que a página for redimensionada -->
-            <!-- TODO: traduzir "no results found" no select2 -->
             <div class="box box-solid">
                 <div class="box-header with-border">
                     <h3 class="box-title">Filtrar</h3>
@@ -49,7 +47,7 @@
                 <div class="box-body">
                     <div class="form-group">
                         <label>Aluno</label>
-                        <select class="form-control select2">
+                        <select class="form-control" select2>
                             <option selected="selected">Alabama</option>
                             <option>Alaska</option>
                             <option>California</option>
@@ -62,7 +60,7 @@
 
                     <div class="form-group">
                         <label>Disciplina</label>
-                        <select class="form-control select2">
+                        <select class="form-control" select2>
                             <option selected="selected">Alabama</option>
                             <option>Alaska</option>
                             <option>California</option>
@@ -75,7 +73,7 @@
 
                     <div class="form-group">
                         <label>Turma</label>
-                        <select class="form-control select2">
+                        <select class="form-control" select2>
                             <option selected="selected">Alabama</option>
                             <option>Alaska</option>
                             <option>California</option>
@@ -88,7 +86,7 @@
 
                     <div class="form-group">
                         <label>Prova</label>
-                        <select class="form-control select2">
+                        <select class="form-control" select2>
                             <option selected="selected">Alabama</option>
                             <option>Alaska</option>
                             <option>California</option>
@@ -108,7 +106,7 @@
             <div class="box box-solid">
                 <div class="box-body">
 
-                    <table class="table table-data table-bordered table-striped">
+                    <table class="table table-data table-bordered table-striped" datatables>
                         <thead>
                         <tr>
                             <th>Aluno</th>
@@ -315,6 +313,3 @@
         </div>
     </div>
 </section>
-<script>
-    $.getScript('/js/tabela.js');
-</script>

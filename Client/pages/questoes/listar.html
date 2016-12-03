@@ -38,8 +38,6 @@
                 <!-- /.box-body -->
             </div>
             <!-- /. box -->
-            <!-- TODO: chamar o método do select2 para ajustar a largura toda vez que a página for redimensionada -->
-            <!-- TODO: traduzir "no results found" no select2 -->
             <div class="box box-solid">
                 <div class="box-header with-border">
                     <h3 class="box-title">Filtrar</h3>
@@ -52,7 +50,7 @@
                 <div class="box-body">
                     <div class="form-group">
                         <label>Tipo</label>
-                        <select class="form-control select2">
+                        <select class="form-control" select2>
                             <option selected="selected">Alabama</option>
                             <option>Alaska</option>
                             <option>California</option>
@@ -65,7 +63,7 @@
 
                     <div class="form-group">
                         <label>Disciplina</label>
-                        <select class="form-control select2">
+                        <select class="form-control" select2>
                             <option selected="selected">Alabama</option>
                             <option>Alaska</option>
                             <option>California</option>
@@ -78,7 +76,7 @@
 
                     <div class="form-group">
                         <label>Dificuldade</label>
-                        <select class="form-control select2">
+                        <select class="form-control" select2>
                             <option selected="selected">Alabama</option>
                             <option>Alaska</option>
                             <option>California</option>
@@ -91,7 +89,7 @@
 
                     <div class="form-group">
                         <label>Autor</label>
-                        <select class="form-control select2">
+                        <select class="form-control" select2>
                             <option selected="selected">Alabama</option>
                             <option>Alaska</option>
                             <option>California</option>
@@ -111,7 +109,7 @@
             <div class="box box-solid">
                 <div class="box-body">
 
-                    <table class="table table-data table-bordered table-striped">
+                    <table class="table table-data table-bordered table-striped" datatables>
                         <thead>
                         <tr>
                             <th>Título</th>
@@ -348,7 +346,7 @@
                 </p>
             </div>
             <div class="modal-footer">
-                <a type="button" class="btn btn-danger trocar-modal pull-left" data-dismiss="modal" data-show="#confirmacao"><i class="fa fa-trash"></i> Excluir</a>
+                <a type="button" class="btn btn-danger pull-left" data-dismiss="modal" data-show="#confirmacao" trocar-modal><i class="fa fa-trash"></i> Excluir</a>
                 <a href="questoes/id/editar" type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-pencil"></i> Editar</a>
                 <a type="button" class="btn btn-warning" data-dismiss="modal"><i class="fa fa-times"></i> Recusar</a>
                 <a type="button" class="btn btn-success" data-dismiss="modal"><i class="fa fa-check"></i> Aprovar</a>
@@ -375,7 +373,3 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-<script>
-    $.getScript('/js/trocar-modal.js');
-    $.getScript('/js/tabela.js');
-</script>

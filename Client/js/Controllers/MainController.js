@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('MainController', function($scope, $state, usuarioServico) {
+app.controller('MainController', function($scope, $state, usuarioServico, toastr) {
 
     usuarioServico.getUsuario(function (usuario) {
         $scope.usuario = usuario;
@@ -12,9 +12,12 @@ app.controller('MainController', function($scope, $state, usuarioServico) {
         usuarioServico.logout();
         $state.transitionTo('login');
     };
-    
+
     $scope.estaAtivo = function (nome) {
         return ($state.current.name.toLowerCase().indexOf(nome) > -1) ? 'active' : '';
-    }
+    };
 
+    $scope.info = function (frase) {
+        toastr.info(frase);
+    };
 });
