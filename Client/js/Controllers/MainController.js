@@ -14,7 +14,6 @@ app.controller('MainController', function($scope, $state, usuarioServico) {
     };
     
     $scope.estaAtivo = function (nome) {
-        console.log($state.current.name);
         return ($state.current.name.toLowerCase().indexOf(nome) > -1) ? 'active' : '';
     }
 
