@@ -20,7 +20,7 @@ class QuestaoController extends Controller
         if (!Auth::user()->isAdmin()) {
             return response()->json(['erro' => 'Usuário não autorizado'], 401);
         }
-        $questoes = Questao::all();
+        $questoes = Questao::withAll()->get();
         return response()->json(compact('questoes'));
     }
 

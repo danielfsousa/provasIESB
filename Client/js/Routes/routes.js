@@ -30,6 +30,7 @@ app
             .state('template.listarQuestoes', {
                 url: '/questoes',
                 templateUrl: 'pages/questoes/listar.html',
+                controller: 'listarQuestoesController',
                 auth: true
             })
 

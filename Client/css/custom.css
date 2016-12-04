@@ -1,3 +1,7 @@
+.label {
+    padding: .3em .6em;
+}
+
 .click {
     cursor: pointer;
 }

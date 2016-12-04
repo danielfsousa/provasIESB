@@ -27,6 +27,11 @@ class Questao extends Model
         'estado_id' => 'integer|min:1'
     ];
 
+    public function scopeWithAll($query)
+    {
+        $query->with('disciplina', 'autor', 'estado');
+    }
+
     public function tipo()
     {
         if ($this->tipo === 'objetiva') {

@@ -28,11 +28,14 @@
                 </div>
                 <div class="box-body no-padding">
                     <ul class="nav nav-pills nav-stacked">
-                        <li class="active"><a href="#"><i class="fa fa-circle-o text-blue"></i> Todas
-                            <span class="label label-primary pull-right">12</span></a></li>
-                        <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> Aguardando Aprovação</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o text-green"></i> Aceitas</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o text-red"></i> Recusadas</a></li>
+                        <li class="active"><a ui-sref="template.listarQuestoes"><i class="fa fa-circle-o text-blue"></i> Todas
+                            <span class="label label-primary pull-right">{{ questoes.length }}</span></a></li>
+                        <li><a ui-sref="template.questoesAguardando"><i class="fa fa-circle-o text-yellow"></i> Aguardando Aprovação
+                            <span class="label label-warning pull-right">{{ quantidadeAguardando }}</span></a></li>
+                        <li><a ui-sref="template.questoesAceitas"><i class="fa fa-circle-o text-green"></i> Aceitas
+                            <span class="label label-success pull-right">{{ quantidadeAceitas }}</span></a></li>
+                        <li><a ui-sref="template.questoesRecusadas"><i class="fa fa-circle-o text-red"></i> Recusadas
+                            <span class="label label-danger pull-right">{{ quantidadeRecusadas }}</span></a></li>
                     </ul>
                 </div>
                 <!-- /.box-body -->
@@ -51,52 +54,33 @@
                     <div class="form-group">
                         <label>Tipo</label>
                         <select class="form-control" select2>
-                            <option selected="selected">Alabama</option>
-                            <option>Alaska</option>
-                            <option>California</option>
-                            <option>Delaware</option>
-                            <option>Tennessee</option>
-                            <option>Texas</option>
-                            <option>Washington</option>
+                            <option selected="selected">Todos</option>
+                            <option>Subjetiva</option>
+                            <option>Objetiva</option>
                         </select>
                     </div>
 
                     <div class="form-group">
                         <label>Disciplina</label>
                         <select class="form-control" select2>
-                            <option selected="selected">Alabama</option>
-                            <option>Alaska</option>
-                            <option>California</option>
-                            <option>Delaware</option>
-                            <option>Tennessee</option>
-                            <option>Texas</option>
-                            <option>Washington</option>
+                            <option selected="selected">Todas</option>
                         </select>
                     </div>
 
                     <div class="form-group">
                         <label>Dificuldade</label>
                         <select class="form-control" select2>
-                            <option selected="selected">Alabama</option>
-                            <option>Alaska</option>
-                            <option>California</option>
-                            <option>Delaware</option>
-                            <option>Tennessee</option>
-                            <option>Texas</option>
-                            <option>Washington</option>
+                            <option selected="selected">Todas</option>
+                            <option>Baixa</option>
+                            <option>Média</option>
+                            <option>Alta</option>
                         </select>
                     </div>
 
                     <div class="form-group">
                         <label>Autor</label>
                         <select class="form-control" select2>
-                            <option selected="selected">Alabama</option>
-                            <option>Alaska</option>
-                            <option>California</option>
-                            <option>Delaware</option>
-                            <option>Tennessee</option>
-                            <option>Texas</option>
-                            <option>Washington</option>
+                            <option selected="selected">Todos</option>
                         </select>
                     </div>
                 </div>
@@ -122,152 +106,18 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td><a href="#">Título da questão aqui</a></td>
-                            <td>Subjetiva</td>
-                            <td>Alta</td>
-                            <td>Segurança da Informação</td>
-                            <td>Cícero</td>
-                            <td>Aguardando aprovação</td>
+                        <tr ng-repeat="questao in questoes">
+                            <td><a ui-sref="template.visualizarQuestao({ id: questao.id })">{{ questao.titulo }}</a></td>
+                            <td class="text-capitalize">{{ questao.tipo }}</td>
+                            <td class="text-capitalize">{{ questao.dificuldade }}</td>
+                            <td>{{ questao.disciplina.nome }}</td>
+                            <td>{{ questao.autor.nome }}</td>
+                            <td>{{ questao.estado.nome }}</td>
                             <td>
                                 <button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar"><i class="fa fa-eye"></i> Visualizar</button>
                             </td>
                         </tr>
                         <tr>
-                            <td><a href="#">Título da questão aqui</a></td>
-                            <td>Subjetiva</td>
-                            <td>Alta</td>
-                            <td>Segurança da Informação</td>
-                            <td>Cícero</td>
-                            <td>Aguardando aprovação</td>
-                            <td>
-                                <button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar"><i class="fa fa-eye"></i> Visualizar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><a href="#">Título da questão aqui</a></td>
-                            <td>Subjetiva</td>
-                            <td>Alta</td>
-                            <td>Segurança da Informação</td>
-                            <td>Cícero</td>
-                            <td>Aguardando aprovação</td>
-                            <td>
-                                <button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar"><i class="fa fa-eye"></i> Visualizar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><a href="#">Título da questão aqui</a></td>
-                            <td>Subjetiva</td>
-                            <td>Alta</td>
-                            <td>Segurança da Informação</td>
-                            <td>Cícero</td>
-                            <td>Aguardando aprovação</td>
-                            <td>
-                                <button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar"><i class="fa fa-eye"></i> Visualizar</button>
-                            </td>
-                        </tr><tr>
-                            <td><a href="#">Título da questão aqui</a></td>
-                            <td>Subjetiva</td>
-                            <td>Alta</td>
-                            <td>Segurança da Informação</td>
-                            <td>Cícero</td>
-                            <td>Aguardando aprovação</td>
-                            <td>
-                                <button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar"><i class="fa fa-eye"></i> Visualizar</button>
-                            </td>
-                        </tr><tr>
-                            <td><a href="#">Título da questão aqui</a></td>
-                            <td>Subjetiva</td>
-                            <td>Alta</td>
-                            <td>Segurança da Informação</td>
-                            <td>Cícero</td>
-                            <td>Aguardando aprovação</td>
-                            <td>
-                                <button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar"><i class="fa fa-eye"></i> Visualizar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><a href="#">Título da questão aqui</a></td>
-                            <td>Subjetiva</td>
-                            <td>Alta</td>
-                            <td>Segurança da Informação</td>
-                            <td>Cícero</td>
-                            <td>Aguardando aprovação</td>
-                            <td>
-                                <button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar"><i class="fa fa-eye"></i> Visualizar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><a href="#">Título da questão aqui</a></td>
-                            <td>Subjetiva</td>
-                            <td>Alta</td>
-                            <td>Segurança da Informação</td>
-                            <td>Cícero</td>
-                            <td>Aguardando aprovação</td>
-                            <td>
-                                <button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar"><i class="fa fa-eye"></i> Visualizar</button>
-                            </td>
-                        </tr><tr>
-                            <td><a href="#">Título da questão aqui</a></td>
-                            <td>Subjetiva</td>
-                            <td>Alta</td>
-                            <td>Segurança da Informação</td>
-                            <td>Cícero</td>
-                            <td>Aguardando aprovação</td>
-                            <td>
-                                <button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar"><i class="fa fa-eye"></i> Visualizar</button>
-                            </td>
-                        </tr><tr>
-                            <td><a href="#">Título da questão aqui</a></td>
-                            <td>Subjetiva</td>
-                            <td>Alta</td>
-                            <td>Segurança da Informação</td>
-                            <td>Cícero</td>
-                            <td>Aguardando aprovação</td>
-                            <td>
-                                <button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar"><i class="fa fa-eye"></i> Visualizar</button>
-                            </td>
-                        </tr><tr>
-                            <td><a href="#">Título da questão aqui</a></td>
-                            <td>Subjetiva</td>
-                            <td>Alta</td>
-                            <td>Segurança da Informação</td>
-                            <td>Cícero</td>
-                            <td>Aguardando aprovação</td>
-                            <td>
-                                <button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar"><i class="fa fa-eye"></i> Visualizar</button>
-                            </td>
-                        </tr><tr>
-                            <td><a href="#">Título da questão aqui</a></td>
-                            <td>Subjetiva</td>
-                            <td>Alta</td>
-                            <td>Segurança da Informação</td>
-                            <td>Cícero</td>
-                            <td>Aguardando aprovação</td>
-                            <td>
-                                <button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar"><i class="fa fa-eye"></i> Visualizar</button>
-                            </td>
-                        </tr><tr>
-                            <td><a href="#">Título da questão aqui</a></td>
-                            <td>Subjetiva</td>
-                            <td>Alta</td>
-                            <td>Segurança da Informação</td>
-                            <td>Cícero</td>
-                            <td>Aguardando aprovação</td>
-                            <td>
-                                <button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar"><i class="fa fa-eye"></i> Visualizar</button>
-                            </td>
-                        </tr><tr>
-                            <td><a href="#">Título da questão aqui</a></td>
-                            <td>Subjetiva</td>
-                            <td>Alta</td>
-                            <td>Segurança da Informação</td>
-                            <td>Cícero</td>
-                            <td>Aguardando aprovação</td>
-                            <td>
-                                <button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar"><i class="fa fa-eye"></i> Visualizar</button>
-                            </td>
-                        </tr><tr>
                             <td><a href="#">Título da questão aqui</a></td>
                             <td>Subjetiva</td>
                             <td>Alta</td>
