@@ -10,5 +10,5 @@ https://iesb.blackboard.com/webapps/blackboard/execute/content/file?cmd=view&con
 
 
 ## TO-DO
-* Adicionar autenticação no Angular
 * Consumir os resources com o Angular
+* Verificar se o token expirou
