@@ -12,7 +12,7 @@
 </section>
 
 <!-- Main content -->
-<section class="content">
+<section class="content" ng-controller="CriarQuestaoCtrl as ctrl">
     <div class="row">
 
 
@@ -24,21 +24,17 @@
                 <div class="box-body">
                     <div class="form-group">
                         <label for="titulo">Título</label>
-                        <input type="text" class="form-control" id="titulo" placeholder="Título">
+                        <input type="text" class="form-control" ng-model="ctrl.titulo" id="titulo" placeholder="Título">
                     </div>
                     <div class="form-group">
                         <label for="disciplina">Disciplina</label>
-                        <select id="disciplina" class="form-control">
-                            <option>option 1</option>
-                            <option>option 2</option>
-                            <option>option 3</option>
-                            <option>option 4</option>
-                            <option>option 5</option>
+                        <select id="disciplina" ng-model="ctrl.disciplinaProva" class="form-control" ng-repeat="disciplina in ctrl.disciplina">
+                            <option ng-value="disciplina.id">{{disciplina.nome}}</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="dificuldade">Dificuldade</label>
-                        <select id="dificuldade" class="form-control">
+                        <select id="dificuldade" ng-model="ctrl.dificuldade" class="form-control">
                             <option>Baixa</option>
                             <option>Média</option>
                             <option>Alta</option>
@@ -46,7 +42,7 @@
                     </div>
                     <div class="form-group">
                         <label for="gabarito">Gabarito</label>
-                        <select id="gabarito" class="form-control">
+                        <select id="gabarito" ng-model="ctrl.gabarito" class="form-control">
                             <option>A</option>
                             <option>B</option>
                             <option>C</option>
@@ -56,8 +52,8 @@
                     </div>
                 </div>
                 <div class="box-footer">
-                    <button type="submit" class="btn btn-primary pull-right">Enviar</button>
-                    <button type="submit" class="btn btn-default pull-right">Salvar como rascunho</button>
+                    <button type="submit" class="btn btn-primary pull-right" ng-click="ctrl.enviarQuestao()">Enviar</button>
+                    <button type="submit" class="btn btn-default pull-right" ng-click="ctrl.salvarRascunho()">Salvar como rascunho</button>
                 </div>
             </div>
         </div>
@@ -67,7 +63,7 @@
                     <h3 class="box-title click" data-widget="collapse">Enunciado</h3>
                 </div>
                 <div class="box-body">
-                    <textarea id="enunciado" name="enunciado" rows="20" cols="70" editor="grande"></textarea>
+                    <textarea id="enunciado" ng-model="ctrl.enunciado" name="enunciado" rows="20" cols="70" editor="grande"></textarea>
                 </div>
             </div>
 
@@ -85,7 +81,7 @@
                 <div class="box-body">
                     <div class="row">
                         <div class="col-md-12">
-                            <textarea id="alternativa-a" name="alternativa-a" rows="20" cols="70" editor="pequeno"></textarea>
+                            <textarea id="alternativa-a" ng-model="ctrl.disiplicinaA" name="alternativa-a" rows="20" cols="70" editor="pequeno"></textarea>
                         </div>
                     </div>
                 </div>
@@ -107,7 +103,7 @@
                 <div class="box-body">
                     <div class="row">
                         <div class="col-md-12">
-                            <textarea id="alternativa-b" name="alternativa-b" rows="20" cols="70" editor="pequeno"></textarea>
+                            <textarea id="alternativa-b" ng-model="ctrl.disiplicinaB" name="alternativa-b" rows="20" cols="70" editor="pequeno"></textarea>
                         </div>
                     </div>
                 </div>
@@ -129,7 +125,7 @@
                 <div class="box-body">
                     <div class="row">
                         <div class="col-md-12">
-                            <textarea id="alternativa-c" name="alternativa-c" rows="20" cols="70" editor="pequeno"></textarea>
+                            <textarea id="alternativa-c" ng-model="ctrl.disiplicinaC" name="alternativa-c" rows="20" cols="70" editor="pequeno"></textarea>
                         </div>
                     </div>
                 </div>
@@ -151,7 +147,7 @@
                 <div class="box-body">
                     <div class="row">
                         <div class="col-md-12">
-                            <textarea id="alternativa-d" name="alternativa-d" rows="20" cols="70" editor="pequeno"></textarea>
+                            <textarea id="alternativa-d" ng-model="ctrl.disiplicinaD" name="alternativa-d" rows="20" cols="70" editor="pequeno"></textarea>
                         </div>
                     </div>
                 </div>
@@ -173,7 +169,7 @@
                 <div class="box-body">
                     <div class="row">
                         <div class="col-md-12">
-                            <textarea id="alternativa-e" name="alternativa-e" rows="20" cols="70" editor="pequeno"></textarea>
+                            <textarea id="alternativa-e" ng-model="ctrl.disiplicinaE" name="alternativa-e" rows="20" cols="70" editor="pequeno"></textarea>
                         </div>
                     </div>
                 </div>
