@@ -17,7 +17,7 @@ class ProvaController extends Controller
      */
     public function index()
     {
-        if (! (Auth::user()->isCoordenador() || Auth::user()->isSecretaria())) {
+        if (! (Auth::user()->isCoordenador() || Auth::user()->isSecretaria() || Auth::user()->isAdmin())) {
             return response()->json(['erro' => 'Usuário não autorizado'], 401);
         }
         $provas = Prova::withAll()->get();

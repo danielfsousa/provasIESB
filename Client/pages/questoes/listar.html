@@ -29,7 +29,7 @@
                 <div class="box-body no-padding">
                     <ul class="nav nav-pills nav-stacked">
                         <li class="active"><a ui-sref="template.listarQuestoes"><i class="fa fa-circle-o text-blue"></i> Todas
-                            <span class="label label-primary pull-right">{{ questoes.length }}</span></a></li>
+                            <span class="label label-primary pull-right">{{ quantidadeTodas }}</span></a></li>
                         <li><a ui-sref="template.questoesAguardando"><i class="fa fa-circle-o text-yellow"></i> Aguardando Aprovação
                             <span class="label label-warning pull-right">{{ quantidadeAguardando }}</span></a></li>
                         <li><a ui-sref="template.questoesAceitas"><i class="fa fa-circle-o text-green"></i> Aceitas
@@ -93,7 +93,7 @@
             <div class="box box-solid">
                 <div class="box-body">
 
-                    <table class="table table-data table-bordered table-striped" datatables>
+                    <table class="table table-data table-bordered table-striped" datatable="ng" dt-options="dtOptions" dt-column-defs="dtColumnsDefs">
                         <thead>
                         <tr>
                             <th>Título</th>
@@ -113,17 +113,6 @@
                             <td>{{ questao.disciplina.nome }}</td>
                             <td>{{ questao.autor.nome }}</td>
                             <td>{{ questao.estado.nome }}</td>
-                            <td>
-                                <button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar"><i class="fa fa-eye"></i> Visualizar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><a href="#">Título da questão aqui</a></td>
-                            <td>Subjetiva</td>
-                            <td>Alta</td>
-                            <td>Segurança da Informação</td>
-                            <td>Cícero</td>
-                            <td>Aguardando aprovação</td>
                             <td>
                                 <button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar"><i class="fa fa-eye"></i> Visualizar</button>
                             </td>

@@ -42,7 +42,7 @@
         restartOnPushState: true,
         restartOnRequestAfter: true,
         ajax: {
-            trackMethods: [ 'POST','GET']
+            trackMethods: ['GET', 'POST', 'PUT', 'DELETE']
         }
     };
 </script>
@@ -77,8 +77,6 @@
 <script src="lib/AngularJS/angular.min.js"></script>
 <script src="lib/AngularJS/angular-animate.min.js"></script>
 <script src="lib/AngularJS/angular-ui-router.min.js"></script>
-<script src="lib/Lodash/lodash.min.js"></script>
-<script src="lib/AngularJS/restangular.min.js"></script>
 <script src="lib/AngularJS/angular-local-storage.min.js"></script>
 <script src="lib/AngularJS/angular-toastr.tpls.min.js"></script>
 <!-- Inicializa o Angular -->
@@ -87,11 +85,16 @@
 <script src="js/Routes/routes.js"></script>
 <!-- Interceptors -->
 <script src="js/Interceptors/httpInterceptor.js"></script>
+<!-- Filters -->
+<script src="js/Filters/dataFilter.js"></script>
 <!-- Serviços -->
 <script src="js/Factories/usuarioServico.js"></script>
 <script src="js/Factories/questaoServico.js"></script>
+<script src="js/Factories/provaServico.js"></script>
+<script src="js/Factories/recursoServico.js"></script>
+<script src="js/Factories/notaServico.js"></script>
 <!-- Diretivas -->
-<script src="js/Directives/dataTables.js"></script>
+<script src="js/Directives/angular-datatables.min.js"></script>
 <script src="js/Directives/select2.js"></script>
 <script src="js/Directives/selecionaTudo.js"></script>
 <script src="js/Directives/editor.js"></script>
@@ -103,6 +106,12 @@
 <!-- Questao -->
 <script src="js/Controllers/Questao/ListarCtrl.js"></script>
 <script src="js/Controllers/Questao/CriarCtrl.js"></script>
+<!-- Prova -->
+<script src="js/Controllers/Prova/ListarCtrl.js"></script>
+<!-- Recurso -->
+<script src="js/Controllers/Recurso/ListarCtrl.js"></script>
+<!-- Notas -->
+<script src="js/Controllers/Nota/ListarCtrl.js"></script>
 
 
 </body>

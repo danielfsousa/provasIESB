@@ -41,4 +41,9 @@ class Turma extends Model
     {
         return $this->belongsTo('App\Disciplina');
     }
+
+    public function notas()
+    {
+        return $this->hasMany('App\Nota');
+    }
 }

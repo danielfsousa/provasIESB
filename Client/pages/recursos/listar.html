@@ -28,11 +28,14 @@
                 </div>
                 <div class="box-body no-padding">
                     <ul class="nav nav-pills nav-stacked">
-                        <li class="active"><a href="#"><i class="fa fa-circle-o text-blue"></i> Todos
-                            <span class="label label-primary pull-right">12</span></a></li>
-                        <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> Aguardando Aprovação</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o text-green"></i> Aceitos</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o text-red"></i> Recusados</a></li>
+                        <li class="active"><a ui-sref="template.listarRecursos"><i class="fa fa-circle-o text-blue"></i> Todos
+                            <span class="label label-primary pull-right">{{ quantidadeTodas }}</span></a></li>
+                        <li><a ui-sref="template.recursosAguardando"><i class="fa fa-circle-o text-yellow"></i> Aguardando Aprovação
+                            <span class="label label-warning pull-right">{{ quantidadeAguardando }}</span></a></li>
+                        <li><a ui-sref="template.recursosAceitos"><i class="fa fa-circle-o text-green"></i> Aceitos
+                            <span class="label label-success pull-right">{{ quantidadeAceitas }}</span></a></li>
+                        <li><a ui-sref="template.recursosRecusados"><i class="fa fa-circle-o text-red"></i> Recusados
+                            <span class="label label-danger pull-right">{{ quantidadeRecusadas }}</span></a></li>
                     </ul>
                 </div>
                 <!-- /.box-body -->
@@ -108,175 +111,28 @@
             <div class="box box-solid">
                 <div class="box-body">
 
-                    <table class="table table-data table-bordered table-striped" datatables>
+                    <table class="table table-data table-bordered table-striped" datatable="ng" dt-options="dtOptions" dt-column-defs="dtColumnsDefs">
                         <thead>
                         <tr>
                             <th>Título</th>
                             <th>Aluno</th>
-                            <th>Turma</th>
                             <th>Disciplina</th>
                             <th>Prova</th>
                             <th>Questão</th>
                             <th>Data</th>
                             <th>Estado</th>
-                            <th>Ações</th>
+                            <th>Visualizar</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td><a href="#">Recruso 1</a></td>
-                            <td>Daniel Sousa</td>
-                            <td>ADS123456</td>
-                            <td>Projeto Integrador</td>
-                            <td>P2</td>
-                            <td>2</td>
-                            <td>14/10/2016</td>
-                            <td>Aguardando aprovação</td>
-                            <td><button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar-recurso"><i class="fa fa-eye"></i>  Visualizar</button></td>
-                        </tr>
-                        <tr>
-                            <td><a href="#">Recruso 1</a></td>
-                            <td>Daniel Sousa</td>
-                            <td>ADS123456</td>
-                            <td>Projeto Integrador</td>
-                            <td>P2</td>
-                            <td>2</td>
-                            <td>14/10/2016</td>
-                            <td>Aguardando aprovação</td>
-                            <td><button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar-recurso"><i class="fa fa-eye"></i>  Visualizar</button></td>
-                        </tr>
-                        <tr>
-                            <td><a href="#">Recruso 1</a></td>
-                            <td>Daniel Sousa</td>
-                            <td>ADS123456</td>
-                            <td>Projeto Integrador</td>
-                            <td>P2</td>
-                            <td>2</td>
-                            <td>14/10/2016</td>
-                            <td>Aguardando aprovação</td>
-                            <td><button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar-recurso"><i class="fa fa-eye"></i>  Visualizar</button></td>
-                        </tr>
-                        <tr>
-                            <td><a href="#">Recruso 1</a></td>
-                            <td>Daniel Sousa</td>
-                            <td>ADS123456</td>
-                            <td>Projeto Integrador</td>
-                            <td>P2</td>
-                            <td>2</td>
-                            <td>14/10/2016</td>
-                            <td>Aguardando aprovação</td>
-                            <td><button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar-recurso"><i class="fa fa-eye"></i>  Visualizar</button></td>
-                        </tr><tr>
-                            <td><a href="#">Recruso 1</a></td>
-                            <td>Daniel Sousa</td>
-                            <td>ADS123456</td>
-                            <td>Projeto Integrador</td>
-                            <td>P2</td>
-                            <td>2</td>
-                            <td>14/10/2016</td>
-                            <td>Aguardando aprovação</td>
-                            <td><button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar-recurso"><i class="fa fa-eye"></i>  Visualizar</button></td>
-                        </tr><tr>
-                            <td><a href="#">Recruso 1</a></td>
-                            <td>Daniel Sousa</td>
-                            <td>ADS123456</td>
-                            <td>Projeto Integrador</td>
-                            <td>P2</td>
-                            <td>2</td>
-                            <td>14/10/2016</td>
-                            <td>Aguardando aprovação</td>
-                            <td><button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar-recurso"><i class="fa fa-eye"></i>  Visualizar</button></td>
-                        </tr>
-                        <tr>
-                            <td><a href="#">Recruso 1</a></td>
-                            <td>Daniel Sousa</td>
-                            <td>ADS123456</td>
-                            <td>Projeto Integrador</td>
-                            <td>P2</td>
-                            <td>2</td>
-                            <td>14/10/2016</td>
-                            <td>Aguardando aprovação</td>
-                            <td><button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar-recurso"><i class="fa fa-eye"></i>  Visualizar</button></td>
-                        </tr>
-                        <tr>
-                            <td><a href="#">Recruso 1</a></td>
-                            <td>Daniel Sousa</td>
-                            <td>ADS123456</td>
-                            <td>Projeto Integrador</td>
-                            <td>P2</td>
-                            <td>2</td>
-                            <td>14/10/2016</td>
-                            <td>Aguardando aprovação</td>
-                            <td><button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar-recurso"><i class="fa fa-eye"></i>  Visualizar</button></td>
-                        </tr><tr>
-                            <td><a href="#">Recruso 1</a></td>
-                            <td>Daniel Sousa</td>
-                            <td>ADS123456</td>
-                            <td>Projeto Integrador</td>
-                            <td>P2</td>
-                            <td>2</td>
-                            <td>14/10/2016</td>
-                            <td>Aguardando aprovação</td>
-                            <td><button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar-recurso"><i class="fa fa-eye"></i>  Visualizar</button></td>
-                        </tr><tr>
-                            <td><a href="#">Recruso 1</a></td>
-                            <td>Daniel Sousa</td>
-                            <td>ADS123456</td>
-                            <td>Projeto Integrador</td>
-                            <td>P2</td>
-                            <td>2</td>
-                            <td>14/10/2016</td>
-                            <td>Aguardando aprovação</td>
-                            <td><button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar-recurso"><i class="fa fa-eye"></i>  Visualizar</button></td>
-                        </tr><tr>
-                            <td><a href="#">Recruso 1</a></td>
-                            <td>Daniel Sousa</td>
-                            <td>ADS123456</td>
-                            <td>Projeto Integrador</td>
-                            <td>P2</td>
-                            <td>2</td>
-                            <td>14/10/2016</td>
-                            <td>Aguardando aprovação</td>
-                            <td><button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar-recurso"><i class="fa fa-eye"></i>  Visualizar</button></td>
-                        </tr><tr>
-                            <td><a href="#">Recruso 1</a></td>
-                            <td>Daniel Sousa</td>
-                            <td>ADS123456</td>
-                            <td>Projeto Integrador</td>
-                            <td>P2</td>
-                            <td>2</td>
-                            <td>14/10/2016</td>
-                            <td>Aguardando aprovação</td>
-                            <td><button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar-recurso"><i class="fa fa-eye"></i>  Visualizar</button></td>
-                        </tr><tr>
-                            <td><a href="#">Recruso 1</a></td>
-                            <td>Daniel Sousa</td>
-                            <td>ADS123456</td>
-                            <td>Projeto Integrador</td>
-                            <td>P2</td>
-                            <td>2</td>
-                            <td>14/10/2016</td>
-                            <td>Aguardando aprovação</td>
-                            <td><button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar-recurso"><i class="fa fa-eye"></i>  Visualizar</button></td>
-                        </tr><tr>
-                            <td><a href="#">Recruso 1</a></td>
-                            <td>Daniel Sousa</td>
-                            <td>ADS123456</td>
-                            <td>Projeto Integrador</td>
-                            <td>P2</td>
-                            <td>2</td>
-                            <td>14/10/2016</td>
-                            <td>Aguardando aprovação</td>
-                            <td><button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar-recurso"><i class="fa fa-eye"></i>  Visualizar</button></td>
-                        </tr><tr>
-                            <td><a href="#">Recruso 1</a></td>
-                            <td>Daniel Sousa</td>
-                            <td>ADS123456</td>
-                            <td>Projeto Integrador</td>
-                            <td>P2</td>
-                            <td>2</td>
-                            <td>14/10/2016</td>
-                            <td>Aguardando aprovação</td>
+                        <tr ng-repeat="recurso in recursos">
+                            <td><a ui-sref="template.visualizarRecurso({ id: recurso.id })">{{ recurso.titulo }}</a></td>
+                            <td>{{ recurso.aluno.nome }}</td>
+                            <td>{{ recurso.disciplina.nome }}</td>
+                            <td>{{ recurso.prova }}</td>
+                            <td>{{ recurso.questao }}</td>
+                            <td>{{ recurso.created_at | data }}</td>
+                            <td>{{ recurso.estado.nome }}</td>
                             <td><button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar-recurso"><i class="fa fa-eye"></i>  Visualizar</button></td>
                         </tr>
                         </tbody>
@@ -284,12 +140,12 @@
                         <tr>
                             <th>Título</th>
                             <th>Aluno</th>
-                            <th>Turma</th>
                             <th>Disciplina</th>
                             <th>Prova</th>
                             <th>Questão</th>
                             <th>Data</th>
                             <th>Estado</th>
+                            <th>Visualizar</th>
                         </tr>
                         </tfoot>
                     </table>

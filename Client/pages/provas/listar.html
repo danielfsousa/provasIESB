@@ -28,11 +28,14 @@
                 </div>
                 <div class="box-body no-padding">
                     <ul class="nav nav-pills nav-stacked">
-                        <li class="active"><a href="#"><i class="fa fa-circle-o text-blue"></i> Todos
-                            <span class="label label-primary pull-right">12</span></a></li>
-                        <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> Aguardando Aprovação</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o text-green"></i> Aceitas</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o text-red"></i> Recusadas</a></li>
+                        <li class="active"><a ui-sref="template.listarProvas"><i class="fa fa-circle-o text-blue"></i> Todas
+                            <span class="label label-primary pull-right">{{ quantidadeTodas }}</span></a></li>
+                        <li><a ui-sref="template.provasAguardando"><i class="fa fa-circle-o text-yellow"></i> Aguardando Aprovação
+                            <span class="label label-warning pull-right">{{ quantidadeAguardando }}</span></a></li>
+                        <li><a ui-sref="template.provasAceitas"><i class="fa fa-circle-o text-green"></i> Aceitas
+                            <span class="label label-success pull-right">{{ quantidadeAceitas }}</span></a></li>
+                        <li><a ui-sref="template.provasRecusadas"><i class="fa fa-circle-o text-red"></i> Recusadas
+                            <span class="label label-danger pull-right">{{ quantidadeRecusadas }}</span></a></li>
                     </ul>
                 </div>
                 <!-- /.box-body -->
@@ -51,52 +54,28 @@
                     <div class="form-group">
                         <label>Disciplina</label>
                         <select class="form-control" select2>
-                            <option selected="selected">Alabama</option>
-                            <option>Alaska</option>
-                            <option>California</option>
-                            <option>Delaware</option>
-                            <option>Tennessee</option>
-                            <option>Texas</option>
-                            <option>Washington</option>
+                            <option selected="selected">Todas</option>
                         </select>
                     </div>
 
                     <div class="form-group">
                         <label>Turma</label>
                         <select class="form-control" select2>
-                            <option selected="selected">Alabama</option>
-                            <option>Alaska</option>
-                            <option>California</option>
-                            <option>Delaware</option>
-                            <option>Tennessee</option>
-                            <option>Texas</option>
-                            <option>Washington</option>
+                            <option selected="selected">Turmas</option>
                         </select>
                     </div>
 
                     <div class="form-group">
                         <label>Professor</label>
                         <select class="form-control" select2>
-                            <option selected="selected">Alabama</option>
-                            <option>Alaska</option>
-                            <option>California</option>
-                            <option>Delaware</option>
-                            <option>Tennessee</option>
-                            <option>Texas</option>
-                            <option>Washington</option>
+                            <option selected="selected">Todos</option>
                         </select>
                     </div>
 
                     <div class="form-group">
                         <label>Prova</label>
                         <select class="form-control" select2>
-                            <option selected="selected">Alabama</option>
-                            <option>Alaska</option>
-                            <option>California</option>
-                            <option>Delaware</option>
-                            <option>Tennessee</option>
-                            <option>Texas</option>
-                            <option>Washington</option>
+                            <option selected="selected">Todas</option>
                         </select>
                     </div>
                 </div>
@@ -109,13 +88,13 @@
             <div class="box box-solid">
                 <div class="box-body">
 
-                    <table class="table table-data table-bordered table-striped" datatables>
+                    <table class="table table-data table-bordered table-striped" datatable="ng" dt-options="dtOptions" dt-column-defs="dtColumnsDefs">
                         <thead>
                         <tr>
+                            <th>Prova</th>
                             <th>Disciplina</th>
                             <th>Turma</th>
                             <th>Professor</th>
-                            <th>Prova</th>
                             <th>Data</th>
                             <th>Estado</th>
                             <th>Visualizar</th>
@@ -123,202 +102,15 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td><a href="#">Programação para Web</a></td>
-                            <td>ADS123456</td>
-                            <td>Reginaldo</td>
-                            <td>P2</td>
-                            <td>14/10/2016</td>
-                            <td>Aguardando aprovação</td>
+                        <tr ng-repeat="prova in provas">
+                            <td ><a ui-sref="template.visualizarProva({ id: prova.id })">{{ prova.prova }}</a></td>
+                            <td>{{ prova.disciplina.nome }}</td>
+                            <td>{{ prova.turma.codigo }}</td>
+                            <td>{{ prova.professor.nome }}</td>
+                            <td>{{ prova.updated_at | data }}</td>
+                            <td>{{ prova.estado.nome }}</td>
                             <td>
-                                <button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar-prova"><i class="fa fa-eye"></i> Visualizar</button>
-                            </td>
-                            <td>
-                                <button class="btn btn-sm btn-default btn-block"><i class="fa fa-print"></i> Imprimir</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><a href="#">Programação para Web</a></td>
-                            <td>ADS123456</td>
-                            <td>Reginaldo</td>
-                            <td>P2</td>
-                            <td>14/10/2016</td>
-                            <td>Aguardando aprovação</td>
-                            <td>
-                                <button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar-prova"><i class="fa fa-eye"></i> Visualizar</button>
-                            </td>
-                            <td>
-                                <button class="btn btn-sm btn-default btn-block"><i class="fa fa-print"></i> Imprimir</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><a href="#">Programação para Web</a></td>
-                            <td>ADS123456</td>
-                            <td>Reginaldo</td>
-                            <td>P2</td>
-                            <td>14/10/2016</td>
-                            <td>Aguardando aprovação</td>
-                            <td>
-                                <button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar-prova"><i class="fa fa-eye"></i> Visualizar</button>
-                            </td>
-                            <td>
-                                <button class="btn btn-sm btn-default btn-block"><i class="fa fa-print"></i> Imprimir</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><a href="#">Programação para Web</a></td>
-                            <td>ADS123456</td>
-                            <td>Reginaldo</td>
-                            <td>P2</td>
-                            <td>14/10/2016</td>
-                            <td>Aguardando aprovação</td>
-                            <td>
-                                <button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar-prova"><i class="fa fa-eye"></i> Visualizar</button>
-                            </td>
-                            <td>
-                                <button class="btn btn-sm btn-default btn-block"><i class="fa fa-print"></i> Imprimir</button>
-                            </td>
-                        </tr><tr>
-                            <td><a href="#">Programação para Web</a></td>
-                            <td>ADS123456</td>
-                            <td>Reginaldo</td>
-                            <td>P2</td>
-                            <td>14/10/2016</td>
-                            <td>Aguardando aprovação</td>
-                            <td>
-                                <button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar-prova"><i class="fa fa-eye"></i> Visualizar</button>
-                            </td>
-                            <td>
-                                <button class="btn btn-sm btn-default btn-block"><i class="fa fa-print"></i> Imprimir</button>
-                            </td>
-                        </tr><tr>
-                            <td><a href="#">Programação para Web</a></td>
-                            <td>ADS123456</td>
-                            <td>Reginaldo</td>
-                            <td>P2</td>
-                            <td>14/10/2016</td>
-                            <td>Aguardando aprovação</td>
-                            <td>
-                                <button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar-prova"><i class="fa fa-eye"></i> Visualizar</button>
-                            </td>
-                            <td>
-                                <button class="btn btn-sm btn-default btn-block"><i class="fa fa-print"></i> Imprimir</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><a href="#">Programação para Web</a></td>
-                            <td>ADS123456</td>
-                            <td>Reginaldo</td>
-                            <td>P2</td>
-                            <td>14/10/2016</td>
-                            <td>Aguardando aprovação</td>
-                            <td>
-                                <button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar-prova"><i class="fa fa-eye"></i> Visualizar</button>
-                            </td>
-                            <td>
-                                <button class="btn btn-sm btn-default btn-block"><i class="fa fa-print"></i> Imprimir</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><a href="#">Programação para Web</a></td>
-                            <td>ADS123456</td>
-                            <td>Reginaldo</td>
-                            <td>P2</td>
-                            <td>14/10/2016</td>
-                            <td>Aguardando aprovação</td>
-                            <td>
-                                <button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar-prova"><i class="fa fa-eye"></i> Visualizar</button>
-                            </td>
-                            <td>
-                                <button class="btn btn-sm btn-default btn-block"><i class="fa fa-print"></i> Imprimir</button>
-                            </td>
-                        </tr><tr>
-                            <td><a href="#">Programação para Web</a></td>
-                            <td>ADS123456</td>
-                            <td>Reginaldo</td>
-                            <td>P2</td>
-                            <td>14/10/2016</td>
-                            <td>Aguardando aprovação</td>
-                            <td>
-                                <button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar-prova"><i class="fa fa-eye"></i> Visualizar</button>
-                            </td>
-                            <td>
-                                <button class="btn btn-sm btn-default btn-block"><i class="fa fa-print"></i> Imprimir</button>
-                            </td>
-                        </tr><tr>
-                            <td><a href="#">Programação para Web</a></td>
-                            <td>ADS123456</td>
-                            <td>Reginaldo</td>
-                            <td>P2</td>
-                            <td>14/10/2016</td>
-                            <td>Aguardando aprovação</td>
-                            <td>
-                                <button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar-prova"><i class="fa fa-eye"></i> Visualizar</button>
-                            </td>
-                            <td>
-                                <button class="btn btn-sm btn-default btn-block"><i class="fa fa-print"></i> Imprimir</button>
-                            </td>
-                        </tr><tr>
-                            <td><a href="#">Programação para Web</a></td>
-                            <td>ADS123456</td>
-                            <td>Reginaldo</td>
-                            <td>P2</td>
-                            <td>14/10/2016</td>
-                            <td>Aguardando aprovação</td>
-                            <td>
-                                <button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar-prova"><i class="fa fa-eye"></i> Visualizar</button>
-                            </td>
-                            <td>
-                                <button class="btn btn-sm btn-default btn-block"><i class="fa fa-print"></i> Imprimir</button>
-                            </td>
-                        </tr><tr>
-                            <td><a href="#">Programação para Web</a></td>
-                            <td>ADS123456</td>
-                            <td>Reginaldo</td>
-                            <td>P2</td>
-                            <td>14/10/2016</td>
-                            <td>Aguardando aprovação</td>
-                            <td>
-                                <button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar-prova"><i class="fa fa-eye"></i> Visualizar</button>
-                            </td>
-                            <td>
-                                <button class="btn btn-sm btn-default btn-block"><i class="fa fa-print"></i> Imprimir</button>
-                            </td>
-                        </tr><tr>
-                            <td><a href="#">Programação para Web</a></td>
-                            <td>ADS123456</td>
-                            <td>Reginaldo</td>
-                            <td>P2</td>
-                            <td>14/10/2016</td>
-                            <td>Aguardando aprovação</td>
-                            <td>
-                                <button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar-prova"><i class="fa fa-eye"></i> Visualizar</button>
-                            </td>
-                            <td>
-                                <button class="btn btn-sm btn-default btn-block"><i class="fa fa-print"></i> Imprimir</button>
-                            </td>
-                        </tr><tr>
-                            <td><a href="#">Programação para Web</a></td>
-                            <td>ADS123456</td>
-                            <td>Reginaldo</td>
-                            <td>P2</td>
-                            <td>14/10/2016</td>
-                            <td>Aguardando aprovação</td>
-                            <td>
-                                <button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar-prova"><i class="fa fa-eye"></i> Visualizar</button>
-                            </td>
-                            <td>
-                                <button class="btn btn-sm btn-default btn-block"><i class="fa fa-print"></i> Imprimir</button>
-                            </td>
-                        </tr><tr>
-                            <td><a href="#">Programação para Web</a></td>
-                            <td>ADS123456</td>
-                            <td>Reginaldo</td>
-                            <td>P2</td>
-                            <td>14/10/2016</td>
-                            <td>Aguardando aprovação</td>
-                            <td>
-                                <button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar-prova"><i class="fa fa-eye"></i> Visualizar</button>
+                                <button ng-click="provaAtual(this)" class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar-prova"><i class="fa fa-eye"></i> Visualizar</button>
                             </td>
                             <td>
                                 <button class="btn btn-sm btn-default btn-block"><i class="fa fa-print"></i> Imprimir</button>
@@ -327,10 +119,10 @@
                         </tbody>
                         <tfoot>
                         <tr>
+                            <th>Prova</th>
                             <th>Disciplina</th>
                             <th>Turma</th>
                             <th>Professor</th>
-                            <th>Prova</th>
                             <th>Data</th>
                             <th>Estado</th>
                             <th>Visualizar</th>

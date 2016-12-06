@@ -102,6 +102,7 @@ app
             .state('template.listarProvas', {
                 url: '/provas',
                 templateUrl: 'pages/provas/listar.html',
+                controller: 'listarProvasController',
                 auth: true
             })
 
@@ -172,6 +173,7 @@ app
             .state('template.listarNotas', {
                 url: '/notas',
                 templateUrl: 'pages/notas/listar.html',
+                controller: 'listarNotasController',
                 auth: true
             })
 
@@ -188,7 +190,7 @@ app
             })
 
             .state('template.visualizarNotas', {
-                url: '/notas/:prova',
+                url: '/notas/:id',
                 templateUrl: 'pages/notas/visualizar.html',
                 auth: true
             })
@@ -200,6 +202,7 @@ app
             .state('template.listarRecursos', {
                 url: '/recursos',
                 templateUrl: 'pages/recursos/listar.html',
+                controller: 'listarRecursosController',
                 auth: true
             })
 

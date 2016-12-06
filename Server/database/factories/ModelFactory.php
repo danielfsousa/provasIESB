@@ -31,8 +31,8 @@ $factory->define(App\Questao::class, function (Faker\Generator $faker) {
         'autor_id' => 2,
         'tags' => 'tag',
         'estado_id' => $faker->biasedNumberBetween(1, 3),
-        'dificuldade' => collect(['alta', 'média', 'baixa'])->random(),
-        'tipo' => collect(['objetiva', 'subjetiva'])->random()
+        'dificuldade' => collect(['Alta', 'Média', 'Baixa'])->random(),
+        'tipo' => collect(['Objetiva', 'Subjetiva'])->random()
     ];
 });
 

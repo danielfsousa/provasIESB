@@ -78,4 +78,9 @@ class Nota extends Model
     {
         return $this->belongsTo('App\Disciplina');
     }
+
+    public function turma()
+    {
+        return $this->belongsTo('App\Turma');
+    }
 }

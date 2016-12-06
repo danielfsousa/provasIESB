@@ -1,13 +1,13 @@
-app.controller('listarQuestoesController', function ($scope, questaoServico, toastr, DTOptionsBuilder, DTColumnDefBuilder) {
+app.controller('listarRecursosController', function ($scope, recursoServico, toastr, DTOptionsBuilder, DTColumnDefBuilder) {
 
-    function quantidadeQuestoes(questoes) {
-        $scope.quantidadeTodas = questoes.length;
+    function quantidadeQuestoes(recursos) {
+        $scope.quantidadeTodas = recursos.length;
         $scope.quantidadeAguardando = 0;
         $scope.quantidadeAceitas = 0;
         $scope.quantidadeRecusadas = 0;
 
-        angular.forEach(questoes, function (questao) {
-            switch (questao.estado.nome) {
+        angular.forEach(recursos, function (recurso) {
+            switch (recurso.estado.nome) {
                 case 'Aguardando aprovação':
                     $scope.quantidadeAguardando++;
                     break;
@@ -27,17 +27,17 @@ app.controller('listarQuestoesController', function ($scope, questaoServico, toa
         .withOption('aaSorting', [0, 'asc']);
 
     $scope.dtColumnsDefs = [
-        DTColumnDefBuilder.newColumnDef(6).notSortable()
+        DTColumnDefBuilder.newColumnDef(7).notSortable()
     ];
 
-    questaoServico.getAll()
+    recursoServico.getAll()
         .then(function (res) {
-            $scope.questoes = res.data.questoes;
-            quantidadeQuestoes(res.data.questoes);
             console.log(res); // log
+            $scope.recursos = res.data.recursos;
+            quantidadeQuestoes(res.data.recursos);
         })
         .catch(function (res) {
-            toastr.error('Não foi possível obter as questões');
+            toastr.error('Não foi possível obter os recursos');
             console.log(res); // log
         });
 

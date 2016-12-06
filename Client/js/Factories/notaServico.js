@@ -1,16 +1,16 @@
-app.factory('questaoServico', function ($http) {
+app.factory('notaServico', function ($http) {
 
     function getAll() {
         return $http({
             method: 'GET',
-            url: api('questoes')
+            url: api('notas')
         });
     }
 
     function getById(id) {
         return $http({
             method: 'GET',
-            url: api('questoes/' + id)
+            url: api('notas/' + id)
         });
     }
 
@@ -18,5 +18,5 @@ app.factory('questaoServico', function ($http) {
         getAll: getAll,
         getById: getById
     }
-    
+
 });
