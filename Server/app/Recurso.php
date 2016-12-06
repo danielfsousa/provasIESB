@@ -47,6 +47,11 @@ class Recurso extends Model
         'disciplina_id' => 'required|integer|min:1'
     ];
 
+    public function scopeWithAll($query)
+    {
+        $query->with('aluno', 'estado', 'disciplina');
+    }
+
     public function estado()
     {
         return $this->belongsTo('App\Estado');

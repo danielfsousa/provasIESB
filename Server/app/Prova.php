@@ -53,6 +53,11 @@ class Prova extends Model
         'estado_id' => 'integer|min:1'
     ];
 
+    public function scopeWithAll($query)
+    {
+        $query->with('turma', 'professor', 'estado', 'disciplina');
+    }
+
     public function questoes()
     {
         return $this->belongsToMany('App\Questao');

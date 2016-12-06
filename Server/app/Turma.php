@@ -27,6 +27,11 @@ class Turma extends Model
         'codigo', 'disciplina_id'
     ];
 
+    public function scopeWithAll($query)
+    {
+        $query->with('disciplina');
+    }
+
     public function provas()
     {
         return $this->hasMany('App\Prova');

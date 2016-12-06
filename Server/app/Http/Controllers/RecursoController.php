@@ -22,7 +22,7 @@ class RecursoController extends Controller
             return response()->json(['erro' => 'Usuário não autorizado'], 401);
         }
 
-        $recursos = Recurso::all();
+        $recursos = Recurso::withAll()->get();
         return response()->json(compact('recursos'));
     }
 
@@ -39,7 +39,7 @@ class RecursoController extends Controller
         switch($papel) {
 
             case 'aluno':
-                $recursos = Recurso::where('aluno_id', $id)->get();
+                $recursos = Recurso::withAll()->where('aluno_id', $id)->get();
                 return response()->json(compact('recursos'));
             break;
 
@@ -90,7 +90,7 @@ class RecursoController extends Controller
      */
     public function show($id)
     {
-        if(!$recurso = Recurso::find($id)) {
+        if(!$recurso = Recurso::withAll()->find($id)) {
             return response()->json(['erro' => 'Recurso não encontrado'], 404);
         }
 

@@ -20,7 +20,7 @@ class ProvaController extends Controller
         if (! (Auth::user()->isCoordenador() || Auth::user()->isSecretaria())) {
             return response()->json(['erro' => 'Usuário não autorizado'], 401);
         }
-        $provas = Prova::all();
+        $provas = Prova::withAll()->get();
         return response()->json(compact('provas'));
     }
 
@@ -37,7 +37,7 @@ class ProvaController extends Controller
         switch($papel) {
 
             case 'professor':
-                $provas = Prova::where('professor_id', $id)->get();
+                $provas = Prova::withAll()->where('professor_id', $id)->get();
                 return response()->json(compact('provas'));
             break;
 
@@ -84,7 +84,7 @@ class ProvaController extends Controller
      */
     public function show($id)
     {
-        if(!$prova = Prova::find($id)) {
+        if(!$prova = Prova::withAll()->find($id)) {
             return response()->json(['erro' => 'Prova não encontrada'], 404);
         }
 

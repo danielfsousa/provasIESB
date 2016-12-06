@@ -19,7 +19,7 @@ class NotaController extends Controller
         if (!Auth::user()->isAdmin()) {
             return response()->json(['erro' => 'Usuário não autorizado'], 401);
         }
-        $notas = Nota::all();
+        $notas = Nota::withAll()->get();
         return response()->json(compact('notas'));
     }
 
@@ -55,15 +55,14 @@ class NotaController extends Controller
      */
     public function show($id)
     {
-        if(!$nota= Nota::find($id)) {
+        if(!$nota= Nota::withAll()->find($id)) {
             return response()->json(['erro' => 'Nota não encontrada'], 404);
         }
 
         $usuario_id = $nota->aluno_id;
-        $usuario_papel = Auth::user()->papel;
 
         // Se for aluno e a nota não for dele: retorna erro (não autorizado)
-        if($usuario_papel === 'aluno' && $usuario_id !== Auth::user()->id) {
+        if(Auth::user()->isAluno() && $usuario_id !== Auth::user()->id) {
             return response()->json(['erro' => 'Usuário não autorizado'], 401);
         }
 

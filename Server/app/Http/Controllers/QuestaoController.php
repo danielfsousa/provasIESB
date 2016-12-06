@@ -37,7 +37,7 @@ class QuestaoController extends Controller
         switch($papel) {
 
             case 'professor':
-                $questoes = Questao::where('autor_id', $id)->get();
+                $questoes = Questao::withAll()->where('autor_id', $id)->withAll()->get();
                 return response()->json(compact('questoes'));
             break;
 
@@ -82,7 +82,7 @@ class QuestaoController extends Controller
      */
     public function show($id)
     {
-        if(!$questao = Questao::find($id)) {
+        if(!$questao = Questao::withAll()->find($id)) {
             return response()->json(['erro' => 'Questão não encontrada'], 404);
         }
 

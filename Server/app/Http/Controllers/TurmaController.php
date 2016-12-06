@@ -14,7 +14,7 @@ class TurmaController extends Controller
      */
     public function index()
     {
-        $turmas = Turma::all();
+        $turmas = Turma::withAll()->get();
         return response()->json(compact('turmas'));
     }
 
@@ -26,7 +26,7 @@ class TurmaController extends Controller
      */
     public function show($id)
     {
-        if(!$turma = Turma::find($id)) {
+        if(!$turma = Turma::withAll()->find($id)) {
             return response()->json(['erro' => 'Turma não encontrada'], 404);
         }
         return response()->json(compact('turma'));

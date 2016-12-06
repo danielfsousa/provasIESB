@@ -60,19 +60,19 @@ class Usuario extends Authenticatable
     }
 
     public function isCoordenador() {
-        return $this->papel === 'coordenador' || $this->papel === 'admin';
+        return $this->papel === 'coordenador';
     }
 
     public function isSecretaria() {
-        return $this->papel === 'secretaria' || $this->papel === 'admin';
+        return $this->papel === 'secretaria';
     }
 
     public function isProfessor() {
-        return $this->papel === 'professor' || $this->papel === 'coordenador' || $this->papel === 'admin';
+        return $this->papel === 'professor';
     }
 
     public function isAluno() {
-        return $this->papel === 'aluno' || $this->papel === 'admin';
+        return $this->papel === 'aluno';
     }
 
     public function provas()

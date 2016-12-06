@@ -35,7 +35,7 @@ use Illuminate\Database\Eloquent\Model;
 class Nota extends Model
 {
     protected $fillable = [
-        'data', 'nota', 'prova', 'folha_repsosta', 'respostas', 'turma_id', 'estado_id', 'aluno_id', 'disciplina_id'
+        'data', 'nota', 'prova', 'folha_resposta', 'respostas', 'turma_id', 'estado_id', 'aluno_id', 'disciplina_id'
     ];
 
     const VALIDACAO = [
@@ -58,6 +58,11 @@ class Nota extends Model
         'estado_id' => 'integer|min:1',
         'disciplina_id' => 'integer|min:1'
     ];
+
+    public function scopeWithAll($query)
+    {
+        $query->with('turma', 'aluno', 'estado', 'disciplina');
+    }
 
     public function estado()
     {
