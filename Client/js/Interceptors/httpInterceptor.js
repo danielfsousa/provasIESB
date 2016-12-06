@@ -1,20 +1,23 @@
-app.factory('httpRequestInterceptor', function ($injector, $q, $state) {
+app.factory('httpInterceptor', function ($injector, $q) {
+
     return {
         request: function (config) {
 
-            var usuarioServico = $injector.get('usuarioServico');
-
-            config.headers['Authorization'] = 'Bearer ' + usuarioServico.getToken();
+            config.headers['Authorization'] = 'Bearer ' + $injector.get('usuarioServico').getToken();
             config.headers['Accept'] = 'application/json;odata=verbose';
 
             return config || $q.when(config);
         },
-        response: function (response) {
-            if (response.status === 401) {
-                $state.go('login');
+        responseError: function(rejection) {
+
+            if (rejection.status === 401) {
+                $injector.get('usuarioServico').logout();
+                $injector.get('$state').go('login');
+                $injector.get('toastr').warning('Sua sessão expirou. Faça o login novamente.');
             }
 
-            return response || $q.when(response);
+            return $q.reject(rejection);
         }
     };
+
 });
