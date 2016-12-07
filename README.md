@@ -8,7 +8,12 @@ https://iesb.blackboard.com/webapps/blackboard/execute/content/file?cmd=view&con
 * Pswd: iesb
 * DB: iesb
 
+## TO-DO Client
+* Criar, Editar e Excluir Questão
+* Criar, Editar e Excluir Prova
+* Criar, Editar e Excluir Recurso
+* Criar e Editar Nota
 
-## TO-DO
-* Consumir os resources com o Angular
-* Verificar se o token expirou
+## TO-DO Server
+* Digitalizar Prova
+* Refatorar Nota model e controller
