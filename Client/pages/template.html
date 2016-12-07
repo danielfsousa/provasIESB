@@ -24,7 +24,7 @@
                     <!-- Notifications Menu -->
                     <li class="dropdown notifications-menu">
                         <!-- Menu toggle button -->
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" ng-click="info('Não suportado ainda.')">
                             <i class="fa fa-bell-o"></i>
                             <span id="label-top" class="label label-warning">1</span>
                         </a>
@@ -66,7 +66,7 @@
                             <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-left">
-                                    <a href="#" class="btn btn-default btn-flat">Configurações</a>
+                                    <a href="#" class="btn btn-default btn-flat" ng-click="info('Não suportado ainda.')">Configurações</a>
                                 </div>
                                 <div class="pull-right">
                                     <a ng-click="logout()" class="btn btn-default btn-flat">Sair</a>
@@ -120,6 +120,7 @@
                         </span>
                     </a>
                     <ul class="treeview-menu">
+                        <li><a href="/questoes"><i class="fa fa-circle-o"></i> Todas</a></li>
                         <li>
                             <a href="#"><i class="fa fa-circle-o"></i> Criar
                                 <span class="pull-right-container">
@@ -133,7 +134,6 @@
                                 </ul>
                             </a>
                         </li>
-                        <li><a href="/questoes"><i class="fa fa-circle-o"></i> Todas</a></li>
                         <li><a href="/questoes/aguardando"><i class="fa fa-circle-o"></i> Aguardando Aprovação</a></li>
                         <li><a href="/questoes/aceitas"><i class="fa fa-circle-o"></i> Aceitas</a></li>
                         <li><a href="/questoes/recusadas"><i class="fa fa-circle-o"></i> Recusadas</a></li>
@@ -146,9 +146,9 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
+                        <li><a href="/provas"><i class="fa fa-circle-o"></i> Todas</a></li>
                         <li><a href="/provas/criar"><i class="fa fa-circle-o"></i> Criar</a></li>
                         <li><a href="/provas/digitalizar"><i class="fa fa-circle-o"></i> Digitalizar</a></li>
-                        <li><a href="/provas"><i class="fa fa-circle-o"></i> Todas</a></li>
                         <li><a href="/provas/aguardando"><i class="fa fa-circle-o"></i> Aguardando Aprovação</a></li>
                         <li><a href="/provas/aceitas"><i class="fa fa-circle-o"></i> Aceitas</a></li>
                         <li><a href="/provas/recusadas"><i class="fa fa-circle-o"></i> Recusadas</a></li>
@@ -174,8 +174,8 @@
                         </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="/recursos/criar"><i class="fa fa-circle-o"></i> Criar</a></li>
                         <li><a href="/recursos"><i class="fa fa-circle-o"></i> Todos</a></li>
+                        <li><a href="/recursos/criar"><i class="fa fa-circle-o"></i> Criar</a></li>
                         <li><a href="/recursos/aguardando"><i class="fa fa-circle-o"></i> Aguardando Aprovação</a></li>
                         <li><a href="/recursos/aceitos"><i class="fa fa-circle-o"></i> Aceitos</a></li>
                         <li><a href="/recursos/recusados"><i class="fa fa-circle-o"></i> Recusados</a></li>
