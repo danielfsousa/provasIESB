@@ -14,15 +14,21 @@ class RecursoController extends Controller
     /**
      * Retorna todos os recursos.
      *
+     * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         if (!Auth::user()->isAdmin()) {
             return response()->json(['erro' => 'Usuário não autorizado'], 401);
         }
 
-        $recursos = Recurso::withAll()->get();
+        if ($request->has('estado')) {
+            $recursos = Recurso::withAll()->where('estado_id', $request->get('estado'))->get();
+        } else {
+            $recursos = Recurso::withAll()->get();
+        }
+
         return response()->json(compact('recursos'));
     }
 

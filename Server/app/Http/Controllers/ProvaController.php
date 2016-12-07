@@ -13,14 +13,21 @@ class ProvaController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         if (! (Auth::user()->isCoordenador() || Auth::user()->isSecretaria() || Auth::user()->isAdmin())) {
             return response()->json(['erro' => 'Usuário não autorizado'], 401);
         }
-        $provas = Prova::withAll()->get();
+
+        if ($request->has('estado')) {
+            $provas = Prova::withAll()->where('estado_id', $request->get('estado'))->get();
+        } else {
+            $provas = Prova::withAll()->get();
+        }
+
         return response()->json(compact('provas'));
     }
 

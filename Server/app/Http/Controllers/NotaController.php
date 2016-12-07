@@ -12,14 +12,21 @@ class NotaController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         if (!Auth::user()->isAdmin()) {
             return response()->json(['erro' => 'Usuário não autorizado'], 401);
         }
-        $notas = Nota::withAll()->get();
+
+        if ($request->has('estado')) {
+            $notas = Nota::withAll()->where('estado_id', $request->get('estado'))->get();
+        } else {
+            $notas = Nota::withAll()->get();
+        }
+
         return response()->json(compact('notas'));
     }
 

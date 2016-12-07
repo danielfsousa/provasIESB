@@ -13,14 +13,21 @@ class QuestaoController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         if (!Auth::user()->isAdmin()) {
             return response()->json(['erro' => 'Usuário não autorizado'], 401);
         }
-        $questoes = Questao::withAll()->get();
+
+        if ($request->has('estado')) {
+            $questoes = Questao::withAll()->where('estado_id', $request->get('estado'))->get();
+        } else {
+            $questoes = Questao::withAll()->get();
+        }
+
         return response()->json(compact('questoes'));
     }
 
