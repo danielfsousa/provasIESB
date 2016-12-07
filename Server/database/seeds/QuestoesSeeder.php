@@ -11,6 +11,6 @@ class QuestoesSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Questao::class, 10)->create();
+        factory(App\Questao::class, 20)->create();
     }
 }

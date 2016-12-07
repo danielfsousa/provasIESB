@@ -11,6 +11,6 @@ class ObjetivaSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Objetiva::class, 10)->create();
+        factory(App\Objetiva::class, 20)->create();
     }
 }

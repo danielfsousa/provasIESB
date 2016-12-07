@@ -11,6 +11,6 @@ class SubjetivaSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Subjetiva::class, 10)->create();
+        factory(App\Subjetiva::class, 20)->create();
     }
 }
