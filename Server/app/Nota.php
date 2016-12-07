@@ -57,6 +57,17 @@ class Nota extends Model
         'disciplina_id' => 'integer|min:1'
     ];
 
+    public static function comQuantidade($notas)
+    {
+        $quantidade = [
+            'todos'      => Nota::count(),
+            'aguardando' => Nota::where('estado_id', Estado::AGUARDANDO_CORRECAO)->count(),
+            'corrigido'  => Nota::where('estado_id', Estado::CORRIGIDO)->count(),
+        ];
+
+        return compact('quantidade', 'notas');
+    }
+
     public function scopeWithAll($query)
     {
         $query->with('turma', 'aluno', 'estado', 'disciplina');

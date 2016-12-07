@@ -50,11 +50,6 @@ class Prova extends Model
         'estado_id' => 'integer|min:1'
     ];
 
-    public function scopeWithAll($query)
-    {
-        $query->with('turma', 'professor', 'estado', 'disciplina');
-    }
-
     public static function comQuantidade($provas)
     {
         $quantidade = [
@@ -64,7 +59,12 @@ class Prova extends Model
             'recusados'  => Prova::where('estado_id', Estado::RECUSADO)->count(),
         ];
 
-        return compact('provas', 'quantidade');
+        return compact('quantidade', 'provas');
+    }
+
+    public function scopeWithAll($query)
+    {
+        $query->with('turma', 'professor', 'estado', 'disciplina');
     }
 
     public function questoes()

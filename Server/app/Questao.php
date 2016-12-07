@@ -27,6 +27,18 @@ class Questao extends Model
         'estado_id' => 'integer|min:1'
     ];
 
+    public static function comQuantidade($questoes)
+    {
+        $quantidade = [
+            'todos'      => Questao::count(),
+            'aguardando' => Questao::where('estado_id', Estado::AGUARDANDO_APROVACAO)->count(),
+            'aprovados'  => Questao::where('estado_id', Estado::APROVADO)->count(),
+            'recusados'  => Questao::where('estado_id', Estado::RECUSADO)->count(),
+        ];
+
+        return compact('quantidade', 'questoes');
+    }
+
     public function scopeWithAll($query)
     {
         $query->with('disciplina', 'autor', 'estado');

@@ -47,6 +47,18 @@ class Recurso extends Model
         'disciplina_id' => 'required|integer|min:1'
     ];
 
+    public static function comQuantidade($recursos)
+    {
+        $quantidade = [
+            'todos'      => Recurso::count(),
+            'aguardando' => Recurso::where('estado_id', Estado::AGUARDANDO_APROVACAO)->count(),
+            'aprovados'  => Recurso::where('estado_id', Estado::APROVADO)->count(),
+            'recusados'  => Recurso::where('estado_id', Estado::RECUSADO)->count(),
+        ];
+
+        return compact('quantidade', 'recursos');
+    }
+
     public function scopeWithAll($query)
     {
         $query->with('aluno', 'estado', 'disciplina');

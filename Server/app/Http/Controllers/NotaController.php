@@ -27,7 +27,7 @@ class NotaController extends Controller
             $notas = Nota::withAll()->get();
         }
 
-        return response()->json(compact('notas'));
+        return response()->json(Nota::comQuantidade($notas));
     }
 
     /**

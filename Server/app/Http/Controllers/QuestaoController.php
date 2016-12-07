@@ -28,7 +28,7 @@ class QuestaoController extends Controller
             $questoes = Questao::withAll()->get();
         }
 
-        return response()->json(compact('questoes'));
+        return response()->json(Questao::comQuantidade($questoes));
     }
 
     /**

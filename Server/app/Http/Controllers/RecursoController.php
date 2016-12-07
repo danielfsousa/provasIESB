@@ -29,7 +29,7 @@ class RecursoController extends Controller
             $recursos = Recurso::withAll()->get();
         }
 
-        return response()->json(compact('recursos'));
+        return response()->json(Recurso::comQuantidade($recursos));
     }
 
     /**
