@@ -1,24 +1,23 @@
-app.controller('listarQuestoesController', function ($scope, questaoServico, toastr, DTOptionsBuilder, DTColumnDefBuilder) {
+app.controller('listarQuestoesController', function ($scope, $state, questaoServico, toastr, DTOptionsBuilder, DTColumnDefBuilder, estado) {
 
-    function quantidadeQuestoes(questoes) {
-        $scope.quantidadeTodas = questoes.length;
-        $scope.quantidadeAguardando = 0;
-        $scope.quantidadeAceitas = 0;
-        $scope.quantidadeRecusadas = 0;
+    function getParams() {
+        var params = {};
 
-        angular.forEach(questoes, function (questao) {
-            switch (questao.estado.nome) {
-                case 'Aguardando aprovação':
-                    $scope.quantidadeAguardando++;
-                    break;
-                case 'Aceito':
-                    $scope.quantidadeAceitas++;
-                    break;
-                case 'Recusado':
-                    $scope.quantidadeRecusadas++;
-                    break;
-            }
-        });
+        switch ($state.current.name) {
+            case 'template.questoesAguardando':
+                params = { estado: estado.AGUARDANDO_APROVACAO };
+                break;
+
+            case 'template.questoesAceitas':
+                params = { estado: estado.APROVADO };
+                break;
+
+            case 'template.questoesRecusadas':
+                params = { estado: estado.RECUSADO };
+                break;
+        }
+
+        return params;
     }
 
     $scope.dtOptions = DTOptionsBuilder.newOptions()
@@ -30,11 +29,11 @@ app.controller('listarQuestoesController', function ($scope, questaoServico, toa
         DTColumnDefBuilder.newColumnDef(6).notSortable()
     ];
 
-    questaoServico.getAll()
+    questaoServico.getAll(getParams())
         .then(function (res) {
-            $scope.questoes = res.data.questoes;
-            quantidadeQuestoes(res.data.questoes);
             console.log(res); // log
+            $scope.questoes = res.data.questoes;
+            $scope.quantidade = res.data.quantidade;
         })
         .catch(function (res) {
             toastr.error('Não foi possível obter as questões');

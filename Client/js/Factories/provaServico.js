@@ -1,4 +1,4 @@
-app.factory('provaServico', function ($http, api, estado) {
+app.factory('provaServico', function ($http, api) {
 
     function getAll(params) {
         return $http({

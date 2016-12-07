@@ -49,24 +49,21 @@ app
             .state('template.questoesAguardando', {
                 url: '/questoes/aguardando',
                 templateUrl: 'pages/questoes/listar.html',
+                controller: 'listarQuestoesController',
                 auth: true
             })
 
             .state('template.questoesAceitas', {
                 url: '/questoes/aceitas',
                 templateUrl: 'pages/questoes/listar.html',
+                controller: 'listarQuestoesController',
                 auth: true
             })
 
             .state('template.questoesRecusadas', {
                 url: '/questoes/recusadas',
                 templateUrl: 'pages/questoes/listar.html',
-                auth: true
-            })
-
-            .state('template.questoesRascunhos', {
-                url: '/questoes/rascunhos',
-                templateUrl: 'pages/questoes/listar.html',
+                controller: 'listarQuestoesController',
                 auth: true
             })
 
@@ -128,13 +125,6 @@ app
 
             .state('template.provasRecusadas', {
                 url: '/provas/recusadas',
-                templateUrl: 'pages/provas/listar.html',
-                controller: 'listarProvasController',
-                auth: true
-            })
-
-            .state('template.provasRascunho', {
-                url: '/provas/rascunhos',
                 templateUrl: 'pages/provas/listar.html',
                 controller: 'listarProvasController',
                 auth: true

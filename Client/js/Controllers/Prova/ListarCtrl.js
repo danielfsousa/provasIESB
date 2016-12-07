@@ -15,9 +15,6 @@ app.controller('listarProvasController', function ($scope, $state, provaServico,
             case 'template.provasRecusadas':
                 params = { estado: estado.RECUSADO };
                 break;
-
-            case 'template.provasRascunho':
-                // TODO
         }
 
         return params;
@@ -44,9 +41,8 @@ app.controller('listarProvasController', function ($scope, $state, provaServico,
             console.log(res); // log
     });
 
-    $scope.provaAtual = function (obj) {
+    $scope.provaVisualizar = function (obj) {
         console.info(obj);
     }
-
 
 });
