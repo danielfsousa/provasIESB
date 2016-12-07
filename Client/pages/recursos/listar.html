@@ -125,7 +125,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr ng-repeat="recurso in recursos">
+                        <tr ng-repeat="recurso in ::recursos">
                             <td><a ui-sref="template.visualizarRecurso({ id: recurso.id })">{{ recurso.titulo }}</a></td>
                             <td>{{ recurso.aluno.nome }}</td>
                             <td>{{ recurso.disciplina.nome }}</td>

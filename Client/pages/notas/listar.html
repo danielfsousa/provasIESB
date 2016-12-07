@@ -98,7 +98,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr ng-repeat="nota in notas">
+                        <tr ng-repeat="nota in ::notas">
                             <td><a ui-sref="template.visualizarNotas({ id: nota.id })">{{ nota.aluno.nome }}</a></td>
                             <td>{{ nota.disciplina.nome }}</td>
                             <td>{{ nota.turma.codigo }}</td>
