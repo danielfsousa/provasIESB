@@ -1,4 +1,9 @@
 # Time 2 Rocks
+Após os pulls:
+```
+php artisan migrate:refresh --seed
+```
+
 ## Requisitos
 https://iesb.blackboard.com/webapps/blackboard/execute/content/file?cmd=view&content_id=_613693_1&course_id=_457648_1
 
@@ -8,7 +13,13 @@ https://iesb.blackboard.com/webapps/blackboard/execute/content/file?cmd=view&con
 * Pswd: iesb
 * DB: iesb
 
+## TO-DO Client
+* Visualizar, Criar, Editar e Excluir Questão
+* Visualizar, Criar, Editar e Excluir Prova
+* Listar, Visualizar, Criar, Editar e Excluir Recurso
+* Listar, Visualizar, Criar e Editar Nota
+* Autorização das rotas na navegação do template
 
-## TO-DO
-* Consumir os resources com o Angular
-* Verificar se o token expirou
+## TO-DO Server
+* Digitalizar Prova
+* Refatorar Nota migration, model e controller
