@@ -1,7 +1,6 @@
 'use strict';
 
-app.controller('LoginController', ['$scope', '$http', '$state', 'usuarioServico', 'toastr',
-    function ($scope, $http, $state, usuarioServico, toastr) {
+app.controller('LoginController', function ($scope, $http, $state, usuarioServico, toastr) {
 
         $scope.login = function() {
             usuarioServico.login(parseInt($scope.matricula), $scope.senha,
@@ -22,4 +21,4 @@ app.controller('LoginController', ['$scope', '$http', '$state', 'usuarioServico'
         $scope.matricula = '';
         $scope.senha = '';
 
-}]);
+});

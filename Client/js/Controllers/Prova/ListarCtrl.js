@@ -1,24 +1,26 @@
-app.controller('listarProvasController', function ($scope, provaServico, toastr, DTOptionsBuilder, DTColumnDefBuilder) {
+app.controller('listarProvasController', function ($scope, $state, provaServico, toastr, DTOptionsBuilder, DTColumnDefBuilder, estado) {
 
-    function quantidadeProvas(provas) {
-        $scope.quantidadeTodas = provas.length;
-        $scope.quantidadeAguardando = 0;
-        $scope.quantidadeAceitas = 0;
-        $scope.quantidadeRecusadas = 0;
+    function getParams() {
+        var params = {};
 
-        angular.forEach(provas, function (prova) {
-            switch (prova.estado.nome) {
-                case 'Aguardando aprovação':
-                    $scope.quantidadeAguardando++;
-                    break;
-                case 'Aceito':
-                    $scope.quantidadeAceitas++;
-                    break;
-                case 'Recusado':
-                    $scope.quantidadeRecusadas++;
-                    break;
-            }
-        });
+        switch ($state.current.name) {
+            case 'template.provasAguardando':
+                params = { estado: estado.AGUARDANDO_APROVACAO };
+                break;
+
+            case 'template.provasAceitas':
+                params = { estado: estado.APROVADO };
+                break;
+
+            case 'template.provasRecusadas':
+                params = { estado: estado.RECUSADO };
+                break;
+
+            case 'template.provasRascunho':
+                // TODO
+        }
+
+        return params;
     }
 
     $scope.dtOptions = DTOptionsBuilder.newOptions()
@@ -31,11 +33,11 @@ app.controller('listarProvasController', function ($scope, provaServico, toastr,
         DTColumnDefBuilder.newColumnDef(7).notSortable()
     ];
 
-    provaServico.getAll()
+    provaServico.getAll(getParams())
         .then(function (res) {
             console.log(res); // log
             $scope.provas = res.data.provas;
-            quantidadeProvas(res.data.provas);
+            $scope.quantidade = res.data.quantidade;
         })
         .catch(function (res) {
             toastr.error('Não foi possível obter as provas');

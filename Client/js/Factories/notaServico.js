@@ -1,4 +1,4 @@
-app.factory('notaServico', function ($http) {
+app.factory('notaServico', function ($http, api) {
 
     function getAll() {
         return $http({

@@ -1,9 +1,10 @@
-app.factory('provaServico', function ($http) {
+app.factory('provaServico', function ($http, api, estado) {
 
-    function getAll() {
+    function getAll(params) {
         return $http({
             method: 'GET',
-            url: api('provas')
+            url: api('provas'),
+            params: params
         });
     }
 

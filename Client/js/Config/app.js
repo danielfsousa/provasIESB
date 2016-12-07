@@ -13,7 +13,3 @@ app.config(function($httpProvider, $locationProvider, toastrConfig) {
     });
 
 });
-
-function api(url) {
-    return 'http://localhost:8000/api/' + url;
-}

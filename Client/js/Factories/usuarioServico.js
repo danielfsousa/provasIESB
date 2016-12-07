@@ -1,6 +1,6 @@
 'use strict';
 
-app.factory('usuarioServico', ['$http', 'localStorageService', function ($http, localStorageService) {
+app.factory('usuarioServico', ['$http', 'localStorageService', 'api', function ($http, localStorageService, api) {
 
     function estaLogado() {
         if (localStorageService.get('token')) {

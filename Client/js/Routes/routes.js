@@ -115,24 +115,28 @@ app
             .state('template.provasAguardando', {
                 url: '/provas/aguardando',
                 templateUrl: 'pages/provas/listar.html',
+                controller: 'listarProvasController',
                 auth: true
             })
 
             .state('template.provasAceitas', {
                 url: '/provas/aceitas',
                 templateUrl: 'pages/provas/listar.html',
+                controller: 'listarProvasController',
                 auth: true
             })
 
             .state('template.provasRecusadas', {
                 url: '/provas/recusadas',
                 templateUrl: 'pages/provas/listar.html',
+                controller: 'listarProvasController',
                 auth: true
             })
 
             .state('template.provasRascunho', {
                 url: '/provas/rascunhos',
                 templateUrl: 'pages/provas/listar.html',
+                controller: 'listarProvasController',
                 auth: true
             })
 

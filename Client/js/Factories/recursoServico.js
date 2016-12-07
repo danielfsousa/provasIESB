@@ -1,4 +1,4 @@
-app.factory('recursoServico', function ($http) {
+app.factory('recursoServico', function ($http, api) {
 
     function getAll() {
         return $http({
