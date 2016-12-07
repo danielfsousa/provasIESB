@@ -17,7 +17,6 @@ class Prova extends Migration
             $table->increments('id');
 
             $table->string('prova');
-            $table->date('data');
 
             $table->integer('turma_id')->unsigned()->index();
             $table->integer('disciplina_id')->unsigned()->index();

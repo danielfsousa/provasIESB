@@ -28,7 +28,7 @@ class ProvaController extends Controller
             $provas = Prova::withAll()->get();
         }
 
-        return response()->json(compact('provas'));
+        return response()->json(Prova::comQuantidade($provas));
     }
 
     /**

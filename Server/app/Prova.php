@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property integer $id
  * @property string $prova
- * @property string $data
  * @property integer $turma_id
  * @property integer $disciplina_id
  * @property integer $professor_id
@@ -35,19 +34,17 @@ use Illuminate\Database\Eloquent\Model;
 class Prova extends Model
 {
     protected $fillable = [
-        'prova', 'data', 'turma_id', 'professor_id', 'disciplina_id', 'estado_id'
+        'prova', 'turma_id', 'professor_id', 'disciplina_id', 'estado_id'
     ];
 
     const VALIDACAO = [
         'prova' => 'required',
-        'data' => 'required|date',
         'turma_id' => 'required|integer|min:1',
         'disciplina_id' => 'required|integer|min:1',
         'estado_id' => 'required|integer|min:1'
     ];
 
     const VALIDACAO_UPDATE = [
-        'data' => 'date',
         'turma_id' => 'integer|min:1',
         'disciplina_id' => 'integer|min:1',
         'estado_id' => 'integer|min:1'
@@ -56,6 +53,18 @@ class Prova extends Model
     public function scopeWithAll($query)
     {
         $query->with('turma', 'professor', 'estado', 'disciplina');
+    }
+
+    public static function comQuantidade($provas)
+    {
+        $quantidade = [
+            'todos'      => Prova::count(),
+            'aguardando' => Prova::where('estado_id', Estado::AGUARDANDO_APROVACAO)->count(),
+            'aprovados'  => Prova::where('estado_id', Estado::APROVADO)->count(),
+            'recusados'  => Prova::where('estado_id', Estado::RECUSADO)->count(),
+        ];
+
+        return compact('provas', 'quantidade');
     }
 
     public function questoes()

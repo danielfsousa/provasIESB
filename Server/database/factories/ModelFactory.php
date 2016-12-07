@@ -60,7 +60,6 @@ $factory->define(App\Subjetiva::class, function (Faker\Generator $faker) {
 $factory->define(App\Prova::class, function (Faker\Generator $faker) {
     return [
         'prova' => collect(['P1', 'P2'])->random(),
-        'data' => $faker->date(),
         'disciplina_id' => $faker->biasedNumberBetween(1, 4),
         'professor_id' => 2,
         'turma_id' => $faker->biasedNumberBetween(1, 4),
@@ -71,7 +70,6 @@ $factory->define(App\Prova::class, function (Faker\Generator $faker) {
 $factory->define(App\Nota::class, function (Faker\Generator $faker) {
     return [
         'prova' => collect(['P1', 'P2'])->random(),
-        'data' => $faker->date(),
         'nota' => $faker->biasedNumberBetween(0, 10),
         'aluno_id' => 1,
         'estado_id' => collect([4, 5])->random(),

@@ -17,7 +17,6 @@ class Nota extends Migration
             $table->increments('id');
 
             $table->string('prova');
-            $table->date('data');
             $table->integer('nota')->unsigned();
 
             $table->integer('aluno_id')->unsigned()->index();
