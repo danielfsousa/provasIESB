@@ -5,7 +5,21 @@ app.controller('CriarProvaCtrl', function (provaServico) {
 
     var vm = this;
 
-    vm.titulo = '';
+    vm.prova = [
+        {
+            id: 1,
+            nome: 'P1'
+        },
+        {
+            id: 2,
+            nome: 'P2'
+        },
+        {
+            id: 3,
+            nome: 'P3'
+        }
+     ];
+
     vm.disciplina = [
         {
             id: 1,
@@ -44,16 +58,6 @@ app.controller('CriarProvaCtrl', function (provaServico) {
                 nome: '4'
             }
     ];
-
-    vm.dificuldade = '';
-    vm.gabarito = '';
-    vm.enunciado = '';
-    vm.alternativaA = '';
-    vm.alternativaB = '';
-    vm.alternativaC = '';
-    vm.alternativaD = '';
-    vm.alternativaE = '';
-    vm.disciplinaProva = '';
 
     function verificaCampos() {
         if (vm.titulo != '' && vm.dificuldade != '' && vm.gabarito != '' && vm.enunciado != ''

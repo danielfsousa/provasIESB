@@ -43,9 +43,9 @@
                     </div>
                     <div class="form-group">
                         <label>Prova</label>
-                        <select class="form-control">
-                            <option selected="selected">P1</option>
-                            <option>P2</option>
+                        <select select2 ng-model="ctrl.prova" ng-repeat="prova in ctrl.prova">
+                            <option selected="selected">Selecione</option>
+                            <option>{{prova}}</option>
                         </select>
                     </div>
                 </div>
