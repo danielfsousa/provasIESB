@@ -16,8 +16,8 @@ https://iesb.blackboard.com/webapps/blackboard/execute/content/file?cmd=view&con
 ## TO-DO Client
 * Visualizar, Criar, Editar e Excluir Questão
 * Visualizar, Criar, Editar e Excluir Prova
-* Listar, Visualizar, Criar, Editar e Excluir Recurso
-* Listar, Visualizar, Criar e Editar Nota
+* Visualizar, Criar, Editar e Excluir Recurso
+* Visualizar, Criar e Editar Nota
 * Autorização das rotas na navegação do template
 
 ## TO-DO Server
