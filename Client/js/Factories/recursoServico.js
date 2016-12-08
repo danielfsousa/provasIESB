@@ -1,9 +1,10 @@
 app.factory('recursoServico', function ($http, api) {
 
-    function getAll() {
+    function getAll(params) {
         return $http({
             method: 'GET',
-            url: api('recursos')
+            url: api('recursos'),
+            params: params
         });
     }
 

@@ -1,9 +1,10 @@
 app.factory('notaServico', function ($http, api) {
 
-    function getAll() {
+    function getAll(params) {
         return $http({
             method: 'GET',
-            url: api('notas')
+            url: api('notas'),
+            params: params
         });
     }
 

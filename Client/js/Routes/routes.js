@@ -174,12 +174,14 @@ app
             .state('template.notasAguardando', {
                 url: '/notas/aguardando',
                 templateUrl: 'pages/notas/listar.html',
+                controller: 'listarNotasController',
                 auth: true
             })
 
             .state('template.notasCorrigidas', {
                 url: '/notas/corrigidas',
                 templateUrl: 'pages/notas/listar.html',
+                controller: 'listarNotasController',
                 auth: true
             })
 
@@ -203,24 +205,28 @@ app
             .state('template.criarRecurso', {
                 url: '/recursos/criar',
                 templateUrl: 'pages/recursos/criar.html',
+                controller: 'listarRecursosController',
                 auth: true
             })
 
             .state('template.recursosAguardando', {
                 url: '/recursos/aguardando',
                 templateUrl: 'pages/recursos/listar.html',
+                controller: 'listarRecursosController',
                 auth: true
             })
 
             .state('template.recursosAceitos', {
                 url: '/recursos/aceitos',
                 templateUrl: 'pages/recursos/listar.html',
+                controller: 'listarRecursosController',
                 auth: true
             })
 
             .state('template.recursosRecusados', {
                 url: '/recursos/recusados',
                 templateUrl: 'pages/recursos/listar.html',
+                controller: 'listarRecursosController',
                 auth: true
             })
 

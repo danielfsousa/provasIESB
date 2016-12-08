@@ -1,20 +1,23 @@
-app.controller('listarNotasController', function ($scope, notaServico, toastr, DTOptionsBuilder, DTColumnDefBuilder) {
+app.controller('listarNotasController', function ($scope, $state, notaServico, toastr, DTOptionsBuilder, DTColumnDefBuilder, estado) {
 
-    function quantidadeQuestoes(notas) {
-        $scope.quantidadeTodas = notas.length;
-        $scope.quantidadeAguardando = 0;
-        $scope.quantidadeCorrigidas = 0;
+    function getParams() {
+        var params = {};
 
-        angular.forEach(notas, function (nota) {
-            switch (nota.estado.nome) {
-                case 'Aguardando correção':
-                    $scope.quantidadeAguardando++;
-                    break;
-                case 'Corrigido':
-                    $scope.quantidadeCorrigidas++;
-                    break;
-            }
-        });
+        switch ($state.current.name) {
+            case 'template.provasAguardando':
+                params = { estado: estado.AGUARDANDO_APROVACAO };
+                break;
+
+            case 'template.provasAceitas':
+                params = { estado: estado.APROVADO };
+                break;
+
+            case 'template.provasRecusadas':
+                params = { estado: estado.RECUSADO };
+                break;
+        }
+
+        return params;
     }
 
     $scope.dtOptions = DTOptionsBuilder.newOptions()
@@ -26,16 +29,16 @@ app.controller('listarNotasController', function ($scope, notaServico, toastr, D
         DTColumnDefBuilder.newColumnDef(7).notSortable()
     ];
 
-    notaServico.getAll()
+    notaServico.getAll(getParams())
         .then(function (res) {
             console.log(res); // log
             $scope.notas = res.data.notas;
-            quantidadeQuestoes(res.data.notas);
+            $scope.quantidade = res.data.quantidade;
         })
         .catch(function (res) {
             toastr.error('Não foi possível obter as notas');
             console.log(res); // log
-        });
+    });
 
 
 });

@@ -1,24 +1,23 @@
-app.controller('listarRecursosController', function ($scope, recursoServico, toastr, DTOptionsBuilder, DTColumnDefBuilder) {
+app.controller('listarRecursosController', function ($scope, $state, recursoServico, toastr, DTOptionsBuilder, DTColumnDefBuilder, estado) {
 
-    function quantidadeQuestoes(recursos) {
-        $scope.quantidadeTodas = recursos.length;
-        $scope.quantidadeAguardando = 0;
-        $scope.quantidadeAceitas = 0;
-        $scope.quantidadeRecusadas = 0;
+    function getParams() {
+        var params = {};
 
-        angular.forEach(recursos, function (recurso) {
-            switch (recurso.estado.nome) {
-                case 'Aguardando aprovação':
-                    $scope.quantidadeAguardando++;
-                    break;
-                case 'Aceito':
-                    $scope.quantidadeAceitas++;
-                    break;
-                case 'Recusado':
-                    $scope.quantidadeRecusadas++;
-                    break;
-            }
-        });
+        switch ($state.current.name) {
+            case 'template.recursosAguardando':
+                params = { estado: estado.AGUARDANDO_APROVACAO };
+                break;
+
+            case 'template.recursosAceitos':
+                params = { estado: estado.APROVADO };
+                break;
+
+            case 'template.recursosRecusados':
+                params = { estado: estado.RECUSADO };
+                break;
+        }
+
+        return params;
     }
 
     $scope.dtOptions = DTOptionsBuilder.newOptions()
@@ -30,11 +29,11 @@ app.controller('listarRecursosController', function ($scope, recursoServico, toa
         DTColumnDefBuilder.newColumnDef(7).notSortable()
     ];
 
-    recursoServico.getAll()
+    recursoServico.getAll(getParams())
         .then(function (res) {
             console.log(res); // log
             $scope.recursos = res.data.recursos;
-            quantidadeQuestoes(res.data.recursos);
+            $scope.quantidade = res.data.quantidade;
         })
         .catch(function (res) {
             toastr.error('Não foi possível obter os recursos');
