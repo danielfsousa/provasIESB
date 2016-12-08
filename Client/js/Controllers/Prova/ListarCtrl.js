@@ -41,8 +41,8 @@ app.controller('listarProvasController', function ($scope, $state, provaServico,
             console.log(res); // log
     });
 
-    $scope.provaVisualizar = function (prova) {
+    $scope.visualizarProva = function (prova) {
         $scope.provaAtual = prova;
-    }
+    };
 
 });

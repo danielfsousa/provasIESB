@@ -38,7 +38,10 @@ app.controller('listarRecursosController', function ($scope, $state, recursoServ
         .catch(function (res) {
             toastr.error('Não foi possível obter os recursos');
             console.log(res); // log
-        });
+    });
 
+    $scope.visualizarRecurso = function (recurso) {
+        $scope.recursoAtual = recurso;
+    };
 
 });

@@ -234,11 +234,12 @@ app
             .state('template.visualizarRecurso', {
                 url: '/recursos/:id',
                 templateUrl: 'pages/recursos/visualizar.html',
+                controller: 'visualizarRecursoController',
                 auth: true
             })
 
             /******************
-             *    404    *
+             *    404         *
              ******************/
             .state('template.404', {
                 url: '*path',

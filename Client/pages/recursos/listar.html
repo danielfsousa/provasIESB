@@ -109,7 +109,7 @@
                             <td>{{ recurso.questao }}</td>
                             <td>{{ recurso.created_at | data }}</td>
                             <td>{{ recurso.estado.nome }}</td>
-                            <td><button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar-recurso"><i class="fa fa-eye"></i>  Visualizar</button></td>
+                            <td><button ng-click="visualizarRecurso(recurso)" class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar-recurso"><i class="fa fa-eye"></i>  Visualizar</button></td>
                         </tr>
                         </tbody>
                         <tfoot>
@@ -194,8 +194,8 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title">
-                    Recruso 1
-                    <small><a href="recursos/id" target="_blank" title="Ir para página completa"><i class="fa fa-external-link" aria-hidden="true"></i></a></small>
+                    {{ recursoAtual.titulo }}
+                    <small><a ui-sref="template.visualizarRecurso({ id: recursoAtual.id })" target="_blank" title="Ir para página completa"><i class="fa fa-external-link" aria-hidden="true"></i></a></small>
                 </h4>
             </div>
             <div class="modal-body">
@@ -203,47 +203,48 @@
                     <tbody>
                     <tr>
                         <th style="width: 10%">Aluno:</th>
-                        <td>Daniel Sousa</td>
+                        <td>{{ recursoAtual.aluno.nome }}</td>
                     </tr>
-                    <tr>
-                        <th>Turma:</th>
-                        <td>ADS123456</td>
-                    </tr>
+                    <!--<tr>-->
+                        <!--<th>Turma:</th>-->
+                        <!--<td>ADS123456</td>-->
+                    <!--</tr>-->
                     <tr>
                         <th>Disciplina:</th>
-                        <td>Projeto Integrador</td>
+                        <td>{{ recursoAtual.disciplina.nome }}</td>
                     </tr>
                     <tr>
                         <th>Prova:</th>
-                        <td>P2</td>
+                        <td>{{ recursoAtual.prova }}</td>
                     </tr>
                     <tr>
                         <th>Questão:</th>
-                        <td>2</td>
+                        <td>{{ recursoAtual.questao }}</td>
                     </tr>
                     <tr>
                         <th>Data:</th>
-                        <td>14/10/2016</td>
+                        <td>{{ recursoAtual.created_at | data }}</td>
                     </tr>
                     <tr>
                         <th>Estado:</th>
-                        <td>Aguardando aprovação</td>
+                        <td>{{ recursoAtual.estado.nome }}</td>
                     </tr>
                     </tbody>
                 </table>
                 <hr>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquam lorem et lectus congue, vitae pulvinar odio porta. Cras fringilla tortor id sollicitudin dictum. Sed consequat ligula est, in interdum urna facilisis at. Praesent tempus mi non porta molestie. Pellentesque bibendum libero quis odio euismod, imperdiet tempus magna bibendum. Mauris commodo suscipit consectetur. Donec eget ultrices erat, quis tristique urna. Duis a libero quam. Quisque eu enim dolor. Donec hendrerit in turpis in mollis. Vestibulum ante quam, rhoncus at urna sed, efficitur elementum erat?
+                    {{ recursoAtual.descricao }}
                 </p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" trocar-modal data-dismiss="modal" data-show="#visualizar-questao"><i class="fa fa-eye"></i> Visualizar Questão</button>
+                <!--<button type="button" class="btn btn-default" trocar-modal data-dismiss="modal" data-show="#visualizar-questao"><i class="fa fa-eye"></i> Visualizar Questão</button>-->
+                <button ng-click="info('Não suportado ainda')" type="button" class="btn btn-default"><i class="fa fa-eye"></i> Visualizar Questão</button>
 
                 <!--Somente admin / coordenador-->
-                <button type="button" class="btn btn-danger pull-left" trocar-modal data-dismiss="modal" data-show="#confirmacao"><i class="fa fa-trash"></i> Excluir</button>
+                <button ng-click="info('Não suportado ainda')" type="button" class="btn btn-danger pull-left" trocar-modal data-dismiss="modal" data-show="#confirmacao"><i class="fa fa-trash"></i> Excluir</button>
 
                 <!--Somente professor-->
-                <button type="button" class="btn btn-warning" data-dismiss="modal"><i class="fa fa-times"></i> Recusar</button>
+                <button ng-click="info('Não suportado ainda')" type="button" class="btn btn-warning" data-dismiss="modal"><i class="fa fa-times"></i> Recusar</button>
                 <button type="button" class="btn btn-success" data-dismiss="modal"><i class="fa fa-check"></i> Aceitar</button>
             </div>
         </div><!-- /.modal-content -->
@@ -263,7 +264,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Excluir</button>
+                <button ng-click="info('Não suportado ainda')" type="button" class="btn btn-danger" data-dismiss="modal">Excluir</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->

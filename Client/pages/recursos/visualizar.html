@@ -6,7 +6,7 @@
     </h1>
     <ol class="breadcrumb">
         <li><a href="/">Provas IESB</a></li>
-        <li><a href="/recursos">Questões</a></li>
+        <li><a href="/recursos">Recursos</a></li>
         <li class="active">Visualizar</li>
     </ol>
 </section>
@@ -29,31 +29,31 @@
                         <tbody>
                         <tr>
                             <th style="width: 10%">Aluno:</th>
-                            <td>Daniel Sousa</td>
+                            <td>{{ recurso.aluno.nome }}</td>
                         </tr>
-                        <tr>
-                            <th>Turma:</th>
-                            <td>ADS123456</td>
-                        </tr>
+                        <!--<tr>-->
+                            <!--<th>Turma:</th>-->
+                            <!--<td>ADS123456</td>-->
+                        <!--</tr>-->
                         <tr>
                             <th>Disciplina:</th>
-                            <td>Projeto Integrador</td>
+                            <td>{{ recurso.disciplina.nome }}</td>
                         </tr>
                         <tr>
                             <th>Prova:</th>
-                            <td>P2</td>
+                            <td>{{ recurso.prova }}</td>
                         </tr>
                         <tr>
                             <th>Questão:</th>
-                            <td>2</td>
+                            <td>{{ recurso.questao }}</td>
                         </tr>
                         <tr>
                             <th>Data:</th>
-                            <td>14/10/2016</td>
+                            <td>{{ recurso.created_at | data }}</td>
                         </tr>
                         <tr>
                             <th>Estado:</th>
-                            <td>Aguardando aprovação</td>
+                            <td>{{ recurso.estado.nome }}</td>
                         </tr>
                         </tbody>
                     </table>
@@ -61,8 +61,8 @@
                 <!-- /.box-body -->
                 <div class="box-footer">
                     <button type="button" class="btn btn-danger" trocar-modal data-toggle="modal" data-target="#aviso"><i class="fa fa-trash"></i> Excluir</button>
-                    <button type="button" class="btn btn-success pull-right" ><i class="fa fa-check"></i> Aprovar</button>
-                    <button type="button" class="btn btn-warning pull-right" ><i class="fa fa-times"></i> Recusar</button>
+                    <button ng-click="info('Não suportado ainda')" type="button" class="btn btn-success pull-right" ><i class="fa fa-check"></i> Aprovar</button>
+                    <button ng-click="info('Não suportado ainda')" type="button" class="btn btn-warning pull-right" ><i class="fa fa-times"></i> Recusar</button>
                 </div>
             </div>
             <!-- /. box -->
@@ -142,7 +142,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Excluir</button>
+                <button ng-click="info('Não suportado ainda')" type="button" class="btn btn-danger" data-dismiss="modal">Excluir</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
