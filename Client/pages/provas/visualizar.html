@@ -6,7 +6,7 @@
     </h1>
     <ol class="breadcrumb">
         <li><a href="/">Provas IESB</a></li>
-        <li><a href="/provas">Questões</a></li>
+        <li><a href="/provas">Provas</a></li>
         <li class="active">Visualizar</li>
     </ol>
 </section>
@@ -30,27 +30,27 @@
                         <tbody>
                         <tr>
                             <th style="width: 10%">Disciplina:</th>
-                            <td>Programação para Web</td>
+                            <td>{{ prova.disciplina.nome }}</td>
                         </tr>
                         <tr>
                             <th>Turma:</th>
-                            <td>ADS123456</td>
+                            <td>{{ prova.turma.codigo }}</td>
                         </tr>
                         <tr>
                             <th>Professor:</th>
-                            <td>Reginaldo</td>
+                            <td>{{ prova.professor.nome }}</td>
                         </tr>
                         <tr>
                             <th>Prova:</th>
-                            <td>P2</td>
+                            <td>{{ prova.prova }}</td>
                         </tr>
                         <tr>
                             <th>Data:</th>
-                            <td>14/10/2016</td>
+                            <td>{{ prova.updated_at | data }}</td>
                         </tr>
                         <tr>
                             <th>Estado:</th>
-                            <td>Aguardando aprovação</td>
+                            <td>{{ prova.estado.nome }}</td>
                         </tr>
                         </tbody>
                     </table>

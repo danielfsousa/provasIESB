@@ -151,6 +151,7 @@ app
             .state('template.visualizarProva', {
                 url: '/provas/:id',
                 templateUrl: 'pages/provas/visualizar.html',
+                controller: 'visualizarProvaController',
                 auth: true
             })
 

@@ -113,7 +113,7 @@
                             <td>{{ prova.updated_at | data }}</td>
                             <td>{{ prova.estado.nome }}</td>
                             <td>
-                                <button ng-click="provaAtual(this)" class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar-prova"><i class="fa fa-eye"></i> Visualizar</button>
+                                <button ng-click="provaVisualizar(prova)" class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar-prova"><i class="fa fa-eye"></i> Visualizar</button>
                             </td>
                             <td>
                                 <button class="btn btn-sm btn-default btn-block"><i class="fa fa-print"></i> Imprimir</button>
@@ -149,8 +149,8 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title">
-                    P2 Linguagem de Programação
-                    <small><a href="provas/id" target="_blank" title="Ir para página completa"><i class="fa fa-external-link" aria-hidden="true"></i></a></small>
+                    {{ provaAtual.prova }} - {{ provaAtual.disciplina.nome }}
+                    <small><a ui-sref="template.visualizarProva({ id: provaAtual.id })" target="_blank" title="Ir para página completa"><i class="fa fa-external-link" aria-hidden="true"></i></a></small>
                 </h4>
             </div>
             <div class="modal-body">
@@ -160,15 +160,15 @@
                             <tbody>
                             <tr>
                                 <th style="width: 10%">Disciplina:</th>
-                                <td>Programação para Web</td>
+                                <td>{{ provaAtual.disciplina.nome }}</td>
                             </tr>
                             <tr>
                                 <th>Turma:</th>
-                                <td>ADS123456</td>
+                                <td>{{ provaAtual.turma.codigo }}</td>
                             </tr>
                             <tr>
                                 <th>Professor:</th>
-                                <td>Reginaldo</td>
+                                <td>{{ provaAtual.professor.nome }}</td>
                             </tr>
                             </tbody>
                         </table>
@@ -178,15 +178,15 @@
                             <tbody>
                             <tr>
                                 <th style="width: 10%">Prova:</th>
-                                <td>P2</td>
+                                <td>{{ provaAtual.prova }}</td>
                             </tr>
                             <tr>
                                 <th>Data:</th>
-                                <td>14/10/2016</td>
+                                <td>{{ provaAtual.updated_at | data }}</td>
                             </tr>
                             <tr>
                                 <th>Estado:</th>
-                                <td>Aguardando aprovação</td>
+                                <td>{{ provaAtual.estado.nome }}</td>
                             </tr>
                             </tbody>
                         </table>
