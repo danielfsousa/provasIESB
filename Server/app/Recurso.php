@@ -31,6 +31,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property-read \App\Estado $estado
  * @property-read \App\Usuario $aluno
  * @property-read \App\Disciplina $disciplina
+ * @method static \Illuminate\Database\Query\Builder|\App\Recurso withAll()
  */
 class Recurso extends Model
 {

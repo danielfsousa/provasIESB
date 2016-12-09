@@ -13,17 +13,17 @@ class Subjetiva extends Migration
      */
     public function up()
     {
-        Schema::create('subjetivas', function(Blueprint $table) {
-            $table->increments('id');
-
-            $table->text('enunciado');
-            $table->text('resposta');
-
-            $table->integer('questao_id')->unsigned()->index();
-
-            $table->timestamps();
-
-        });
+//        Schema::create('subjetivas', function(Blueprint $table) {
+//            $table->increments('id');
+//
+//            $table->text('enunciado');
+//            $table->text('resposta');
+//
+//            $table->integer('questao_id')->unsigned()->index();
+//
+//            $table->timestamps();
+//
+//        });
     }
 
     /**

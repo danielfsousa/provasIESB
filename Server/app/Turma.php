@@ -20,6 +20,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Query\Builder|\App\Turma whereCreatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Turma whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Nota[] $notas
+ * @method static \Illuminate\Database\Query\Builder|\App\Turma withAll()
  */
 class Turma extends Model
 {

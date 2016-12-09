@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('iesb', ['ngAnimate', 'toastr', 'ui.router', 'LocalStorageModule', 'datatables']);
+var app = angular.module('iesb', ['ngAnimate', 'toastr', 'ui.router', 'LocalStorageModule', 'datatables', 'wu.masonry', 'ngSanitize']);
 
 app.config(function($httpProvider, $locationProvider, toastrConfig) {
 

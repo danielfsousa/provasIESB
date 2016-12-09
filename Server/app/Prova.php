@@ -30,6 +30,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Query\Builder|\App\Prova whereCreatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Prova whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @method static \Illuminate\Database\Query\Builder|\App\Prova withAll()
+ * @method static \Illuminate\Database\Query\Builder|\App\Prova withAllQuestoes()
  */
 class Prova extends Model
 {
@@ -62,23 +64,14 @@ class Prova extends Model
         return compact('quantidade', 'provas');
     }
 
-    public static function comQuestoes(Prova $prova)
-    {
-        $provaArray = $prova->toArray();
-        $questoes = [];
-
-        foreach($prova->questoes as $questao)
-        {
-            array_push($questoes, $questao);
-        }
-
-        $provaArray['questoes'] = $questoes;
-        return $provaArray;
-    }
-
     public function scopeWithAll($query)
     {
         $query->with('turma', 'professor', 'estado', 'disciplina');
+    }
+
+    public function scopeWithAllQuestoes($query)
+    {
+        $query->with('turma', 'professor', 'estado', 'disciplina', 'questoes', 'questoes.disciplina', 'questoes.autor');
     }
 
     public function questoes()

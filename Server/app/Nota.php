@@ -31,6 +31,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Query\Builder|\App\Nota whereCreatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Nota whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property-read \App\Turma $turma
+ * @method static \Illuminate\Database\Query\Builder|\App\Nota withAll()
  */
 class Nota extends Model
 {

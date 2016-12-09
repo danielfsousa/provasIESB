@@ -91,7 +91,7 @@ class ProvaController extends Controller
      */
     public function show($id)
     {
-        if(!$prova = Prova::withAll()->find($id)) {
+        if(!$prova = Prova::withAllQuestoes()->find($id)) {
             return response()->json(['erro' => 'Prova não encontrada'], 404);
         }
 
@@ -100,9 +100,7 @@ class ProvaController extends Controller
             return response()->json(['erro' => 'Usuário não autorizado'], 401);
         }
 
-
-        return response()->json(Prova::comQuestoes($prova));
-//        return response()->json(compact('prova'));
+        return response()->json(compact('prova'));
     }
 
     /**

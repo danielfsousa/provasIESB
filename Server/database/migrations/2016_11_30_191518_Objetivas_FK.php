@@ -13,12 +13,12 @@ class ObjetivasFK extends Migration
      */
     public function up()
     {
-        Schema::table('objetivas', function (Blueprint $table) {
-            $table->foreign('questao_id')
-                ->references('id')
-                ->on('questoes')
-                ->onDelete('cascade');
-        });
+//        Schema::table('objetivas', function (Blueprint $table) {
+//            $table->foreign('questao_id')
+//                ->references('id')
+//                ->on('questoes')
+//                ->onDelete('cascade');
+//        });
     }
 
     /**

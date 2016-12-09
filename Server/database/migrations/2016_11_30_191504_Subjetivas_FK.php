@@ -13,12 +13,12 @@ class SubjetivasFK extends Migration
      */
     public function up()
     {
-        Schema::table('subjetivas', function (Blueprint $table) {
-            $table->foreign('questao_id')
-                ->references('id')
-                ->on('questoes')
-                ->onDelete('cascade');
-        });
+//        Schema::table('subjetivas', function (Blueprint $table) {
+//            $table->foreign('questao_id')
+//                ->references('id')
+//                ->on('questoes')
+//                ->onDelete('cascade');
+//        });
     }
 
     /**

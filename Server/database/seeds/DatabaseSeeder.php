@@ -17,8 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(EstadosSeeder::class);
         $this->call(RecursosSeeder::class);
         $this->call(QuestoesSeeder::class);
-        $this->call(ObjetivaSeeder::class);
-        $this->call(SubjetivaSeeder::class);
         $this->call(ProvasSeeder::class);
         $this->call(NotasSeeder::class);
         $this->call(Prova_QuestaoSeeder::class);

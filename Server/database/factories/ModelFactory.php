@@ -25,36 +25,44 @@ $factory->define(App\Recurso::class, function (Faker\Generator $faker) {
 });
 
 $factory->define(App\Questao::class, function (Faker\Generator $faker) {
-    return [
+
+    $tipo = collect(['Objetiva', 'Subjetiva'])->random();
+
+    $enunciado  = '<img class="center-block img-responsive" src="/img/questao.jpg" alt="Independência"><br>';
+    $enunciado .= '<p>';
+    $enunciado .= $faker->text;
+    $enunciado .= '</p>';
+
+
+    $questao = [
         'disciplina_id' => $faker->biasedNumberBetween(1, 4),
         'titulo' => $faker->sentence(5),
         'autor_id' => 2,
         'tags' => 'tag',
         'estado_id' => $faker->biasedNumberBetween(1, 3),
         'dificuldade' => collect(['Alta', 'Média', 'Baixa'])->random(),
-        'tipo' => collect(['Objetiva', 'Subjetiva'])->random()
+        'tipo' => $tipo,
+        'enunciado' => $enunciado,
     ];
-});
 
-$factory->define(App\Objetiva::class, function (Faker\Generator $faker) {
-    return [
-        'enunciado' => $faker->text,
-        'alternativa_a' => $faker->sentence(5),
-        'alternativa_b' => $faker->sentence(5),
-        'alternativa_c' => $faker->sentence(5),
-        'alternativa_d' => $faker->sentence(5),
-        'alternativa_e' => $faker->sentence(5),
-        'alternativa_correta' => collect(['a', 'b', 'c', 'd', 'e'])->random(),
-        'questao_id' => $faker->biasedNumberBetween(1, 10)
-    ];
-});
+    if ($tipo === 'Objetiva') {
+        $corpo = [
+            'alternativa_a' => $faker->sentence(5),
+            'alternativa_b' => $faker->sentence(5),
+            'alternativa_c' => $faker->sentence(5),
+            'alternativa_d' => $faker->sentence(5),
+            'alternativa_e' => $faker->sentence(5),
+            'resposta' => collect(['A', 'B', 'C', 'D', 'E'])->random(),
+        ];
+    }
 
-$factory->define(App\Subjetiva::class, function (Faker\Generator $faker) {
-    return [
-        'enunciado' => $faker->text,
-        'resposta' => $faker->text,
-        'questao_id' => $faker->biasedNumberBetween(1, 10)
-    ];
+    else if ($tipo === 'Subjetiva') {
+        $corpo = [
+            'resposta' => $faker->text,
+        ];
+    }
+
+    return array_merge($questao, $corpo);
 });
 
 $factory->define(App\Prova::class, function (Faker\Generator $faker) {

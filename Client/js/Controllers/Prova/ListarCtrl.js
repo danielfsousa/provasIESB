@@ -43,6 +43,14 @@ app.controller('listarProvasController', function ($scope, $state, provaServico,
 
     $scope.visualizarProva = function (prova) {
         $scope.provaAtual = prova;
+        provaServico.getById(prova.id)
+            .then(function (res) {
+                console.info(res);
+                $scope.provaAtual = res.data.prova;
+            })
+            .catch(function (res) {
+                toastr.error('Não foi possível obter a prova');
+        });
     };
 
 });

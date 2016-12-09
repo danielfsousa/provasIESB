@@ -20,6 +20,13 @@ class Questao extends Migration
             $table->string('tags');
             $table->string('dificuldade');
             $table->string('tipo');
+            $table->text('enunciado');
+            $table->text('alternativa_a')->nullable();
+            $table->text('alternativa_b')->nullable();
+            $table->text('alternativa_c')->nullable();
+            $table->text('alternativa_d')->nullable();
+            $table->text('alternativa_e')->nullable();
+            $table->text('resposta');
 
             $table->integer('disciplina_id')->unsigned()->index();
             $table->integer('autor_id')->unsigned()->index();
