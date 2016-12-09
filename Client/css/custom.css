@@ -1,14 +1,23 @@
-.btn-prova-container {
+.btn-two-container {
     width: 100%;
     text-align: center;
 }
-.btn-prova {
+.btn-two {
     width: 48%;
 }
-
-.btn-prova:last-of-type {
+.btn-two:last-of-type {
     margin-left: 2.2%;
 }
+
+@media screen and (min-width: 992px) and (max-width: 1280px) {
+    .btn-two {
+        font-size: 0.9em;
+    }
+}
+
+/* 1275 */
+/* 992 */
+
 
 .label {
     padding: .3em .6em;

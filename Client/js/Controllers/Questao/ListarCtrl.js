@@ -38,7 +38,10 @@ app.controller('listarQuestoesController', function ($scope, $state, questaoServ
         .catch(function (res) {
             toastr.error('Não foi possível obter as questões');
             console.log(res); // log
-        });
+    });
 
+    $scope.visualizarQuestao = function (questao) {
+        $scope.questaoAtual = questao;
+    };
 
 });

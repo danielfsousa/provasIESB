@@ -30,30 +30,34 @@
                         <tbody>
                             <tr>
                                 <th style="width: 10%">Aluno:</th>
-                                <td>Daniel Sousa</td>
+                                <td>{{ nota.aluno.nome }}</td>
                             </tr>
                             <tr>
                                 <th>Turma:</th>
-                                <td>ADS123456</td>
+                                <td>{{ nota.turma.codigo }}</td>
                             </tr>
                             <tr>
                                 <th>Prova:</th>
-                                <td>P2</td>
+                                <td>{{ nota.prova }}</td>
                             </tr>
                             <tr>
                                 <th>Data:</th>
-                                <td>14/10/2016</td>
+                                <td>{{ nota.updated_at | data }}</td>
                             </tr>
                             <tr>
                                 <th>Estado:</th>
-                                <td>Corrigida</td>
+                                <td>{{ nota.estado.nome }}</td>
+                            </tr>
+                            <tr ng-if="nota.estado.nome == 'Corrigida'">
+                                <th>Nota:</th>
+                                <td>{{ notas.nota }}</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <!-- /.box-body -->
                 <div class="box-footer">
-                    <button type="submit" class="btn btn-primary pull-right">Salvar</button>
+                    <button ng-click="info('Não suportado ainda')" type="submit" class="btn btn-primary pull-right">Salvar</button>
                 </div>
             </div>
             <!-- /. box -->
@@ -556,8 +560,8 @@
                 </div>
                 <!-- /.box-body -->
                 <div class="box-footer">
-                    <button class="btn btn-default pull-right"><i class="fa fa-download"></i> Fazer Download</button>
-                    <button class="btn btn-default pull-right"><i class="fa fa-print"></i> Imprimir</button>
+                    <button ng-click="info('Não suportado ainda')" class="btn btn-default pull-right"><i class="fa fa-download"></i> Fazer Download</button>
+                    <button ng-click="info('Não suportado ainda')" class="btn btn-default pull-right"><i class="fa fa-print"></i> Imprimir</button>
                 </div>
             </div>
             <!-- /.box -->

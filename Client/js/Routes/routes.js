@@ -89,6 +89,7 @@ app
             .state('template.visualizarQuestao', {
                 url: '/questoes/:id',
                 templateUrl: 'pages/questoes/visualizar.html',
+                controller: 'visualizarQuestaoController',
                 auth: true
             })
 
@@ -189,6 +190,7 @@ app
             .state('template.visualizarNotas', {
                 url: '/notas/:id',
                 templateUrl: 'pages/notas/visualizar.html',
+                controller: 'visualizarNotaController',
                 auth: true
             })
 

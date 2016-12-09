@@ -10,7 +10,7 @@ app.factory('httpInterceptor', function ($injector, $q) {
         },
         responseError: function(rejection) {
 
-            if (rejection.status === 401) {
+            if (rejection.data.error === 'token_expired') {
                 $injector.get('usuarioServico').logout();
                 $injector.get('$state').go('login');
                 $injector.get('toastr').warning('Sua sessão expirou. Faça o login novamente.');

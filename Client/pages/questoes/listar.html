@@ -15,7 +15,10 @@
 <section class="content">
     <div class="row">
         <div class="col-md-3">
-            <a href="/questoes/criar" class="btn btn-primary btn-block margin-bottom">Criar</a>
+            <div class="btn-two-container">
+                <a ui-sref="template.criarQuestaoObjetiva" class="btn btn-primary btn-two margin-bottom">Criar Objetiva</a>
+                <a ui-sref="template.criarQuestaoSubjetiva" class="btn btn-primary btn-two margin-bottom">Criar Subjetiva</a>
+            </div>
 
             <div class="box box-solid">
                 <div class="box-header with-border">
@@ -114,7 +117,7 @@
                             <td>{{ questao.autor.nome }}</td>
                             <td>{{ questao.estado.nome }}</td>
                             <td>
-                                <button class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar"><i class="fa fa-eye"></i> Visualizar</button>
+                                <button ng-click="visualizarQuestao(questao)" class="btn btn-sm btn-default btn-block" data-toggle="modal" data-target="#visualizar"><i class="fa fa-eye"></i> Visualizar</button>
                             </td>
                         </tr>
                         </tbody>
@@ -146,8 +149,8 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title">
-                    Título da questão aqui
-                    <small><a href="questoes/id" target="_blank" title="Ir para página completa"><i class="fa fa-external-link" aria-hidden="true"></i></a></small>
+                    {{ questaoAtual.titulo }}
+                    <small><a ui-sref="template.visualizarQuestao({ id: questaoAtual.id })" target="_blank" title="Ir para página completa"><i class="fa fa-external-link" aria-hidden="true"></i></a></small>
                 </h4>
             </div>
             <div class="modal-body">
@@ -155,40 +158,30 @@
                     <tbody>
                     <tr>
                         <th style="width: 10%">Tipo:</th>
-                        <td>Subjetiva</td>
+                        <td>{{ questaoAtual.tipo }}</td>
                     </tr>
                     <tr>
                         <th>Dificuldade:</th>
-                        <td>Alta</td>
+                        <td>{{ questaoAtual.dificuldade }}</td>
                     </tr>
                     <tr>
                         <th>Disciplina:</th>
-                        <td>Segurança da Informação</td>
+                        <td>{{ questaoAtual.disciplina.nome }}</td>
                     </tr>
                     <tr>
                         <th>Autor:</th>
-                        <td>Cícero</td>
+                        <td>{{ questaoAtual.autor.nome }}</td>
                     </tr>
                     </tbody>
                 </table>
                 <hr>
-                <img class="center-block img-responsive" src="/img/questao.jpg" alt="Independência">
-                <br>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquam lorem et lectus congue, vitae pulvinar odio porta. Cras fringilla tortor id sollicitudin dictum. Sed consequat ligula est, in interdum urna facilisis at. Praesent tempus mi non porta molestie. Pellentesque bibendum libero quis odio euismod, imperdiet tempus magna bibendum. Mauris commodo suscipit consectetur. Donec eget ultrices erat, quis tristique urna. Duis a libero quam. Quisque eu enim dolor. Donec hendrerit in turpis in mollis. Vestibulum ante quam, rhoncus at urna sed, efficitur elementum erat?<br><br>
-
-                    A) Lorem ipsum dolor sit amet.<br>
-                    B) Consectetur adipiscing elit.<br>
-                    C) Sed consequat ligula est.<br>
-                    D) Duis a libero quam.<br>
-                    E) Donec hendrerit in turpis in mollis.<br>
-                </p>
+                {{ questaoAtual.enunciado }}
             </div>
             <div class="modal-footer">
                 <a type="button" class="btn btn-danger pull-left" data-dismiss="modal" data-show="#confirmacao" trocar-modal><i class="fa fa-trash"></i> Excluir</a>
-                <a href="questoes/id/editar" type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-pencil"></i> Editar</a>
-                <a type="button" class="btn btn-warning" data-dismiss="modal"><i class="fa fa-times"></i> Recusar</a>
-                <a type="button" class="btn btn-success" data-dismiss="modal"><i class="fa fa-check"></i> Aprovar</a>
+                <a ng-click="info('Não suportado ainda')" type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-pencil"></i> Editar</a>
+                <a ng-click="info('Não suportado ainda')" type="button" class="btn btn-warning" data-dismiss="modal"><i class="fa fa-times"></i> Recusar</a>
+                <a ng-click="info('Não suportado ainda')" type="button" class="btn btn-success" data-dismiss="modal"><i class="fa fa-check"></i> Aprovar</a>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
@@ -207,7 +200,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Excluir</button>
+                <button ng-click="info('Não suportado ainda')" type="button" class="btn btn-danger" data-dismiss="modal">Excluir</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
