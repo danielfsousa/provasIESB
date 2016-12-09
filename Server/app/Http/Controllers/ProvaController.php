@@ -46,11 +46,11 @@ class ProvaController extends Controller
             case 'professor':
                 $provas = Prova::withAll()->where('professor_id', $id)->get();
                 return response()->json(compact('provas'));
-            break;
+                break;
 
             case 'coordenador':
                 // TODO
-            break;
+                break;
 
         }
 
@@ -100,7 +100,9 @@ class ProvaController extends Controller
             return response()->json(['erro' => 'Usuário não autorizado'], 401);
         }
 
-        return response()->json(compact('prova'));
+
+        return response()->json(Prova::comQuestoes($prova));
+//        return response()->json(compact('prova'));
     }
 
     /**

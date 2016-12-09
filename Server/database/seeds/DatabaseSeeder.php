@@ -21,5 +21,6 @@ class DatabaseSeeder extends Seeder
         $this->call(SubjetivaSeeder::class);
         $this->call(ProvasSeeder::class);
         $this->call(NotasSeeder::class);
+        $this->call(Prova_QuestaoSeeder::class);
     }
 }

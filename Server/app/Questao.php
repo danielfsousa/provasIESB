@@ -59,7 +59,7 @@ class Questao extends Model
 
     public function provas()
     {
-        return $this->belongsToMany('App\Provas');
+        return $this->belongsToMany('App\Provas', 'prova_questao', 'questao_id', 'prova_id')->withPivot('valor');
     }
 
     public function disciplina()

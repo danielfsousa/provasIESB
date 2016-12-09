@@ -24,6 +24,7 @@ class DropTables extends Migration
     public function down()
     {
         Schema::dropIfExists('notas');
+        Schema::dropIfExists('prova_questao');
         Schema::dropIfExists('provas');
         Schema::dropIfExists('subjetivas');
         Schema::dropIfExists('objetivas');

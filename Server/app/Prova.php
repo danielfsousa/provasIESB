@@ -62,6 +62,20 @@ class Prova extends Model
         return compact('quantidade', 'provas');
     }
 
+    public static function comQuestoes(Prova $prova)
+    {
+        $provaArray = $prova->toArray();
+        $questoes = [];
+
+        foreach($prova->questoes as $questao)
+        {
+            array_push($questoes, $questao);
+        }
+
+        $provaArray['questoes'] = $questoes;
+        return $provaArray;
+    }
+
     public function scopeWithAll($query)
     {
         $query->with('turma', 'professor', 'estado', 'disciplina');
@@ -69,7 +83,7 @@ class Prova extends Model
 
     public function questoes()
     {
-        return $this->belongsToMany('App\Questao');
+        return $this->belongsToMany('App\Questao', 'prova_questao', 'prova_id', 'questao_id')->withPivot('valor');
     }
 
     public function turma()
