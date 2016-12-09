@@ -31,8 +31,8 @@ Route::group(['middleware' => 'jwt.auth'], function () {
 
     Route::get('usuario/recursos', 'RecursoController@indexAutenticado');
     Route::resource('recursos', 'RecursoController', ['only' => ['index', 'store', 'show', 'destroy']]);
-    Route::get('provas/aprovar/{recurso}', 'RecursoController@aprovar');
-    Route::get('provas/recusar/{recurso}', 'RecursoController@recusar');
+    Route::get('recursos/aprovar/{recurso}', 'RecursoController@aprovar');
+    Route::get('recursos/recusar/{recurso}', 'RecursoController@recusar');
 
     Route::get('usuario/provas', 'ProvaController@indexAutenticado');
     Route::resource('provas', 'ProvaController', ['only' => ['index', 'store', 'show', 'update', 'destroy']]);

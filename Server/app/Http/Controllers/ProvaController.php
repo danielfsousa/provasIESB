@@ -161,7 +161,7 @@ class ProvaController extends Controller
      */
     public function aprovar($id)
     {
-        if (!Auth::user()->isCoordenador()) {
+        if (! (Auth::user()->isCoordenador() || Auth::user()->isAdmin())) {
             return response()->json(['erro' => 'Usuário não autorizado'], 401);
         }
 
@@ -182,7 +182,7 @@ class ProvaController extends Controller
      */
     public function recusar($id)
     {
-        if (!Auth::user()->isCoordenador()) {
+        if (! (Auth::user()->isCoordenador() || Auth::user()->isAdmin())) {
             return response()->json(['erro' => 'Usuário não autorizado'], 401);
         }
 

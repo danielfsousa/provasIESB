@@ -60,12 +60,12 @@
                     <!--Professor que fez a prova-->
                     <button ng-click="info('Não suportado ainda')" type="button" class="btn btn-danger" data-toggle="modal" data-target="#aviso"><i class="fa fa-trash"></i> Excluir</button>
                     <!--Coordenador-->
-                    <button ng-click="info('Não suportado ainda')" type="button" class="btn btn-success pull-right"><i class="fa fa-check"></i> Aprovar</button>
-                    <button ng-click="info('Não suportado ainda')" type="button" class="btn btn-danger pull-right"><i class="fa fa-times"></i> Recusar</button>
+                    <button ng-click="aprovar(prova)" type="button" class="btn btn-success pull-right"><i class="fa fa-check"></i> Aprovar</button>
+                    <button ng-click="recusar(prova)" type="button" class="btn btn-danger pull-right"><i class="fa fa-times"></i> Recusar</button>
                     <!--Professor que fez a prova-->
-                    <button ng-click="info('Não suportado ainda')" type="button" class="btn btn-default pull-right"><i class="fa fa-pencil"></i> Editar</button>
+                    <a ui-sref="template.editarProva({ id: prova.id })" type="button" class="btn btn-default pull-right"><i class="fa fa-pencil"></i> Editar</a>
                     <!--Todos-->
-                    <button type="button" class="btn btn-default pull-right"><i class="fa fa-print"></i> Imprimir</button>
+                    <button ng-click="info('Não suportado ainda')" type="button" class="btn btn-default pull-right"><i class="fa fa-print"></i> Imprimir</button>
                 </div>
             </div>
             <!-- /. box -->

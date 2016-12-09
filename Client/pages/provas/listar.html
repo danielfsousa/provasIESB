@@ -105,7 +105,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr ng-repeat="prova in ::provas">
+                        <tr ng-repeat="prova in provas">
                             <td ><a ui-sref="template.visualizarProva({ id: prova.id })">{{ prova.prova }}</a></td>
                             <td>{{ prova.disciplina.nome }}</td>
                             <td>{{ prova.turma.codigo }}</td>
@@ -251,13 +251,13 @@
             <div class="modal-footer">
                 <!--Somente coordenador ou se a prova for do professor-->
                 <button type="button" class="btn btn-danger pull-left" data-dismiss="modal" data-show="#confirmacao" trocar-modal><i class="fa fa-trash"></i> Excluir</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-pencil"></i> Editar</button>
+                <a ui-sref="template.editarProva({ id: provaAtual.id })" type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-pencil"></i> Editar</a>
 
-                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-print"></i> Imprimir</button>
+                <button ng-click="info('Não suportado ainda')" type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-print"></i> Imprimir</button>
 
                 <!--Somente admin / coordenador-->
-                <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Recusar</button>
-                <button type="button" class="btn btn-success" data-dismiss="modal"><i class="fa fa-check"></i> Aprovar</button>
+                <button ng-click="recusar(provaAtual)" type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Recusar</button>
+                <button ng-click="aprovar(provaAtual)" type="button" class="btn btn-success" data-dismiss="modal"><i class="fa fa-check"></i> Aprovar</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
@@ -276,7 +276,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Excluir</button>
+                <button ng-click="info('Não suportado ainda')" type="button" class="btn btn-danger" data-dismiss="modal">Excluir</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->

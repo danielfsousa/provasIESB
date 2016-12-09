@@ -20,6 +20,19 @@ app.controller('listarProvasController', function ($scope, $state, provaServico,
         return params;
     }
 
+    function atualizarProvas() {
+        provaServico.getAll(getParams())
+            .then(function (res) {
+                console.log(res); // log
+                $scope.provas = res.data.provas;
+                $scope.quantidade = res.data.quantidade;
+            })
+            .catch(function (res) {
+                toastr.error('Não foi possível obter as provas');
+                console.log(res); // log
+            });
+    }
+
     $scope.dtOptions = DTOptionsBuilder.newOptions()
         .withPaginationType('full_numbers')
         .withLanguageSource('/lang/datatables.pt-BR.json')
@@ -29,17 +42,6 @@ app.controller('listarProvasController', function ($scope, $state, provaServico,
         DTColumnDefBuilder.newColumnDef(6).notSortable(),
         DTColumnDefBuilder.newColumnDef(7).notSortable()
     ];
-
-    provaServico.getAll(getParams())
-        .then(function (res) {
-            console.log(res); // log
-            $scope.provas = res.data.provas;
-            $scope.quantidade = res.data.quantidade;
-        })
-        .catch(function (res) {
-            toastr.error('Não foi possível obter as provas');
-            console.log(res); // log
-    });
 
     $scope.visualizarProva = function (prova) {
         $scope.provaAtual = prova;
@@ -52,5 +54,29 @@ app.controller('listarProvasController', function ($scope, $state, provaServico,
                 toastr.error('Não foi possível obter a prova');
         });
     };
+
+    $scope.aprovar = function (prova) {
+      provaServico.aprovar(prova.id)
+          .then(function (res) {
+              toastr.success('A prova "' + prova.prova + ' - ' + prova.disciplina.nome + '" foi aprovada.');
+              atualizarProvas();
+          })
+          .catch(function (res) {
+              toastr.error('Não foi possível aprovar a prova "' + prova.prova + ' - ' + prova.disciplina.nome + '".');
+      });
+    };
+
+    $scope.recusar = function (prova) {
+        provaServico.recusar(prova.id)
+            .then(function (res) {
+                toastr.success('A prova "' + prova.prova + ' - ' + prova.disciplina.nome + '" foi recusada.');
+                atualizarProvas();
+            })
+            .catch(function (res) {
+                toastr.error('Não foi possível recusar a prova "' + prova.prova + ' - ' + prova.disciplina.nome + '".');
+            });
+    };
+
+    atualizarProvas();
 
 });
