@@ -1,11 +1,10 @@
 /**
  * Created by danilo on 04/12/16.
  */
-app.controller('CriarQuestaoCtrl', function (questaoServico) {
+app.controller('CriarQuestaoCtrl', function (questaoServico, toastr) {
 
     var vm = this;
 
-    vm.titulo = '';
     vm.disciplina = [
         {
             id: 1,
@@ -24,6 +23,8 @@ app.controller('CriarQuestaoCtrl', function (questaoServico) {
             nome: 'Java I'
         }
     ];
+
+    vm.titulo = '';
     vm.dificuldade = '';
     vm.gabarito = '';
     vm.enunciado = '';
@@ -35,9 +36,10 @@ app.controller('CriarQuestaoCtrl', function (questaoServico) {
     vm.disciplinaProva = '';
 
     function verificaCampos() {
+        console.log(vm.titulo, vm.dificuldade, vm.gabarito, vm.enunciado, vm.alternativaA, vm.alternativaB, vm.alternativaC, vm.alternativaD, vm.alternativaE, vm.disciplinaProva);
         if (vm.titulo != '' && vm.dificuldade != '' && vm.gabarito != '' && vm.enunciado != ''
             && vm.alternativaA != '' && vm.alternativaB != '' && vm.alternativaC != '' && vm.alternativaD != ''
-            && vm.alternativaE != '' && vm.disciplinaProva) {
+            && vm.alternativaE != '' && vm.disciplinaProva != '') {
             return true;
         }
         return false;
@@ -60,6 +62,8 @@ app.controller('CriarQuestaoCtrl', function (questaoServico) {
                 disciplina: vm.disciplinaProva
             };
             questaoServico.criarQuestao(questao); //TODO implementar este método
+        } else {
+            toastr.error('Todos os campos são obrigatórios', 'ERRO');
         }
     };
 

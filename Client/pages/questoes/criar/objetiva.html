@@ -28,8 +28,8 @@
                     </div>
                     <div class="form-group">
                         <label for="disciplina">Disciplina</label>
-                        <select id="disciplina" ng-model="ctrl.disciplinaProva" class="form-control" ng-repeat="disciplina in ctrl.disciplina">
-                            <option ng-value="disciplina.id">{{disciplina.nome}}</option>
+                        <select id="disciplina" ng-model="ctrl.disciplinaProva" class="form-control">
+                            <option ng-repeat="disciplina in ctrl.disciplina" ng-value="disciplina.id">{{disciplina.nome}}</option>
                         </select>
                     </div>
                     <div class="form-group">
