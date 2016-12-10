@@ -124,7 +124,6 @@ class RecursoController extends Controller
             return response()->json(['erro' => 'Usuário não autorizado'], 401);
         }
 
-//        $questao = $recurso->prova()->questoes->toArray()[$recurso->questao + 1];
         $prova = Prova::where('id', $recurso->prova_id)
                       ->with('questoes', 'questoes.disciplina', 'questoes.autor')->get()->toArray();
 

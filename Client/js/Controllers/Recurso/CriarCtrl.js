@@ -39,6 +39,9 @@ app.controller('criarRecursoController', function ($scope, $state, recursoServic
                     console.log(res); //log
                 })
                 .catch(function (res) {
+                    if (res.status === 404) {
+                        toastr.error(res.data.erro);
+                    }
                     toastr.error('Não foi possível criar o recurso');
                     console.log(res); //log
                 });
