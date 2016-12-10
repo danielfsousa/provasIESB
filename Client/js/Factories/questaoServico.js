@@ -18,14 +18,14 @@ app.factory('questaoServico', function ($http, api) {
     function aprovar(id) {
         return $http({
             method: 'GET',
-            url: api('questoes/aprovar/' + id)
+            url: api('questoes/' + id + '/aprovar')
         });
     }
 
     function recusar(id) {
         return $http({
             method: 'GET',
-            url: api('questoes/recusar/' + id)
+            url: api('questoes/' + id + '/recusar')
         });
     }
 

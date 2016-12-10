@@ -31,18 +31,18 @@ Route::group(['middleware' => 'jwt.auth'], function () {
 
     Route::get('usuario/recursos', 'RecursoController@indexAutenticado');
     Route::resource('recursos', 'RecursoController', ['only' => ['index', 'store', 'show', 'destroy']]);
-    Route::get('recursos/aprovar/{recurso}', 'RecursoController@aprovar');
-    Route::get('recursos/recusar/{recurso}', 'RecursoController@recusar');
+    Route::get('recursos/{recurso}/aprovar', 'RecursoController@aprovar');
+    Route::get('recursos/{recurso}/recusar', 'RecursoController@recusar');
 
     Route::get('usuario/provas', 'ProvaController@indexAutenticado');
     Route::resource('provas', 'ProvaController', ['only' => ['index', 'store', 'show', 'update', 'destroy']]);
-    Route::get('provas/aprovar/{prova}', 'ProvaController@aprovar');
-    Route::get('provas/recusar/{prova}', 'ProvaController@recusar');
+    Route::get('provas/{prova}/aprovar', 'ProvaController@aprovar');
+    Route::get('provas/{prova}/recusar', 'ProvaController@recusar');
 
     Route::get('usuario/questoes', 'QuestaoController@indexAutenticado');
     Route::resource('questoes', 'QuestaoController', ['only' => ['index', 'store', 'show', 'update', 'destroy']]);
-    Route::get('questoes/aprovar/{questao}', 'QuestaoController@aprovar');
-    Route::get('questoes/recusar/{questao}', 'QuestaoController@recusar');
+    Route::get('questoes/{questao}/aprovar', 'QuestaoController@aprovar');
+    Route::get('questoes/{questao}/recusar', 'QuestaoController@recusar');
 
     Route::get('usuario/notas', 'notaController@indexAutenticado');
     Route::resource('notas', 'NotaController', ['only' => ['index', 'store', 'show', 'update', 'destroy']]);

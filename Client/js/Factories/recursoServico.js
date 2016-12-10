@@ -15,9 +15,25 @@ app.factory('recursoServico', function ($http, api) {
         });
     }
 
+    function aprovar(id) {
+        return $http({
+            method: 'GET',
+            url: api('recursos/' + id + '/aprovar')
+        });
+    }
+
+    function recusar(id) {
+        return $http({
+            method: 'GET',
+            url: api('recursos/' + id + '/recusar')
+        });
+    }
+
     return {
         getAll: getAll,
-        getById: getById
+        getById: getById,
+        aprovar: aprovar,
+        recusar: recusar
     }
 
 });

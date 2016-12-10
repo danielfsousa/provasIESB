@@ -18,14 +18,14 @@ app.factory('provaServico', function ($http, api) {
     function aprovar(id) {
         return $http({
             method: 'GET',
-            url: api('provas/aprovar/' + id)
+            url: api('provas/' + id + '/aprovar')
         });
     }
 
     function recusar(id) {
         return $http({
             method: 'GET',
-            url: api('provas/recusar/' + id)
+            url: api('provas/' + id + '/recusar')
         });
     }
 
