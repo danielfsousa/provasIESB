@@ -14,13 +14,15 @@ https://iesb.blackboard.com/webapps/blackboard/execute/content/file?cmd=view&con
 * DB: iesb
 
 ## TO-DO Client
-* Criar, Editar e Excluir Questão
-* Criar, Editar e Excluir Prova
-* Criar e Excluir Recurso
-* Salvar e Editar Nota
+* Criar e Editar Questão
+* Criar e Editar Prova
+* Criar Recurso
+* Criar Nota vinculada a cada aluno ao criar uma prova
+* Editar Nota
 * Filtrar dados nas páginas de listagem
 * Autorização das rotas na navegação do template
 
 ## TO-DO Server
 * Digitalizar Prova
 * Refatorar Nota migration, model e controller
+* Refatorar Recurso migration, model e controller

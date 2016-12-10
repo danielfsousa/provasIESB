@@ -109,11 +109,11 @@
                 <h4 class="modal-title">Excluir Questão</h4>
             </div>
             <div class="modal-body">
-                <p>Você realmente deseja excluir a questão "Título da questão aqui"?</p>
+                <p>Você realmente deseja excluir a questão "{{ questao.titulo }}"?</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                <button ng-click="info('Não suportado ainda')" type="button" class="btn btn-danger" data-dismiss="modal">Excluir</button>
+                <button ng-click="excluir(questao)" type="button" class="btn btn-danger" data-dismiss="modal">Excluir</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->

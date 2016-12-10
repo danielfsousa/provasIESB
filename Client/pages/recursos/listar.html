@@ -241,7 +241,7 @@
                 <button ng-click="info('Não suportado ainda')" type="button" class="btn btn-default"><i class="fa fa-eye"></i> Visualizar Questão</button>
 
                 <!--Somente admin / coordenador-->
-                <button ng-click="info('Não suportado ainda')" type="button" class="btn btn-danger pull-left" trocar-modal data-dismiss="modal" data-show="#confirmacao"><i class="fa fa-trash"></i> Excluir</button>
+                <button type="button" class="btn btn-danger pull-left" trocar-modal data-dismiss="modal" data-show="#confirmacao"><i class="fa fa-trash"></i> Excluir</button>
 
                 <!--Somente professor-->
                 <button ng-click="recusar(recursoAtual)" type="button" class="btn btn-warning" data-dismiss="modal"><i class="fa fa-times"></i> Recusar</button>
@@ -260,11 +260,11 @@
                 <h4 class="modal-title">Excluir Recurso</h4>
             </div>
             <div class="modal-body">
-                <p>Você realmente deseja excluir o recurso "Recruso 1"?</p>
+                <p>Você realmente deseja excluir o recurso "{{ recursoAtual.titulo }}"?</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                <button ng-click="info('Não suportado ainda')" type="button" class="btn btn-danger" data-dismiss="modal">Excluir</button>
+                <button ng-click="excluir(recursoAtual)" type="button" class="btn btn-danger" data-dismiss="modal">Excluir</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->

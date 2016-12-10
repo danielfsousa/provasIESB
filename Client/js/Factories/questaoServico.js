@@ -29,11 +29,19 @@ app.factory('questaoServico', function ($http, api) {
         });
     }
 
+    function excluir(id) {
+        return $http({
+            method: 'DELETE',
+            url: api('questoes/' + id)
+        });
+    }
+
     return {
         getAll: getAll,
         getById: getById,
         aprovar: aprovar,
-        recusar: recusar
+        recusar: recusar,
+        excluir: excluir
     }
     
 });

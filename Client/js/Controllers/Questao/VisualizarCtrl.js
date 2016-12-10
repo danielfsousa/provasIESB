@@ -41,4 +41,15 @@ app.controller('visualizarQuestaoController', function ($scope, $state, $statePa
             });
     };
 
+    $scope.excluir = function (questao) {
+        questaoServico.excluir(questao.id)
+            .then(function (res) {
+                toastr.success('A questão "' + questao.titulo + '" foi excluída.');
+                $state.go('template.listarQuestoes');
+            })
+            .catch(function (res) {
+                toastr.error('Não foi possível excluir a questão "' + questao.titulo + '".');
+            });
+    };
+
 });

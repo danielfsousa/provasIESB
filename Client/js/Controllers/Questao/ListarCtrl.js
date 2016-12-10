@@ -68,6 +68,17 @@ app.controller('listarQuestoesController', function ($scope, $state, questaoServ
             });
     };
 
+    $scope.excluir = function (questao) {
+        questaoServico.excluir(questao.id)
+            .then(function (res) {
+                toastr.success('A questão "' + questao.titulo + '" foi excluída.');
+                atualizarQuestoes();
+            })
+            .catch(function (res) {
+                toastr.error('Não foi possível excluir a questão "' + questao.titulo + '".');
+        });
+    };
+
     atualizarQuestoes();
 
 });

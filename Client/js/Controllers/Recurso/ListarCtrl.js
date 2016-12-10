@@ -68,6 +68,17 @@ app.controller('listarRecursosController', function ($scope, $state, recursoServ
         });
     };
 
+    $scope.excluir = function (recurso) {
+        recursoServico.excluir(recurso.id)
+            .then(function (res) {
+                toastr.success('O recurso "' + recurso.titulo + '" foi excluído.');
+                atualizarRecursos();
+            })
+            .catch(function (res) {
+                toastr.error('Não foi possível excluir o recurso "' + recurso.titulo + '".');
+            });
+    };
+
     atualizarRecursos();
 
 });

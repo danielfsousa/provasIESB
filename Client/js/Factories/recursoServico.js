@@ -29,11 +29,19 @@ app.factory('recursoServico', function ($http, api) {
         });
     }
 
+    function excluir(id) {
+        return $http({
+            method: 'DELETE',
+            url: api('recursos/' + id)
+        });
+    }
+
     return {
         getAll: getAll,
         getById: getById,
         aprovar: aprovar,
-        recusar: recusar
+        recusar: recusar,
+        excluir: excluir
     }
 
 });

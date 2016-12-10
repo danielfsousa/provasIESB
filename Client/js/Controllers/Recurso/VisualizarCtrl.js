@@ -41,4 +41,15 @@ app.controller('visualizarRecursoController', function ($scope, $state, $statePa
             });
     };
 
+    $scope.excluir = function (recurso) {
+        recursoServico.excluir(recurso.id)
+            .then(function (res) {
+                toastr.success('O recurso "' + recurso.titulo + '" foi excluído.');
+                $state.go('template.listarRecursos');
+            })
+            .catch(function (res) {
+                toastr.error('Não foi possível excluir o recurso "' + recurso.titulo + '".');
+            });
+    };
+
 });
