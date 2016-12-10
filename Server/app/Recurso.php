@@ -41,12 +41,10 @@ class Recurso extends Model
 
     const VALIDACAO = [
         'titulo' => 'required',
-        'questao' => 'integer|min:1',
+        'questao' => 'required|integer|min:1',
         'descricao' => 'required',
-        'estado_id' => 'integer|min:1',
-        'prova_id' => 'integer|min:1',
-        'turma_id' => 'integer|min:1',
-        'disciplina_id' => 'integer|min:1'
+        'turma_id' => 'required|integer|min:1',
+        'disciplina_id' => 'required|integer|min:1'
     ];
 
     public static function comQuantidade($recursos)

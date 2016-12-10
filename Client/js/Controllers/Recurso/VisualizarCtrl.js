@@ -6,6 +6,7 @@ app.controller('visualizarRecursoController', function ($scope, $state, $statePa
         .then(function (res) {
             console.log(res); //log
             $scope.recurso = res.data.recurso;
+            $scope.questao = res.data.recurso.questao_obj;
         })
         .catch(function (res) {
             console.log(res); //log

@@ -75,29 +75,32 @@ class RecursoController extends Controller
             return response()->json(['erro' => 'Usuário não autorizado'], 401);
         }
 
-        $prova = $request->get('prova');
-        $disciplina_id = $request->get('disciplina_id');
-        $turma_id = Auth::user()->turma();
-
-        $prova = Prova
-                    ::where('disciplina_id', $disciplina_id)
-                    ->where('turma_id', $turma_id)
-                    ->where('prova', $prova)
-                    ->get();
-
-        if (!$prova) {
-            return response()->json(['erro' => 'Prova não encontrada'], 404);
-        }
-
-        $request->request->add(['aluno_id' => Auth::user()->id]);
-        $request->request->add(['prova_id' => $prova->id]);
-
         $validacao = Validator::make($request->all(), Recurso::VALIDACAO);
         if ($validacao->fails()) {
             return response()->json(['erro' => $validacao->errors()], 400);
         }
 
-        if(!Recurso::create($request->all())) {
+        $prova = $request->get('prova');
+        $disciplina_id = $request->get('disciplina_id');
+        $turma_id = $request->get('turma_id');
+
+        $prova = Prova
+                    ::where('disciplina_id', $disciplina_id)
+                    ->where('turma_id', $turma_id)
+                    ->where('prova', $prova)
+                    ->where('estado_id', Estado::APROVADO)
+                    ->first();
+
+        if (!$prova) {
+            return response()->json(['erro' => 'Prova não encontrada'], 404);
+        }
+
+        $recurso = $request->all();
+        $recurso['aluno_id'] = Auth::user()->id;
+        $recurso['prova_id'] = $prova->id;
+        $recurso['estado_id'] = Estado::AGUARDANDO_APROVACAO;
+
+        if(!Recurso::create($recurso)) {
             return response()->json(['erro' => 'Não foi possível criar o recurso'], 500);
         }
 
@@ -116,13 +119,18 @@ class RecursoController extends Controller
             return response()->json(['erro' => 'Recurso não encontrado'], 404);
         }
 
-        $usuario_id = $recurso->aluno_id;
-        $usuario_papel = Auth::user()->papel;
-
         // Se for aluno e o recurso não for dele: retorna erro (não autorizado)
-        if($usuario_papel === 'aluno' && $usuario_id !== Auth::user()->id) {
+        if(Auth::user()->isAluno() && $recurso->aluno_id !== Auth::user()->id) {
             return response()->json(['erro' => 'Usuário não autorizado'], 401);
         }
+
+//        $questao = $recurso->prova()->questoes->toArray()[$recurso->questao + 1];
+        $prova = Prova::where('id', $recurso->prova_id)
+                      ->with('questoes', 'questoes.disciplina', 'questoes.autor')->get()->toArray();
+
+        $questao = $prova[0]['questoes'][$recurso->questao - 1];
+
+        $recurso['questao_obj'] = $questao;
 
         return response()->json(compact('recurso'));
 

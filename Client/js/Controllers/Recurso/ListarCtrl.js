@@ -44,6 +44,15 @@ app.controller('listarRecursosController', function ($scope, $state, recursoServ
 
     $scope.visualizarRecurso = function (recurso) {
         $scope.recursoAtual = recurso;
+        recursoServico.getById(recurso.id)
+            .then(function (res) {
+                console.info(res);
+                $scope.recursoAtual = res.data.recurso;
+                $scope.questaoAtual = res.data.recurso.questao_obj
+            })
+            .catch(function (res) {
+                toastr.error('Não foi possível obter o recurso');
+            });
     };
 
     $scope.aprovar = function (recurso) {
