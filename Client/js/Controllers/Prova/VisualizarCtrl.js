@@ -38,6 +38,17 @@ app.controller('visualizarProvaController', function ($scope, $state, $statePara
             })
             .catch(function (res) {
                 toastr.error('Não foi possível recusar a prova "' + prova.prova + ' - ' + prova.disciplina.nome + '".');
+        });
+    };
+
+    $scope.excluir = function (prova) {
+        provaServico.excluir(prova.id)
+            .then(function (res) {
+                toastr.success('A prova "' + prova.prova + ' - ' + prova.disciplina.nome + '" foi excluída.');
+                $state.go('template.listarProvas');
+            })
+            .catch(function (res) {
+                toastr.error('Não foi possível excluir a prova "' + prova.prova + ' - ' + prova.disciplina.nome + '".');
             });
     };
 

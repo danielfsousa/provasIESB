@@ -136,7 +136,7 @@ class ProvaController extends Controller
      */
     public function destroy($id)
     {
-        if (!Auth::user()->isCoordenador()) {
+        if (! (Auth::user()->isCoordenador() || Auth::user()->isAdmin())) {
             return response()->json(['erro' => 'Usuário não autorizado'], 401);
         }
 

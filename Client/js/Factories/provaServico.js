@@ -29,11 +29,19 @@ app.factory('provaServico', function ($http, api) {
         });
     }
 
+    function excluir(id) {
+        return $http({
+            method: 'DELETE',
+            url: api('provas/' + id)
+        });
+    }
+
     return {
         getAll: getAll,
         getById: getById,
         aprovar: aprovar,
-        recusar: recusar
+        recusar: recusar,
+        excluir: excluir
     }
 
 });

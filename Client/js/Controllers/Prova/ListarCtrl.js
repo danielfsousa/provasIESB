@@ -77,6 +77,17 @@ app.controller('listarProvasController', function ($scope, $state, provaServico,
             });
     };
 
+    $scope.excluir = function (prova) {
+        provaServico.excluir(prova.id)
+            .then(function (res) {
+                toastr.success('A prova "' + prova.prova + ' - ' + prova.disciplina.nome + '" foi excluída.');
+                atualizarProvas();
+            })
+            .catch(function (res) {
+                toastr.error('Não foi possível excluir a prova "' + prova.prova + ' - ' + prova.disciplina.nome + '".');
+        });
+    };
+
     atualizarProvas();
 
 });
