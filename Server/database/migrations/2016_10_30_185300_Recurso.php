@@ -17,10 +17,11 @@ class Recurso extends Migration
             $table->increments('id');
 
             $table->string('titulo');
-            $table->string('prova');
             $table->text('descricao');
             $table->integer('questao')->unsigned();
 
+            $table->integer('prova_id')->unsigned()->index();
+            $table->integer('turma_id')->unsigned()->index();
             $table->integer('aluno_id')->unsigned()->index();
             $table->integer('disciplina_id')->unsigned()->index();
             $table->integer('estado_id')->unsigned()->index();

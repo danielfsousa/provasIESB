@@ -39,7 +39,7 @@ class Usuario extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'nome', 'papel', 'matricula', 'senha',
+        'nome', 'papel', 'matricula', 'senha', 'turma_id'
     ];
 
     /**
@@ -93,5 +93,10 @@ class Usuario extends Authenticatable
     public function notas()
     {
         return $this->hasMany('App\Nota');
+    }
+
+    public function turma()
+    {
+        return $this->belongsTo('App\Turma');
     }
 }

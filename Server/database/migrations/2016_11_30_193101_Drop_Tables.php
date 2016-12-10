@@ -23,9 +23,10 @@ class DropTables extends Migration
      */
     public function down()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
         Schema::dropIfExists('notas');
-        Schema::dropIfExists('prova_questao');
         Schema::dropIfExists('provas');
+        Schema::dropIfExists('prova_questao');
         Schema::dropIfExists('subjetivas');
         Schema::dropIfExists('objetivas');
         Schema::dropIfExists('questoes');
@@ -34,5 +35,6 @@ class DropTables extends Migration
         Schema::dropIfExists('turmas');
         Schema::dropIfExists('disciplinas');
         Schema::dropIfExists('usuarios');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }

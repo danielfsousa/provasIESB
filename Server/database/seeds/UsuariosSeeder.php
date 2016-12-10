@@ -12,11 +12,15 @@ class UsuariosSeeder extends Seeder
      */
     public function run()
     {
+
+        $faker = Faker\Factory::create();
+
         DB::table('usuarios')->insert([
             'nome' => 'Elliot Alderson',
             'papel' => 'aluno',
             'matricula' => '1',
             'senha' => bcrypt('senha'),
+            'turma_id' => $faker->numberBetween(1,4)
         ]);
 
         DB::table('usuarios')->insert([
@@ -24,6 +28,7 @@ class UsuariosSeeder extends Seeder
             'papel' => 'professor',
             'matricula' => '2',
             'senha' => bcrypt('senha'),
+            'turma_id' => $faker->numberBetween(1,4)
         ]);
 
         DB::table('usuarios')->insert([
@@ -31,6 +36,7 @@ class UsuariosSeeder extends Seeder
             'papel' => 'secretaria',
             'matricula' => '3',
             'senha' => bcrypt('senha'),
+            'turma_id' => $faker->numberBetween(1,4)
         ]);
 
         DB::table('usuarios')->insert([
@@ -38,6 +44,7 @@ class UsuariosSeeder extends Seeder
             'papel' => 'coordenador',
             'matricula' => '4',
             'senha' => bcrypt('senha'),
+            'turma_id' => $faker->numberBetween(1,4)
         ]);
 
         DB::table('usuarios')->insert([
@@ -45,6 +52,7 @@ class UsuariosSeeder extends Seeder
             'papel' => 'admin',
             'matricula' => '0',
             'senha' => bcrypt('senha'),
+            'turma_id' => $faker->numberBetween(1,4)
         ]);
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Estado;
 use App\Recurso;
+use App\Prova;
 use Illuminate\Http\Request;
 use Auth;
 use Validator;
@@ -70,11 +71,26 @@ class RecursoController extends Controller
      */
     public function store(Request $request)
     {
-        if (!Auth::user()->isAluno()) {
+        if (! (Auth::user()->isAluno() || Auth::user()->isAdmin())) {
             return response()->json(['erro' => 'Usuário não autorizado'], 401);
         }
 
+        $prova = $request->get('prova');
+        $disciplina_id = $request->get('disciplina_id');
+        $turma_id = Auth::user()->turma();
+
+        $prova = Prova
+                    ::where('disciplina_id', $disciplina_id)
+                    ->where('turma_id', $turma_id)
+                    ->where('prova', $prova)
+                    ->get();
+
+        if (!$prova) {
+            return response()->json(['erro' => 'Prova não encontrada'], 404);
+        }
+
         $request->request->add(['aluno_id' => Auth::user()->id]);
+        $request->request->add(['prova_id' => $prova->id]);
 
         $validacao = Validator::make($request->all(), Recurso::VALIDACAO);
         if ($validacao->fails()) {
