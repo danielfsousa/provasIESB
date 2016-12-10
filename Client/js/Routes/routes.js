@@ -67,13 +67,6 @@ app
                 auth: true
             })
 
-            .state('template.editarQuestoes', {
-                // TODO: Redireciona para subjetiva ou objetiva de acordo com o tipo da questao
-                url: '/questoes/:id/editar',
-                templateUrl: 'pages/questoes/criar/subjetiva.html',
-                auth: true
-            })
-
             .state('template.editarSubjetiva', {
                 url: '/questoes/:id/editar/subjetiva',
                 templateUrl: 'pages/questoes/criar/subjetiva.html',

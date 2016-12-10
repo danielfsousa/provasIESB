@@ -109,7 +109,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr ng-repeat="questao in ::questoes">
+                        <tr ng-repeat="questao in questoes">
                             <td><a ui-sref="template.visualizarQuestao({ id: questao.id })">{{ questao.titulo }}</a></td>
                             <td class="text-capitalize">{{ questao.tipo }}</td>
                             <td class="text-capitalize">{{ questao.dificuldade }}</td>
@@ -175,13 +175,27 @@
                     </tbody>
                 </table>
                 <hr>
-                {{ questaoAtual.enunciado }}
+                <h4>Enunciado:</h4>
+                <span ng-bind-html="questaoAtual.enunciado"></span>
+
+                <div ng-if="questaoAtual.tipo === 'Objetiva'">
+                    <strong>A)</strong> <span ng-bind-html="questaoAtual.alternativa_a"></span> <br>
+                    <strong>B)</strong> <span ng-bind-html="questaoAtual.alternativa_b"></span> <br>
+                    <strong>C)</strong> <span ng-bind-html="questaoAtual.alternativa_c"></span> <br>
+                    <strong>D)</strong> <span ng-bind-html="questaoAtual.alternativa_d"></span> <br>
+                    <strong>E)</strong> <span ng-bind-html="questaoAtual.alternativa_e"></span> <br>
+                </div>
+
+                <hr>
+                <h4>Resposta:</h4>
+                {{ questaoAtual.resposta }}
+                <br><br>
             </div>
             <div class="modal-footer">
                 <a type="button" class="btn btn-danger pull-left" data-dismiss="modal" data-show="#confirmacao" trocar-modal><i class="fa fa-trash"></i> Excluir</a>
                 <a ng-click="info('Não suportado ainda')" type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-pencil"></i> Editar</a>
-                <a ng-click="info('Não suportado ainda')" type="button" class="btn btn-warning" data-dismiss="modal"><i class="fa fa-times"></i> Recusar</a>
-                <a ng-click="info('Não suportado ainda')" type="button" class="btn btn-success" data-dismiss="modal"><i class="fa fa-check"></i> Aprovar</a>
+                <a ng-click="recusar(questaoAtual)" type="button" class="btn btn-warning" data-dismiss="modal"><i class="fa fa-times"></i> Recusar</a>
+                <a ng-click="aprovar(questaoAtual)" type="button" class="btn btn-success" data-dismiss="modal"><i class="fa fa-check"></i> Aprovar</a>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->

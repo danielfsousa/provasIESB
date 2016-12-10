@@ -57,9 +57,11 @@
                 <!-- /.box-body -->
                 <div class="box-footer">
                     <button type="button" class="btn btn-danger" trocar-modal data-toggle="modal" data-target="#aviso"><i class="fa fa-trash"></i> Excluir</button>
-                    <button ng-click="info('Não suportado ainda')" type="button" class="btn btn-success pull-right" ><i class="fa fa-check"></i> Aprovar</button>
-                    <button ng-click="info('Não suportado ainda')" type="button" class="btn btn-warning pull-right" ><i class="fa fa-times"></i> Recusar</button>
-                    <a href="#"><button ng-click="info('Não suportado ainda')" type="button" class="btn btn-default pull-right" ><i class="fa fa-pencil"></i> Editar</button></a>
+                    <button ng-click="aprovar(questao)" type="button" class="btn btn-success pull-right" ><i class="fa fa-check"></i> Aprovar</button>
+                    <button ng-click="recusar(questao)" type="button" class="btn btn-warning pull-right" ><i class="fa fa-times"></i> Recusar</button>
+
+                    <a ng-if="questao.tipo === 'Subjetiva'" ui-sref="template.editarSubjetiva"><button type="button" class="btn btn-default pull-right" ><i class="fa fa-pencil"></i> Editar</button></a>
+                    <a ng-if="questao.tipo === 'Objetiva'" ui-sref="template.editarObjetiva"><button type="button" class="btn btn-default pull-right" ><i class="fa fa-pencil"></i> Editar</button></a>
                 </div>
             </div>
             <!-- /. box -->
@@ -67,10 +69,31 @@
         <div class="col-md-8">
             <div class="box box-solid">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Questão</h3>
+                    <h3 class="box-title">Enunciado</h3>
                 </div>
                 <div class="box-body">
-                    {{ questao.enunciado }}
+                    <span ng-bind-html="questao.enunciado"></span>
+
+                    <div ng-if="questao.tipo === 'Objetiva'">
+                        <strong>A)</strong> <span ng-bind-html="questao.alternativa_a"></span> <br>
+                        <strong>B)</strong> <span ng-bind-html="questao.alternativa_b"></span> <br>
+                        <strong>C)</strong> <span ng-bind-html="questao.alternativa_c"></span> <br>
+                        <strong>D)</strong> <span ng-bind-html="questao.alternativa_d"></span> <br>
+                        <strong>E)</strong> <span ng-bind-html="questao.alternativa_e"></span> <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4"></div>
+
+        <div class="col-md-8">
+            <div class="box box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Resposta</h3>
+                </div>
+                <div class="box-body">
+                    {{ questao.resposta }}
                 </div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-app.controller('visualizarQuestaoController', function ($scope, $state, $stateParams, questaoServico, toastr) {
+app.controller('visualizarQuestaoController', function ($scope, $state, $stateParams, questaoServico, toastr, estado) {
 
     var id = $stateParams.id;
 
@@ -16,5 +16,29 @@ app.controller('visualizarQuestaoController', function ($scope, $state, $statePa
             }
             $state.go('template.listarQuestoes');
     });
+
+    $scope.aprovar = function (questao) {
+        questaoServico.aprovar(questao.id)
+            .then(function (res) {
+                toastr.success('A questão "' + questao.titulo + '" foi aprovada.');
+                questao.estado.id = estado.APROVADO;
+                questao.estado.nome = 'Aprovado';
+            })
+            .catch(function (res) {
+                toastr.error('Não foi possível aprovar a questão "' + questao.titulo + '".');
+            });
+    };
+
+    $scope.recusar = function (questao) {
+        questaoServico.recusar(questao.id)
+            .then(function (res) {
+                toastr.success('A questão "' + questao.titulo + '" foi recusada.');
+                questao.estado.id = estado.RECUSADO;
+                questao.estado.nome = 'Recusado';
+            })
+            .catch(function (res) {
+                toastr.error('Não foi possível recusar a questão "' + questao.titulo + '".');
+            });
+    };
 
 });
