@@ -101,7 +101,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr ng-repeat="recurso in ::recursos">
+                        <tr ng-repeat="recurso in recursos">
                             <td><a ui-sref="template.visualizarRecurso({ id: recurso.id })">{{ recurso.titulo }}</a></td>
                             <td>{{ recurso.aluno.nome }}</td>
                             <td>{{ recurso.disciplina.nome }}</td>
@@ -244,8 +244,8 @@
                 <button ng-click="info('Não suportado ainda')" type="button" class="btn btn-danger pull-left" trocar-modal data-dismiss="modal" data-show="#confirmacao"><i class="fa fa-trash"></i> Excluir</button>
 
                 <!--Somente professor-->
-                <button ng-click="info('Não suportado ainda')" type="button" class="btn btn-warning" data-dismiss="modal"><i class="fa fa-times"></i> Recusar</button>
-                <button type="button" class="btn btn-success" data-dismiss="modal"><i class="fa fa-check"></i> Aceitar</button>
+                <button ng-click="recusar(recursoAtual)" type="button" class="btn btn-warning" data-dismiss="modal"><i class="fa fa-times"></i> Recusar</button>
+                <button ng-click="aprovar(recursoAtual)" type="button" class="btn btn-success" data-dismiss="modal"><i class="fa fa-check"></i> Aprovar</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
