@@ -16,7 +16,6 @@ https://iesb.blackboard.com/webapps/blackboard/execute/content/file?cmd=view&con
 ## TO-DO Client
 * Criar e Editar Questão
 * Criar e Editar Prova
-* Criar Recurso
 * Criar Nota vinculada a cada aluno ao criar uma prova
 * Editar Nota
 * Filtrar dados nas páginas de listagem
@@ -25,4 +24,3 @@ https://iesb.blackboard.com/webapps/blackboard/execute/content/file?cmd=view&con
 ## TO-DO Server
 * Digitalizar Prova
 * Refatorar Nota migration, model e controller
-* Refatorar Recurso migration, model e controller

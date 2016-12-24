@@ -28,6 +28,16 @@ class RecursosFK extends Migration
                 ->references('id')
                 ->on('estados')
                 ->onDelete('cascade');
+
+            $table->foreign('prova_id')
+                ->references('id')
+                ->on('provas')
+                ->onDelete('cascade');
+
+            $table->foreign('turma_id')
+                ->references('id')
+                ->on('turmas')
+                ->onDelete('cascade');
         });
     }
 

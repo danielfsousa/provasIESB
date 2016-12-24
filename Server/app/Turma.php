@@ -48,4 +48,14 @@ class Turma extends Model
     {
         return $this->hasMany('App\Nota');
     }
+
+    public function alunos()
+    {
+        return $this->hasMany('App\Usuario');
+    }
+
+    public function recursos()
+    {
+        return $this->hasMany('App\Recurso');
+    }
 }

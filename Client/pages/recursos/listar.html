@@ -94,6 +94,7 @@
                             <th>Aluno</th>
                             <th>Disciplina</th>
                             <th>Prova</th>
+                            <th>Turma</th>
                             <th>Questão</th>
                             <th>Data</th>
                             <th>Estado</th>
@@ -105,7 +106,8 @@
                             <td><a ui-sref="template.visualizarRecurso({ id: recurso.id })">{{ recurso.titulo }}</a></td>
                             <td>{{ recurso.aluno.nome }}</td>
                             <td>{{ recurso.disciplina.nome }}</td>
-                            <td>{{ recurso.prova }}</td>
+                            <td>{{ recurso.prova.prova }}</td>
+                            <td>{{ recurso.turma.codigo }}</td>
                             <td>{{ recurso.questao }}</td>
                             <td>{{ recurso.created_at | data }}</td>
                             <td>{{ recurso.estado.nome }}</td>
@@ -118,6 +120,7 @@
                             <th>Aluno</th>
                             <th>Disciplina</th>
                             <th>Prova</th>
+                            <th>Turma</th>
                             <th>Questão</th>
                             <th>Data</th>
                             <th>Estado</th>
@@ -141,7 +144,7 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title">
-                    Título da questão aqui
+                    {{ questaoAtual.titulo }}
                     <small><a href="questoes/id" target="_blank" title="Ir para página completa"><i class="fa fa-external-link" aria-hidden="true"></i></a></small>
                 </h4>
             </div>
@@ -150,35 +153,38 @@
                     <tbody>
                     <tr>
                         <th style="width: 10%">Tipo:</th>
-                        <td>Subjetiva</td>
+                        <td>{{ questaoAtual.tipo }}</td>
                     </tr>
                     <tr>
                         <th>Dificuldade:</th>
-                        <td>Alta</td>
+                        <td>{{ questaoAtual.dificuldade }}</td>
                     </tr>
                     <tr>
                         <th>Disciplina:</th>
-                        <td>Segurança da Informação</td>
+                        <td>{{ questaoAtual.disciplina.nome }}</td>
                     </tr>
                     <tr>
                         <th>Autor:</th>
-                        <td>Cícero</td>
+                        <td>{{ questaoAtual.autor.nome }}</td>
                     </tr>
                     </tbody>
                 </table>
                 <hr>
-                <img class="center-block img-responsive" src="/img/questao.jpg" alt="Independência">
-                <br>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquam lorem et lectus congue, vitae pulvinar odio porta. Cras fringilla tortor id sollicitudin dictum. Sed consequat ligula est, in interdum urna facilisis at. Praesent tempus mi non porta molestie. Pellentesque bibendum libero quis odio euismod, imperdiet tempus magna bibendum. Mauris commodo suscipit consectetur. Donec eget ultrices erat, quis tristique urna. Duis a libero quam. Quisque eu enim dolor. Donec hendrerit in turpis in mollis. Vestibulum ante quam, rhoncus at urna sed, efficitur elementum erat?<br><br>
+                <h4>Enunciado:</h4>
+                <span ng-bind-html="questaoAtual.enunciado"></span>
 
-                    A) Lorem ipsum dolor sit amet.<br>
-                    B) Consectetur adipiscing elit.<br>
-                    C) Sed consequat ligula est.<br>
-                    D) Duis a libero quam.<br>
-                    E) Donec hendrerit in turpis in mollis.<br>
-                </p>
+                <div ng-if="questaoAtual.tipo === 'Objetiva'">
+                    <strong>A)</strong> <span ng-bind-html="questaoAtual.alternativa_a"></span> <br>
+                    <strong>B)</strong> <span ng-bind-html="questaoAtual.alternativa_b"></span> <br>
+                    <strong>C)</strong> <span ng-bind-html="questaoAtual.alternativa_c"></span> <br>
+                    <strong>D)</strong> <span ng-bind-html="questaoAtual.alternativa_d"></span> <br>
+                    <strong>E)</strong> <span ng-bind-html="questaoAtual.alternativa_e"></span> <br>
+                </div>
 
+                <hr>
+                <h4>Resposta:</h4>
+                {{ questaoAtual.resposta }}
+                <br><br>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" trocar-modal data-dismiss="modal" data-show="#visualizar-recurso">Voltar</button>
@@ -205,17 +211,17 @@
                         <th style="width: 10%">Aluno:</th>
                         <td>{{ recursoAtual.aluno.nome }}</td>
                     </tr>
-                    <!--<tr>-->
-                        <!--<th>Turma:</th>-->
-                        <!--<td>ADS123456</td>-->
-                    <!--</tr>-->
+                    <tr>
+                        <th>Turma:</th>
+                        <td>{{ recursoAtual.turma.codigo }}</td>
+                    </tr>
                     <tr>
                         <th>Disciplina:</th>
                         <td>{{ recursoAtual.disciplina.nome }}</td>
                     </tr>
                     <tr>
                         <th>Prova:</th>
-                        <td>{{ recursoAtual.prova }}</td>
+                        <td>{{ recursoAtual.prova.prova }}</td>
                     </tr>
                     <tr>
                         <th>Questão:</th>
@@ -232,13 +238,10 @@
                     </tbody>
                 </table>
                 <hr>
-                <p>
-                    {{ recursoAtual.descricao }}
-                </p>
+                <span ng-bind-html="recursoAtual.descricao"></span>
             </div>
             <div class="modal-footer">
-                <!--<button type="button" class="btn btn-default" trocar-modal data-dismiss="modal" data-show="#visualizar-questao"><i class="fa fa-eye"></i> Visualizar Questão</button>-->
-                <button ng-click="info('Não suportado ainda')" type="button" class="btn btn-default"><i class="fa fa-eye"></i> Visualizar Questão</button>
+                <button type="button" class="btn btn-default" trocar-modal data-dismiss="modal" data-show="#visualizar-questao"><i class="fa fa-eye"></i> Visualizar Questão</button>
 
                 <!--Somente admin / coordenador-->
                 <button type="button" class="btn btn-danger pull-left" trocar-modal data-dismiss="modal" data-show="#confirmacao"><i class="fa fa-trash"></i> Excluir</button>

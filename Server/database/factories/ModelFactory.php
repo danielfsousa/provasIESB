@@ -15,9 +15,10 @@
 $factory->define(App\Recurso::class, function (Faker\Generator $faker) {
     return [
         'titulo' => $faker->sentence(5),
-        'prova' => collect(['P1', 'P2'])->random(),
         'questao' => $faker->numberBetween(1,10),
         'descricao' => $faker->text,
+        'prova_id' => $faker->numberBetween(1,20),
+        'turma_id' => $faker->numberBetween(1,4),
         'aluno_id' => 1,
         'disciplina_id' => $faker->biasedNumberBetween(1, 4),
         'estado_id' => collect([1, 2, 3])->random(),

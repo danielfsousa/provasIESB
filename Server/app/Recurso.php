@@ -36,15 +36,14 @@ use Illuminate\Database\Eloquent\Model;
 class Recurso extends Model
 {
     protected $fillable = [
-        'titulo', 'prova', 'questao', 'descricao', 'estado_id', 'aluno_id', 'disciplina_id'
+        'titulo', 'questao', 'descricao', 'estado_id', 'aluno_id', 'disciplina_id', 'prova_id', 'turma_id'
     ];
 
     const VALIDACAO = [
         'titulo' => 'required',
-        'prova' => 'required',
         'questao' => 'required|integer|min:1',
         'descricao' => 'required',
-        'estado_id' => 'required|integer|min:1',
+        'turma_id' => 'required|integer|min:1',
         'disciplina_id' => 'required|integer|min:1'
     ];
 
@@ -62,7 +61,7 @@ class Recurso extends Model
 
     public function scopeWithAll($query)
     {
-        $query->with('aluno', 'estado', 'disciplina');
+        $query->with('aluno', 'estado', 'disciplina', 'prova', 'turma');
     }
 
     public function estado()
@@ -78,5 +77,15 @@ class Recurso extends Model
     public function disciplina()
     {
         return $this->belongsTo('App\Disciplina');
+    }
+
+    public function prova()
+    {
+        return $this->belongsTo('App\Prova');
+    }
+
+    public function turma()
+    {
+        return $this->belongsTo('App\Turma');
     }
 }

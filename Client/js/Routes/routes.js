@@ -201,7 +201,7 @@ app
             .state('template.criarRecurso', {
                 url: '/recursos/criar',
                 templateUrl: 'pages/recursos/criar.html',
-                controller: 'listarRecursosController',
+                controller: 'criarRecursoController',
                 auth: true
             })
 

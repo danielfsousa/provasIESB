@@ -1,10 +1,14 @@
 /**
  * Created by lorran on 08/12/16.
  */
-app.controller('CriarProvaCtrl', function (provaServico) {
+app.controller('CriarProvaCtrl', function () {
 
     var vm = this;
-
+    vm.selecao={
+        prova:'',
+        turma:'',
+        disciplina:''
+    }
     vm.prova = [
         {
             id: 1,
@@ -58,42 +62,5 @@ app.controller('CriarProvaCtrl', function (provaServico) {
                 nome: '4'
             }
     ];
-
-    function verificaCampos() {
-        if (vm.titulo != '' && vm.dificuldade != '' && vm.gabarito != '' && vm.enunciado != ''
-            && vm.alternativaA != '' && vm.alternativaB != '' && vm.alternativaC != '' && vm.alternativaD != ''
-            && vm.alternativaE != '' && vm.disciplinaProva) {
-            return true;
-        }
-        return false;
-    }
-
-    vm.enviarQuestao = function () {
-        if (verificaCampos()) {
-            var questao = {
-                titulo: vm.titulo,
-                dificuldade: vm.dificuldade,
-                gabarito: vm.gabarito,
-                enunciado: vm.enunciado,
-                alternativas: {
-                    A: vm.alternativaA,
-                    B: vm.alternativaB,
-                    C: vm.alternativaC,
-                    D: vm.alternativaD,
-                    E: vm.alternativaE
-                },
-                disciplina: vm.disciplinaProva
-            };
-            questaoServico.criarQuestao(questao); //TODO implementar este método
-        }
-    };
-
-    vm.salvarRascunho = function () {
-        //TODO salvar o rascunho
-        /*
-         * Será em tabela ou localStorage?
-         */
-    };
-
 
 });

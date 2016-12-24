@@ -29,6 +29,15 @@ app.factory('recursoServico', function ($http, api) {
         });
     }
 
+    function criar(recurso) {
+        return $http({
+            headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'},
+            method: 'POST',
+            url: api('recursos'),
+            data: $.param(recurso)
+        });
+    }
+
     function excluir(id) {
         return $http({
             method: 'DELETE',
@@ -41,6 +50,7 @@ app.factory('recursoServico', function ($http, api) {
         getById: getById,
         aprovar: aprovar,
         recusar: recusar,
+        criar: criar,
         excluir: excluir
     }
 

@@ -22,43 +22,36 @@
                 <div class="box-body">
                     <div class="form-group">
                         <label for="titulo">Título</label>
-                        <input type="text" class="form-control" id="titulo" placeholder="Título">
+                        <input ng-model="recurso.titulo" type="text" class="form-control" id="titulo" placeholder="Título">
                     </div>
                     <div class="form-group">
                         <label for="questao">Questão</label>
-                        <input type="number" class="form-control" id="questao" placeholder="Questão">
+                        <input ng-model="recurso.questao" type="number" class="form-control" id="questao" placeholder="Questão">
                     </div>
                     <div class="form-group">
                         <label for="disciplina">Disciplina</label>
-                        <select id="disciplina" class="form-control">
-                            <option>option 1</option>
-                            <option>option 2</option>
-                            <option>option 3</option>
-                            <option>option 4</option>
-                            <option>option 5</option>
+                        <select select2 ng-options="disciplina.nome for disciplina in disciplinas" ng-model="recurso.disciplina" id="disciplina" class="form-control">
+                            <option value="">Selecione uma Disciplina</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="turma">Turma</label>
-                        <select id="turma" class="form-control">
-                            <option>option 1</option>
-                            <option>option 2</option>
-                            <option>option 3</option>
-                            <option>option 4</option>
-                            <option>option 5</option>
+                        <select select2 ng-options="turma.codigo for turma in turmas" ng-model="recurso.turma" id="turma" class="form-control">
+                            <option value="">Selecione uma Turma</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="prova">Prova</label>
-                        <select id="prova" class="form-control">
-                            <option>P1</option>
-                            <option>P2</option>
+                        <select ng-model="recurso.prova" id="prova" class="form-control">
+                            <option value="" disabled>Selecione uma Prova</option>
+                            <option value="P1">P1</option>
+                            <option value="P2">P2</option>
+                            <option value="P3">P3</option>
                         </select>
                     </div>
                 </div>
                 <div class="box-footer">
-                    <button type="submit" class="btn btn-primary pull-right">Enviar</button>
-                    <button type="submit" class="btn btn-default pull-right">Salvar como rascunho</button>
+                    <button ng-click="salvar(recurso)" class="btn btn-primary pull-right">Salvar</button>
                 </div>
             </div>
         </div>
@@ -69,7 +62,7 @@
                     <h3 class="box-title click" data-widget="collapse">Mensagem</h3>
                 </div>
                 <div class="box-body">
-                    <textarea id="editor" name="mensagem" rows="20" cols="70" editor="grande"></textarea>
+                    <textarea ng-model="recurso.descricao" rows="20" cols="70" editor="grande"></textarea>
                 </div>
             </div>
         </div>

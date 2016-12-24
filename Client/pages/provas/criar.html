@@ -12,7 +12,7 @@
 </section>
 
 <!-- Main content -->
-<section class="content">
+<section class="content" ng-controller="CriarProvaCtrl as ctrl" >
     <div class="row">
         <div class="col-md-4">
             <a class="btn btn-primary btn-block margin-bottom" data-toggle="modal" data-target="#adicionar-questoes">Adicionar Questão</a>
@@ -28,24 +28,21 @@
                 </div>
                 <div class="box-body with-border">
                     <div class="form-group">
-                        <label>Disciplina</label>
-                        <select select2 ng-model="ctrl.disciplina" ng-repeat="disciplina in ctrl.disciplina">
-                            <option selected="selected">Selecione</option>
-                            <option>{{disciplina}}</option>
+                        <label for="disciplina">Disciplina</label>
+                        <select select2 ng-model="ctrl.selecao.disciplina" id="disciplina" class="form-control">
+                            <option ng-repeat="disciplina in ctrl.disciplina">{{disciplina.nome}}</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Turma</label>
-                        <select select2 ng-model="ctrl.turma" ng-repeat="turma in ctrl.turma">
-                            <option selected="selected">Selecione</option>
-                            <option>{{turma}}</option>
+                        <select select2 ng-model="ctrl.selecao.turma">
+                            <option  ng-repeat="turma in ctrl.turma">{{turma.nome}}</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Prova</label>
-                        <select select2 ng-model="ctrl.prova" ng-repeat="prova in ctrl.prova">
-                            <option selected="selected">Selecione</option>
-                            <option>{{prova}}</option>
+                        <select select2 ng-model="ctrl.selecao.prova">
+                            <option  ng-repeat="prova in ctrl.prova">{{prova.nome}}</option>
                         </select>
                     </div>
                 </div>

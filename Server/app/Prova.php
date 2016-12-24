@@ -98,4 +98,9 @@ class Prova extends Model
     {
         return $this->belongsTo('App\Estado');
     }
+
+    public function recursos()
+    {
+        return $this->hasMany('App\Recurso');
+    }
 }
